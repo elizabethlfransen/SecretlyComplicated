@@ -6,23 +6,23 @@ loaderVersion="[3,)" # Require at least 3.x
 license='LGPL'
 
 [[mods]]
-modId="examplemod"
+modId="secretly_complicated"
 version="${file.jarVersion}"
-displayName="ExampleMod"
-credits="The ExampleMod dev team"
-authors="ExampleModAuthor"
+displayName="Secretly Complicated"
+credits="SecretlyComplicated Contributors, SecretAsain, and the Not Too Complicated Community"
+authors="Liz Fransen"
 description='''
-Example mod that uses Kotlin for Forge.
+A mod for not too complicated 3
 '''
-[[dependencies.examplemod]]
+[[dependencies.secretly_complicated]]
     modId="forge"
     mandatory=true
     versionRange="[39,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.examplemod]]
+[[dependencies.secretly_complicated]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.1]"
+    versionRange="[1.18.2]"
     ordering="NONE"
     side="BOTH"

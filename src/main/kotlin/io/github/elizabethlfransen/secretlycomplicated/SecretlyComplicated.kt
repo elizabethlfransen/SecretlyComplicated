@@ -1,6 +1,6 @@
-package example.examplemod
+package io.github.elizabethlfransen.secretlycomplicated
 
-import example.examplemod.block.ModBlocks
+import io.github.elizabethlfransen.secretlycomplicated.block.ModBlocks
 import net.minecraft.client.Minecraft
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
@@ -18,13 +18,14 @@ import thedarkcolour.kotlinforforge.forge.runForDist
  *
  * An example for blocks is in the `blocks` package of this mod.
  */
-@Mod(ExampleMod.ID)
-object ExampleMod {
-    const val ID = "examplemod"
+@Mod(SecretlyComplicated.ID)
+object SecretlyComplicated {
+    const val ID = "secretly_complicated"
 
     // the logger for our mod
     val LOGGER: Logger = LogManager.getLogger(ID)
 
+    // TODO: Remove sample code once actual examples exist
     init {
         LOGGER.log(Level.INFO, "Hello world!")
 

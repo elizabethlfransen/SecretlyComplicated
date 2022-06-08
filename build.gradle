@@ -18,8 +18,8 @@ apply plugin: 'kotlinx-serialization'
 apply from: 'https://raw.githubusercontent.com/thedarkcolour/KotlinForForge/site/thedarkcolour/kotlinforforge/gradle/kff-3.1.0.gradle'
 
 version = '1.0.0'
-group = 'example.examplemod'
-archivesBaseName = 'examplemod'
+group = 'io.github.elizabethlfransen.secretlycomplicated'
+archivesBaseName = 'SecretlyComplicated'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -37,7 +37,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                secretly_complicated {
                     source sourceSets.main
                 }
             }
@@ -50,7 +50,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                secretly_complicated {
                     source sourceSets.main
                 }
             }
@@ -62,10 +62,10 @@ minecraft {
             property 'forge.logging.markers', 'SCAN,LOADING,CORE'
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources')
+            args '--mod', 'secretly_complicated', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources')
 
             mods {
-                examplemod {
+                secretly_complicated {
                     source sourceSets.main
                 }
             }
@@ -78,7 +78,7 @@ sourceSets.main.resources { srcDirs 'src/generated/resources/' }
 
 dependencies {
     // Use the latest version of Minecraft Forge
-    minecraft 'net.minecraftforge:forge:1.18.2-40.0.4'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.1.0'
 }
 
 compileKotlin {
@@ -88,12 +88,12 @@ compileKotlin {
 jar {
     manifest {
         attributes([
-                'Specification-Title': "examplemod",
-                'Specification-Vendor': "examplemodsareus",
+                'Specification-Title': "secretly_complicated",
+                'Specification-Vendor': "secretly_complicatedsareus",
                 'Specification-Version': "1", // We are version 1 of ourselves
                 'Implementation-Title': project.name,
                 'Implementation-Version': project.version,
-                'Implementation-Vendor' :"examplemodsareus",
+                'Implementation-Vendor' :"secretly_complicatedsareus",
                 'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
