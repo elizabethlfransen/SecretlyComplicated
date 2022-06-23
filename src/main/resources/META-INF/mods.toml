@@ -4,7 +4,7 @@ modLoader="kotlinforforge"
 loaderVersion="[3,)" # Require at least 3.x
 # License is REQUIRED after 1.16
 license='LGPL'
-
+logoFile="logo.png"
 [[mods]]
 modId="secretly_complicated"
 version="${file.jarVersion}"
