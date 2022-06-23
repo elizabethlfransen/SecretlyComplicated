@@ -1,0 +1,33 @@
+package io.github.elizabethlfransen.secretlycomplicated.element
+
+import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated
+import net.minecraft.client.Minecraft
+import net.minecraft.client.color.item.ItemColor
+import net.minecraft.world.item.CreativeModeTab
+import net.minecraft.world.item.Item
+import net.minecraft.world.item.ItemStack
+import net.minecraftforge.eventbus.api.IEventBus
+import net.minecraftforge.registries.DeferredRegister
+import net.minecraftforge.registries.ForgeRegistries
+import net.minecraftforge.registries.RegistryObject
+import thedarkcolour.kotlinforforge.KotlinModLoadingContext
+import thedarkcolour.kotlinforforge.forge.MOD_BUS
+
+class SCElementItem(properties: Properties = Properties()) : Item(properties) {
+
+}
+
+object ModElements {
+    val items = DeferredRegister.create(ForgeRegistries.ITEMS, SecretlyComplicated.ID)
+    val creativeModeTab = (object: CreativeModeTab("Secretly Complicated Elements") {
+        override fun makeIcon(): ItemStack {
+            return ItemStack(hydrogenIngot.get())
+        }
+    })
+    val hydrogenIngot : RegistryObject<Item> = items.register("hydrogen_ingot") {
+        Item(
+            Item.Properties()
+                .tab(creativeModeTab)
+        )
+    }
+}

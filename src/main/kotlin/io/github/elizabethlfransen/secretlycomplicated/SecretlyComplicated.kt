@@ -1,10 +1,18 @@
 package io.github.elizabethlfransen.secretlycomplicated
 
 import io.github.elizabethlfransen.secretlycomplicated.block.ModBlocks
+import io.github.elizabethlfransen.secretlycomplicated.datagen.ElementLocalizationProvider
+import io.github.elizabethlfransen.secretlycomplicated.datagen.ElementModelProvider
+import io.github.elizabethlfransen.secretlycomplicated.element.ModElements
 import net.minecraft.client.Minecraft
+import net.minecraft.client.color.block.BlockColors
+import net.minecraft.client.color.item.ItemColor
+import net.minecraft.client.color.item.ItemColors
+import net.minecraft.world.item.ItemStack
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent
 import org.apache.logging.log4j.Level
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
@@ -27,15 +35,19 @@ object SecretlyComplicated {
 
     // TODO: Remove sample code once actual examples exist
     init {
-        LOGGER.log(Level.INFO, "Hello world!")
 
-        // Register the KDeferredRegister to the mod-specific event bus
-        ModBlocks.REGISTRY.register(MOD_BUS)
+        ModElements.items.register(MOD_BUS)
+
+        MOD_BUS.addListener<GatherDataEvent> {event ->
+            if(event.includeClient()) {
+                event.generator.addProvider(ElementModelProvider(event.generator,  event.existingFileHelper))
+                event.generator.addProvider(ElementLocalizationProvider(event.generator))
+            }
+        }
 
         val obj = runForDist(
             clientTarget = {
                 MOD_BUS.addListener(::onClientSetup)
-                Minecraft.getInstance()
             },
             serverTarget = {
                 MOD_BUS.addListener(::onServerSetup)
@@ -52,6 +64,8 @@ object SecretlyComplicated {
      */
     private fun onClientSetup(event: FMLClientSetupEvent) {
         LOGGER.log(Level.INFO, "Initializing client...")
+
+        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xE8EF23}), ModElements.hydrogenIngot.get())
     }
 
     /**

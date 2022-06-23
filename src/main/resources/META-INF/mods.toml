@@ -32,3 +32,9 @@ A mod for not too complicated 3
     versionRange="[10,)"
     ordering="NONE"
     side="BOTH"
+[[dependencies.secretly_complicated]]
+    modId = "jei"
+    mandatory = false
+    versionRange = "[9,)"
+    ordering = "NONE"
+    side = "BOTH"
