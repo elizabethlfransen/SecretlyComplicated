@@ -26,3 +26,9 @@ A mod for not too complicated 3
     versionRange="[1.18.2]"
     ordering="NONE"
     side="BOTH"
+[[dependencies.secretly_complicated]]
+    modId="mekanism"
+    mandatory=false
+    versionRange="[10,)"
+    ordering="NONE"
+    side="BOTH"

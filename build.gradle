@@ -76,9 +76,21 @@ minecraft {
 // Include assets and data from data generators
 sourceSets.main.resources { srcDirs 'src/generated/resources/' }
 
+repositories {
+    maven {
+        name = "JEI"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven { url 'https://modmaven.dev/' }
+}
+
 dependencies {
     // Use the latest version of Minecraft Forge
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.0'
+    minecraft "net.minecraftforge:forge:${forge_version}"
+    compileOnly fg.deobf("mezz.jei:jei-${jei_version}:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-${jei_version}")
+    compileOnly "mekanism:Mekanism:${mekanism_version}:api"
+    runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}")
 }
 
 compileKotlin {
