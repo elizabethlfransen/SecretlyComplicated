@@ -1,3 +1,13 @@
 {
-  "item.secretly_complicated.hydrogen_ingot": "Hydrogen Ingot"
+  "itemGroup.secretly_complicated": "Secretly Complicated Elements",
+  "item.secretly_complicated.hydrogen_ingot": "Hydrogen Ingot",
+  "item.secretly_complicated.helium_ingot": "Helium Ingot",
+  "item.secretly_complicated.lithium_ingot": "Lithium Ingot",
+  "item.secretly_complicated.beryllium_ingot": "Beryllium Ingot",
+  "item.secretly_complicated.boron_ingot": "Boron Ingot",
+  "item.secretly_complicated.carbon_ingot": "Carbon Ingot",
+  "item.secretly_complicated.nitrogen_ingot": "Nitrogen Ingot",
+  "item.secretly_complicated.oxygen_ingot": "Oxygen Ingot",
+  "item.secretly_complicated.fluorine_ingot": "Fluorine Ingot",
+  "item.secretly_complicated.neon_ingot": "Neon Ingot"
 }
