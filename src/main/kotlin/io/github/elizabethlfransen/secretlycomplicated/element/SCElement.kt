@@ -1,30 +1,36 @@
 package io.github.elizabethlfransen.secretlycomplicated.element
 
-import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated
-import net.minecraft.world.item.Item
-import net.minecraftforge.registries.DeferredRegister
-import net.minecraftforge.registries.ForgeRegistries
-import thedarkcolour.kotlinforforge.forge.registerObject
+import io.github.elizabethlfransen.secretlycomplicated.util.register.RegisteringContext
+import io.github.elizabethlfransen.secretlycomplicated.util.register.item.registerItem
+import net.minecraft.client.Minecraft
+import net.minecraft.client.color.item.ItemColor
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 
-data class SCElement(
-    val atomicNumber: Number,
-    val name: String
+class SCElement(
+    context: RegisteringContext,
+    val atomicNumber: Int,
+    val name: String,
+    val color: Int
 ) {
-    fun register(itemRegister: DeferredRegister<Item>) = RegisteredSCElement(itemRegister, this)
+    val item by context.registerItem("${name}_ingot")
 }
 
-class RegisteredSCElement(
-    itemRegister: DeferredRegister<Item>,
-    element: SCElement
-) {
-    val item1 = itemRegister.register("hydrogen") { Item(Item.Properties()) }
-    val item2 = itemRegister.register("helium") { Item(Item.Properties()) }
-    val item3 = itemRegister.register("lithium") { Item(Item.Properties()) }
-    val item4 = itemRegister.register("beryllium") { Item(Item.Properties()) }
-    val item5 = itemRegister.register("boron") { Item(Item.Properties()) }
-    val item6 = itemRegister.register("carbon") { Item(Item.Properties()) }
-    val item7 = itemRegister.register("nitrogen") { Item(Item.Properties()) }
-    val item8 = itemRegister.register("oxygen") { Item(Item.Properties()) }
-    val item9 = itemRegister.register("fluorine") { Item(Item.Properties()) }
-    val item10 = itemRegister.register("neon") { Item(Item.Properties()) }
+
+fun RegisteringContext.registerElement(
+    atomicNumber: Int,
+    name: String,
+    color: Int
+): SCElement {
+    val element = SCElement(
+        this,
+        atomicNumber,
+        name,
+        color
+    )
+    onRegister { bus->
+        bus.addListener<FMLClientSetupEvent> {
+            Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  color}), element.item)
+        }
+    }
+    return element
 }

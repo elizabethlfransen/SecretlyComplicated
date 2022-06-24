@@ -2,7 +2,6 @@ package io.github.elizabethlfransen.secretlycomplicated.element
 
 import io.github.elizabethlfransen.secretlycomplicated.util.SimpleCreativeTab
 import io.github.elizabethlfransen.secretlycomplicated.util.register.RegisteringContext
-import io.github.elizabethlfransen.secretlycomplicated.util.register.item.registerItem
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
 
@@ -10,17 +9,17 @@ import net.minecraft.world.item.ItemStack
 object ModElements : RegisteringContext() {
 
     override val defaultTab: CreativeModeTab = SimpleCreativeTab("secretly_complicated") {
-        ItemStack(hydrogenIngot)
+        ItemStack(hydrogen.item)
     }
 
-    val hydrogenIngot by registerItem("hydrogen_ingot")
-    val heliumIngot by registerItem("helium_ingot")
-    val lithiumIngot by registerItem("lithium_ingot")
-    val berylliumIngot by registerItem("beryllium_ingot")
-    val boronIngot by registerItem("boron_ingot")
-    val carbonIngot by registerItem("carbon_ingot")
-    val nitrogenIngot by registerItem("nitrogen_ingot")
-    val oxygenIngot by registerItem("oxygen_ingot")
-    val fluorineIngot by registerItem("fluorine_ingot")
-    val neonIngot by registerItem("neon_ingot")
+    val hydrogen = registerElement(1, "hydrogen", 0xff1a7d)
+    val helium = registerElement(2, "helium", 0xffc6e0)
+    val lithium = registerElement(3, "lithium", 0xff1852)
+    val beryllium = registerElement(4, "beryllium", 0x1e4cff)
+    val boron = registerElement(5, "boron",0x4132ff)
+    val carbon = registerElement(6, "carbon", 0xebffc1)
+    val nitrogen = registerElement(7, "nitrogen", 0xe795ff)
+    val oxygen = registerElement(8, "oxygen", 0xb8bfff)
+    val fluorine = registerElement(9, "fluorine", 0xff1765)
+    val neon = registerElement(10, "neon", 0xff4022)
 }
