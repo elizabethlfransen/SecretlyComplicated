@@ -1,37 +1,26 @@
 package io.github.elizabethlfransen.secretlycomplicated.element
 
-import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated
-import net.minecraft.client.Minecraft
-import net.minecraft.client.color.item.ItemColor
+import io.github.elizabethlfransen.secretlycomplicated.util.SimpleCreativeTab
+import io.github.elizabethlfransen.secretlycomplicated.util.register.RegisteringContext
+import io.github.elizabethlfransen.secretlycomplicated.util.register.item.registerItem
 import net.minecraft.world.item.CreativeModeTab
-import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
-import net.minecraftforge.eventbus.api.IEventBus
-import net.minecraftforge.registries.DeferredRegister
-import net.minecraftforge.registries.ForgeRegistries
-import net.minecraftforge.registries.RegistryObject
-import thedarkcolour.kotlinforforge.KotlinModLoadingContext
-import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
-class SCElementItem(properties: Properties = Properties()) : Item(properties) {
 
-}
+object ModElements : RegisteringContext() {
 
-object ModElements {
-    val items = DeferredRegister.create(ForgeRegistries.ITEMS, SecretlyComplicated.ID)
-    val creativeModeTab = (object: CreativeModeTab("secretly_complicated") {
-        override fun makeIcon(): ItemStack {
-            return ItemStack(hydrogenIngot.get())
-        }
-    })
-    val hydrogenIngot : RegistryObject<Item> = items.register("hydrogen_ingot") { Item(Item.Properties().tab(creativeModeTab)) }
-    val heliumIngot : RegistryObject<Item> = items.register("helium_ingot") { Item(Item.Properties().tab(creativeModeTab)) }
-    val lithiumIngot : RegistryObject<Item> = items.register("lithium_ingot") { Item(Item.Properties().tab(creativeModeTab)) }
-    val berylliumIngot : RegistryObject<Item> = items.register("beryllium_ingot") { Item(Item.Properties().tab(creativeModeTab)) }
-    val boronIngot : RegistryObject<Item> = items.register("boron_ingot") { Item(Item.Properties().tab(creativeModeTab)) }
-    val carbonIngot : RegistryObject<Item> = items.register("carbon_ingot") { Item(Item.Properties().tab(creativeModeTab)) }
-    val nitrogenIngot : RegistryObject<Item> = items.register("nitrogen_ingot") { Item(Item.Properties().tab(creativeModeTab)) }
-    val oxygenIngot : RegistryObject<Item> = items.register("oxygen_ingot") { Item(Item.Properties().tab(creativeModeTab)) }
-    val fluorineIngot : RegistryObject<Item> = items.register("fluorine_ingot") { Item(Item.Properties().tab(creativeModeTab)) }
-    val neonIngot : RegistryObject<Item> = items.register("neon_ingot") { Item(Item.Properties().tab(creativeModeTab)) }
+    override val defaultTab: CreativeModeTab = SimpleCreativeTab("secretly_complicated") {
+        ItemStack(hydrogenIngot)
+    }
+
+    val hydrogenIngot by registerItem("hydrogen_ingot")
+    val heliumIngot by registerItem("helium_ingot")
+    val lithiumIngot by registerItem("lithium_ingot")
+    val berylliumIngot by registerItem("beryllium_ingot")
+    val boronIngot by registerItem("boron_ingot")
+    val carbonIngot by registerItem("carbon_ingot")
+    val nitrogenIngot by registerItem("nitrogen_ingot")
+    val oxygenIngot by registerItem("oxygen_ingot")
+    val fluorineIngot by registerItem("fluorine_ingot")
+    val neonIngot by registerItem("neon_ingot")
 }

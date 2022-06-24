@@ -1,14 +1,10 @@
 package io.github.elizabethlfransen.secretlycomplicated
 
-import io.github.elizabethlfransen.secretlycomplicated.block.ModBlocks
 import io.github.elizabethlfransen.secretlycomplicated.datagen.ElementLocalizationProvider
 import io.github.elizabethlfransen.secretlycomplicated.datagen.ElementModelProvider
 import io.github.elizabethlfransen.secretlycomplicated.element.ModElements
 import net.minecraft.client.Minecraft
-import net.minecraft.client.color.block.BlockColors
 import net.minecraft.client.color.item.ItemColor
-import net.minecraft.client.color.item.ItemColors
-import net.minecraft.world.item.ItemStack
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent
@@ -36,7 +32,7 @@ object SecretlyComplicated {
     // TODO: Remove sample code once actual examples exist
     init {
 
-        ModElements.items.register(MOD_BUS)
+        ModElements.register(MOD_BUS)
 
         MOD_BUS.addListener<GatherDataEvent> {event ->
             if(event.includeClient()) {
@@ -66,16 +62,16 @@ object SecretlyComplicated {
         LOGGER.log(Level.INFO, "Initializing client...")
 
         // TODO: Use Atomic Spectrum Colors
-        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xff1a7d}), ModElements.hydrogenIngot.get())
-        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xffc6e0}), ModElements.heliumIngot.get())
-        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xff1852}), ModElements.lithiumIngot.get())
-        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0x1e4cff}), ModElements.berylliumIngot.get())
-        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0x4132ff}), ModElements.boronIngot.get())
-        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xebffc1}), ModElements.carbonIngot.get())
-        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xe795ff}), ModElements.nitrogenIngot.get())
-        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xb8bfff}), ModElements.oxygenIngot.get())
-        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xff1765}), ModElements.fluorineIngot.get())
-        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xff4022}), ModElements.neonIngot.get())
+        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xff1a7d}), ModElements.hydrogenIngot)
+        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xffc6e0}), ModElements.heliumIngot)
+        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xff1852}), ModElements.lithiumIngot)
+        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0x1e4cff}), ModElements.berylliumIngot)
+        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0x4132ff}), ModElements.boronIngot)
+        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xebffc1}), ModElements.carbonIngot)
+        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xe795ff}), ModElements.nitrogenIngot)
+        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xb8bfff}), ModElements.oxygenIngot)
+        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xff1765}), ModElements.fluorineIngot)
+        Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex ->  0xff4022}), ModElements.neonIngot)
     }
 
     /**
