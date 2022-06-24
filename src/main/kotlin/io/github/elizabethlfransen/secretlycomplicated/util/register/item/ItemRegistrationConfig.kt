@@ -4,5 +4,6 @@ import net.minecraft.world.item.Item
 
 class ItemRegistrationConfig(
 ) {
-    var props: Item.Properties = Item.Properties()
+    var props: ItemPropsConfig = ItemPropsConfig()
+    fun build() = Item(props.build())
 }

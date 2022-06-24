@@ -12,7 +12,15 @@ object ModElements : RegisteringContext() {
         ItemStack(hydrogen.item)
     }
 
-    val hydrogen = registerElement(1, "hydrogen", 0xff1a7d)
+    // redundant
+    // example for configuring an element
+    val hydrogen = registerElement(1, "hydrogen", 0xff1a7d) /* {
+        item {
+            props {
+                tab = defaultTab
+            }
+        }
+    } */
     val helium = registerElement(2, "helium", 0xffc6e0)
     val lithium = registerElement(3, "lithium", 0xff1852)
     val beryllium = registerElement(4, "beryllium", 0x1e4cff)

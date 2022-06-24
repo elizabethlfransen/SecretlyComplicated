@@ -8,18 +8,22 @@ import kotlin.properties.ReadOnlyProperty
 
 fun RegisteringContext.item(name: String, init: ItemRegistrationConfig.() -> Unit = {}): RegistryObject<Item> {
     val config = ItemRegistrationConfig()
-    defaultTab?.let(config.props::tab)
+    defaultTab?.let { tab -> config.props.tab = tab }
     config.init()
     return ITEMS.register(name) {
-        Item(config.props)
+        config.build()
     }
+}
+
+fun ItemRegistrationConfig.props(init: ItemPropsConfig.() -> Unit = {}) {
+    props.init()
 }
 
 fun RegisteringContext.registerItem(name: String, init: ItemRegistrationConfig.() -> Unit = {}): ReadOnlyProperty<Any?, Item> {
     val config = ItemRegistrationConfig()
-    defaultTab?.let(config.props::tab)
+    defaultTab?.let { tab -> config.props.tab = tab }
     config.init()
     return ITEMS.registerObject(name) {
-        Item(config.props)
+        config.build()
     }
 }
