@@ -17,5 +17,14 @@ class ElementLocalizationProvider(gen: DataGenerator) : LanguageProvider(gen, Se
         add(ModElements.oxygen.item,"Oxygen Ingot")
         add(ModElements.fluorine.item,"Fluorine Ingot")
         add(ModElements.neon.item,"Neon Ingot")
+
+        add(ModElements.sodium.item,"Sodium Ingot")
+        add(ModElements.magnesium.item,"Magnesium Ingot")
+        add(ModElements.aluminium.item,"Aluminium Ingot")
+        add(ModElements.silicon.item,"Silicon Ingot")
+        add(ModElements.phosphorus.item,"Phosphorus Ingot")
+        add(ModElements.sulfur.item,"Sulfur Ingot")
+        add(ModElements.chlorine.item,"Chlorine Ingot")
+        add(ModElements.argon.item,"Argon Ingot")
     }
 }

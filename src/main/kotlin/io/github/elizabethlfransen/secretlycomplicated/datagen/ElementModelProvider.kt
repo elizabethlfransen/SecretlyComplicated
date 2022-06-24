@@ -19,5 +19,14 @@ class ElementModelProvider(generator: DataGenerator, existingFileHelper: Existin
         withExistingParent("oxygen_ingot", "item/generated").texture("layer0", "minecraft:item/iron_ingot")
         withExistingParent("fluorine_ingot", "item/generated").texture("layer0", "minecraft:item/iron_ingot")
         withExistingParent("neon_ingot", "item/generated").texture("layer0", "minecraft:item/iron_ingot")
+
+        withExistingParent("sodium_ingot", "item/generated").texture("layer0", "minecraft:item/iron_ingot")
+        withExistingParent("magnesium_ingot", "item/generated").texture("layer0", "minecraft:item/iron_ingot")
+        withExistingParent("aluminium_ingot", "item/generated").texture("layer0", "minecraft:item/iron_ingot")
+        withExistingParent("silicon_ingot", "item/generated").texture("layer0", "minecraft:item/iron_ingot")
+        withExistingParent("phosphorus_ingot", "item/generated").texture("layer0", "minecraft:item/iron_ingot")
+        withExistingParent("sulfur_ingot", "item/generated").texture("layer0", "minecraft:item/iron_ingot")
+        withExistingParent("chlorine_ingot", "item/generated").texture("layer0", "minecraft:item/iron_ingot")
+        withExistingParent("argon_ingot", "item/generated").texture("layer0", "minecraft:item/iron_ingot")
     }
 }
