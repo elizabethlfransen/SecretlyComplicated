@@ -12,6 +12,8 @@ class SCElement(
     val atomicNumber: Int,
     val name: String,
     val color: Int,
+    val melting: Int, /* In Celcius */
+    val boiling: Int,
     config: SCElementConfig
 ) {
     val item by context.registerItem("${name}_ingot", config.itemConfigInitializer)
@@ -32,6 +34,8 @@ fun RegisteringContext.registerElement(
     atomicNumber: Int,
     name: String,
     color: Int,
+    melting: Int,
+    boiling: Int,
     init: SCElementConfig.() -> Unit = {}
 ): SCElement {
     val element = SCElement(
@@ -39,6 +43,8 @@ fun RegisteringContext.registerElement(
         atomicNumber,
         name,
         color,
+        melting,
+        boiling,
         SCElementConfig().apply(init)
     )
     onRegister { bus ->
