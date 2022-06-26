@@ -5,9 +5,7 @@ import io.github.elizabethlfransen.secretlycomplicated.element.ModElements
 import io.github.elizabethlfransen.secretlycomplicated.element.SCElement
 import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.world.item.Item
 import net.minecraftforge.client.model.generators.ItemModelProvider
-import net.minecraftforge.client.model.generators.ModelProvider
 import net.minecraftforge.client.model.generators.loaders.DynamicBucketModelBuilder
 import net.minecraftforge.common.data.ExistingFileHelper
 
@@ -25,6 +23,7 @@ class ElementModelProvider(generator: DataGenerator, existingFileHelper: Existin
             withExistingParent("${it.name}_ingot", "item/generated")
                 .texture("layer0", "minecraft:item/iron_ingot")
             registerBucket(it)
+
         }
     }
 }
