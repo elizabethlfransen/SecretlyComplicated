@@ -10,6 +10,8 @@ typealias RegisterHandler = (bus: IEventBus) -> Unit
 
 open class RegisteringContext {
     val ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SecretlyComplicated.ID)
+    val FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, SecretlyComplicated.ID)
+    val BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SecretlyComplicated.ID)
     private val registerHandlers = mutableSetOf<RegisterHandler>()
 
     open val defaultTab: CreativeModeTab? = null
@@ -20,6 +22,8 @@ open class RegisteringContext {
 
     open fun register(bus: IEventBus) {
         ITEMS.register(bus)
+        BLOCKS.register(bus)
+        FLUIDS.register(bus)
         registerHandlers.forEach { handler -> handler(bus) }
     }
 }

@@ -4,6 +4,8 @@ import io.github.elizabethlfransen.secretlycomplicated.util.SimpleCreativeTab
 import io.github.elizabethlfransen.secretlycomplicated.util.register.RegisteringContext
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
+import kotlin.reflect.full.declaredMemberProperties
+import kotlin.reflect.typeOf
 
 
 object ModElements : RegisteringContext() {
@@ -58,4 +60,13 @@ object ModElements : RegisteringContext() {
     val selenium = registerElement(34, "selenium", 0x4bb2ff, 220, 684)
     val bromine = registerElement(35, "bromine", 0x86bfff, -7, 58)
     val krypton = registerElement(36, "krypton", 0xffc2ef, -157, -153)
+
+    val values by lazy {
+        ModElements::class.declaredMemberProperties
+            .filter { it.returnType == typeOf<SCElement>() }
+            .map { it.get(ModElements) }
+            .map { it as SCElement }
+            .toSet()
+
+    }
 }

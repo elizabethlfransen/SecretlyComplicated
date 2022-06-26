@@ -1,6 +1,7 @@
 package io.github.elizabethlfransen.secretlycomplicated.element
 
 import io.github.elizabethlfransen.secretlycomplicated.util.register.RegisteringContext
+import io.github.elizabethlfransen.secretlycomplicated.util.register.fluid.SCFluid
 import io.github.elizabethlfransen.secretlycomplicated.util.register.item.ItemRegistrationConfig
 import io.github.elizabethlfransen.secretlycomplicated.util.register.item.registerItem
 import net.minecraft.client.Minecraft
@@ -17,6 +18,7 @@ class SCElement(
     config: SCElementConfig
 ) {
     val item by context.registerItem("${name}_ingot", config.itemConfigInitializer)
+    val fluid = SCFluid(name, color, context)
 }
 
 
