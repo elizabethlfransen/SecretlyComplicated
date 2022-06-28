@@ -61,6 +61,26 @@ object ModElements : RegisteringContext() {
     val bromine = registerElement(35, "bromine", 0x86bfff, -7, 58)
     val krypton = registerElement(36, "krypton", 0xffc2ef, -157, -153)
 
+    val rubidium = registerElement(37, "rubidium", 0xff4d81, 63, 758)
+    val strontium = registerElement(38, "strontium", 0xfe69c3, 842, 1483)
+    val yttrium = registerElement(39, "yttrium", 0xffecf1, 1540, 2835)
+    val zirconium = registerElement(40, "zirconium", 0x67d8ff, 1668, 3286)
+    val niobium = registerElement(41, "niobium", 0x6cc2ff, 1910, 3407)
+    val molybdenum = registerElement(42, "molybdenum", 0x8aa1fe, 1907, 2671)
+    val technetium = registerElement(43, "technetium", 0x4780ff, 1246, 2061)
+    val ruthenium = registerElement(44, "ruthenium", 0x447fff, 1538, 2862)
+    val rhodium = registerElement(45, "rhodium", 0x7cffd7, 1495, 2869)
+    val palladium = registerElement(46, "palladium", 0x4effde, 1455, 2730)
+    val silver = registerElement(47, "silver", 0x32ffa3, 1084, 2562)
+    val cadmium = registerElement(48, "cadmium", 0x6098fe, 419, 907)
+    val indium = registerElement(49, "indium", 0x7745ff, 29, 2400)
+    val tin = registerElement(50, "tin", 0xffbefc, 938, 2833)
+    val antimony = registerElement(51, "antimony", 0xefe7ff, 816, 613)
+    val tellurium = registerElement(52, "tellurium", 0x47d7ff, 220, 684)
+    val iodine = registerElement(53, "iodine", 0x9fffdb, -7, 58)
+    val xenon = registerElement(54, "xenon", 0xab94ff, -157, -153)
+
+
     val values by lazy {
         ModElements::class.declaredMemberProperties
             .filter { it.returnType == typeOf<SCElement>() }
