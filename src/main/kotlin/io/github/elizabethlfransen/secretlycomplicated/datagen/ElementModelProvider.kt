@@ -12,7 +12,7 @@ import net.minecraftforge.common.data.ExistingFileHelper
 class ElementModelProvider(generator: DataGenerator, existingFileHelper: ExistingFileHelper) :
     ItemModelProvider(generator, SecretlyComplicated.ID, existingFileHelper) {
 
-    fun registerBucket(element: SCElement) {
+    private fun registerBucket(element: SCElement) {
         withExistingParent("${element.name}_fluid_bucket", ResourceLocation("forge", "item/bucket"))
             .customLoader { parent, exisingFileHandler -> DynamicBucketModelBuilder.begin(parent, exisingFileHandler) }
             .fluid(element.fluid.stillFluid)

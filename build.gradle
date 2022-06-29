@@ -82,6 +82,10 @@ repositories {
         url = "https://dvs1.progwml6.com/files/maven/"
     }
     maven { url 'https://modmaven.dev/' }
+    maven {
+        name 'DVS1 Maven FS'
+        url 'https://dvs1.progwml6.com/files/maven'
+    }
 }
 
 dependencies {
@@ -91,6 +95,8 @@ dependencies {
     runtimeOnly fg.deobf("mezz.jei:jei-${jei_version}")
     compileOnly "mekanism:Mekanism:${mekanism_version}:api"
     runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}")
+    compileOnly fg.deobf("slimeknights.mantle:Mantle:1.16.5-1.6.158")
+    compileOnly fg.deobf("slimeknights.tconstruct:TConstruct:1.16.5-3.0.3.111")
 }
 
 compileKotlin {

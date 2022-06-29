@@ -1,10 +1,7 @@
 package io.github.elizabethlfransen.secretlycomplicated
 
-import io.github.elizabethlfransen.secretlycomplicated.datagen.ElementLocalizationProvider
-import io.github.elizabethlfransen.secretlycomplicated.datagen.ElementModelProvider
 import io.github.elizabethlfransen.secretlycomplicated.element.ModElements
 import net.minecraftforge.fml.common.Mod
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
@@ -25,12 +22,5 @@ object SecretlyComplicated {
     init {
 
         ModElements.register(MOD_BUS)
-
-        MOD_BUS.addListener<GatherDataEvent> {event ->
-            if(event.includeClient()) {
-                event.generator.addProvider(ElementModelProvider(event.generator,  event.existingFileHelper))
-                event.generator.addProvider(ElementLocalizationProvider(event.generator))
-            }
-        }
     }
 }
