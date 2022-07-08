@@ -116,6 +116,25 @@ object ModElements : RegisteringContext() {
     val astatine = registerElement(85, "astatine", 0x444444, 301, 336) { isMetal = true }
     val radon = registerElement(86, "radon", 0xff19a1, -71, -61)
 
+    val francium = registerElement(87, "francium", 0xfe8146, 27, 676) { isMetal = true }
+    val radium = registerElement(88, "radium", 0xff5a64, 700, 1737) { isMetal = true }
+    val actinium = registerElement(89, "actinium", 0xc1e6ff, 1050, 3196) { isMetal = true }
+
+    val thorium = registerElement(90, "thorium", 0x8bf5ff, 1754, 4786) { isMetal = true }
+    val protactinium = registerElement(91, "protactinium", 0xe80aff, 1568, 4000) { isMetal = true }
+    val uranium = registerElement(92, "uranium", 0xa0bbff, 1132, 4131) { isMetal = true }
+    val neptunium = registerElement(93, "neptunium", 0xffbf29, 644, 3901) { isMetal = true }
+    val plutonium = registerElement(94, "plutonium", 0xff40d7, 639, 3231) { isMetal = true }
+    val americium = registerElement(95, "americium", 0x996fff, 1175, 2606) { isMetal = true }
+    val curium = registerElement(96, "curium", 0xff31c3, 1346, 3109) { isMetal = true }
+    val berkelium = registerElement(97, "berkelium", 0x48ff5e, 984, 2627) { isMetal = true }
+    val californium = registerElement(98, "californium", 0x94fec1, 898, 1472) { isMetal = true }
+    val einsteinium = registerElement(99, "einsteinium", 0x13ffb7, 860, 9999) { isMetal = true }
+    val fermium = registerElement(100, "fermium", 0x444444, 1526, 9999) { isMetal = true }
+    val mendelevium = registerElement(101, "mendelevium", 0x444444, 926, 9999) { isMetal = true }
+    val nobelium = registerElement(102, "nobelium", 0x444444, 826, 9999) { isMetal = true }
+    val lawrencium = registerElement(103, "lawrencium", 0x444444, 1627, 9999) { isMetal = true }
+
 
     val values by lazy {
         ModElements::class.declaredMemberProperties
