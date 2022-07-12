@@ -50,7 +50,7 @@ object ModElements : RegisteringContext() {
     val vanadium = registerElement(23, "vanadium", 0xe8cfff, 1910, 3407) { isMetal = true }
     val chromium = registerElement(24, "chromium", 0x63c2fe, 1907, 2671) { isMetal = true }
     val manganese = registerElement(25, "manganese", 0x435eff, 1246, 2061) { isMetal = true }
-    val iron = registerElement(26, "iron", 0x32eaff, 1538, 2862) { isMetal = true }
+    val iron = registerElement(26, "iron", 0x32eaff, 1538, 2862) { isMetal = true; isGear = true }
     val cobalt = registerElement(27, "cobalt", 0x41fffa, 1495, 2869) { isMetal = true }
     val nickel = registerElement(28, "nickel", 0x35f5ff, 1455, 2730) { isMetal = true }
     val copper = registerElement(29, "copper", 0x7effcf, 1084, 2562) { isMetal = true }

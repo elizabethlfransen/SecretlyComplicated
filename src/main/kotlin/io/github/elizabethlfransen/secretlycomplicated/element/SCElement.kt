@@ -17,6 +17,7 @@ class SCElement(
     val melting: Int, /* In Celcius */
     val boiling: Int,
     val metallic: Boolean,
+    val hasGear: Boolean,
     config: SCElementConfig
 ) {
     val item by context.registerItem("${name}_ingot", config.itemConfigInitializer)
@@ -36,6 +37,7 @@ class SCElementConfig {
      * Molten Copper vs Liquid Copper
      */
     var isMetal: Boolean = false
+    var isGear: Boolean = false
 
     fun item(init: ItemRegistrationConfig.() -> Unit) {
         itemConfigInitializer = init
@@ -63,6 +65,7 @@ fun RegisteringContext.registerElement(
         melting,
         boiling,
         config.isMetal,
+        config.isGear,
         config
     )
     onRegister { bus ->
@@ -73,3 +76,4 @@ fun RegisteringContext.registerElement(
     }
     return element
 }
+

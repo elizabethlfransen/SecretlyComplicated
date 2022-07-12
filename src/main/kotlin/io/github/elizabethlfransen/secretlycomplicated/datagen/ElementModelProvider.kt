@@ -19,8 +19,10 @@ class ElementModelProvider(generator: DataGenerator, existingFileHelper: Existin
     }
 
     private fun registerGears(element: SCElement) {
+        if (element.hasGear)
         withExistingParent("${element.name}_gear", "item/generated")
                 .texture("layer0", "secretly_complicated:item/base_gear")
+        else return
     }
 
     override fun registerModels() {

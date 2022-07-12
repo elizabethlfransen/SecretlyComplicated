@@ -35,7 +35,7 @@ class EnglishElementLocalizationProvider(gen: DataGenerator) : BaseElementLocali
             else "Liquid ${element.capitalizeName()}"
         val gearName = 
             if (element.metallic) "${element.capitalizeName()} Gear"
-            else "${element.capitalizeName()} Gear"
+            else return
         add(element.item, solidName)
         addFluidTranslation(element, fluidName)
         add(element.fluid.bucket, "$fluidName Bucket")
