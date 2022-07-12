@@ -18,11 +18,17 @@ class ElementModelProvider(generator: DataGenerator, existingFileHelper: Existin
             .fluid(element.fluid.stillFluid)
     }
 
+    private fun registerGears(element: SCElement) {
+        withExistingParent("${element.name}_gear", "item/generated")
+                .texture("layer0", "secretly_complicated:item/base_gear")
+    }
+
     override fun registerModels() {
         ModElements.values.forEach {
             withExistingParent("${it.name}_ingot", "item/generated")
                 .texture("layer0", "minecraft:item/iron_ingot")
             registerBucket(it)
+            registerGears(it)
 
         }
     }

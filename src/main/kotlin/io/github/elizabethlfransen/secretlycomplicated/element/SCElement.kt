@@ -21,11 +21,13 @@ class SCElement(
 ) {
     val item by context.registerItem("${name}_ingot", config.itemConfigInitializer)
     val fluid = SCFluid(name, color, context)
+    val gear by context.registerItem("${name}_gear", config.itemConfigInitializer)
 }
 
 
 class SCElementConfig {
     private var item: (() -> Item)? = null
+    private var gear: (() -> Item)? = null
     var itemConfigInitializer: ItemRegistrationConfig.() -> Unit = {}
         private set
 
@@ -36,6 +38,9 @@ class SCElementConfig {
     var isMetal: Boolean = false
 
     fun item(init: ItemRegistrationConfig.() -> Unit) {
+        itemConfigInitializer = init
+    }
+    fun gear(init: ItemRegistrationConfig.() -> Unit) {
         itemConfigInitializer = init
     }
 }
@@ -63,6 +68,7 @@ fun RegisteringContext.registerElement(
     onRegister { bus ->
         bus.addListener<FMLClientSetupEvent> {
             Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.item)
+            Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.gear)
         }
     }
     return element
