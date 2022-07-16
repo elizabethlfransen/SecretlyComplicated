@@ -34,12 +34,40 @@ class EnglishElementLocalizationProvider(gen: DataGenerator) : BaseElementLocali
             if (element.metallic) "Molten ${element.capitalizeName()}"
             else "Liquid ${element.capitalizeName()}"
         val gearName = 
-            if (element.metallic) "${element.capitalizeName()} Gear"
+            if (element.hasGear) "${element.capitalizeName()} Gear"
+            else return
+        val plateName = 
+            if (element.hasPlate) "${element.capitalizeName()} Plate"
+            else return
+        val densePlateName = 
+            if (element.hasDensePlate) "${element.capitalizeName()} Dense Plate"
+            else return
+        val rodName = 
+            if (element.hasRod) "${element.capitalizeName()} Rod"
+            else return
+        val dustName = 
+            if (element.hasDust) "${element.capitalizeName()} Dust"
+            else return
+        val smallDustName = 
+            if (element.hasSmallDust) "${element.capitalizeName()} Small Dust"
+            else return
+        val tinyDustName = 
+            if (element.hasTinyDust) "${element.capitalizeName()} Tiny Dust"
+            else return
+        val crushedName = 
+            if (element.hasCrushed) "${element.capitalizeName()} Crushed"
             else return
         add(element.item, solidName)
         addFluidTranslation(element, fluidName)
         add(element.fluid.bucket, "$fluidName Bucket")
         add(element.gear, gearName)
+        add(element.plate, plateName)
+        add(element.densePlate, densePlateName)
+        add(element.rod, rodName)
+        add(element.dust, dustName)
+        add(element.smallDust, smallDustName)
+        add(element.tinyDust, tinyDustName)
+        add(element.crushed, crushedName)
     }
 }
 

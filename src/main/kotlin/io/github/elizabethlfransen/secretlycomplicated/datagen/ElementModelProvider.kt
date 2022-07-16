@@ -18,10 +18,45 @@ class ElementModelProvider(generator: DataGenerator, existingFileHelper: Existin
             .fluid(element.fluid.stillFluid)
     }
 
-    private fun registerGears(element: SCElement) {
+    private fun registerMaterials(element: SCElement) {
         if (element.hasGear)
         withExistingParent("${element.name}_gear", "item/generated")
                 .texture("layer0", "secretly_complicated:item/base_gear")
+        else return
+
+        if (element.hasPlate)
+        withExistingParent("${element.name}_plate", "item/generated")
+                .texture("layer0", "secretly_complicated:item/base_plate")
+        else return
+
+        if (element.hasDensePlate)
+        withExistingParent("${element.name}_dense_plate", "item/generated")
+                .texture("layer0", "secretly_complicated:item/base_dense_plate")
+        else return
+
+        if (element.hasRod)
+        withExistingParent("${element.name}_rod", "item/generated")
+                .texture("layer0", "secretly_complicated:item/base_rod")
+        else return
+
+        if (element.hasDust)
+        withExistingParent("${element.name}_dust", "item/generated")
+                .texture("layer0", "secretly_complicated:item/base_dust")
+        else return
+
+        if (element.hasSmallDust)
+        withExistingParent("${element.name}_small_dust", "item/generated")
+                .texture("layer0", "secretly_complicated:item/base_small_dust")
+        else return
+
+        if (element.hasTinyDust)
+        withExistingParent("${element.name}_tiny_dust", "item/generated")
+                .texture("layer0", "secretly_complicated:item/base_tiny_dust")
+        else return
+
+        if (element.hasCrushed)
+        withExistingParent("${element.name}_crushed", "item/generated")
+                .texture("layer0", "secretly_complicated:item/base_crushed")
         else return
     }
 
@@ -30,7 +65,7 @@ class ElementModelProvider(generator: DataGenerator, existingFileHelper: Existin
             withExistingParent("${it.name}_ingot", "item/generated")
                 .texture("layer0", "minecraft:item/iron_ingot")
             registerBucket(it)
-            registerGears(it)
+            registerMaterials(it)
 
         }
     }

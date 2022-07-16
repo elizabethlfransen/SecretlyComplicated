@@ -25,19 +25,19 @@ object ModElements : RegisteringContext() {
         }
     } */
     val helium = registerElement(2, "helium", 0xffc6e0, -272, -268)
-    val lithium = registerElement(3, "lithium", 0xff1852, 180, 1342) { isMetal = true }
-    val beryllium = registerElement(4, "beryllium", 0x1e4cff, 1286, 2469) { isMetal = true }
-    val boron = registerElement(5, "boron",0x4132ff, 2076, 4000) { isMetal = true }
+    val lithium = registerElement(3, "lithium", 0xe5e5e5, 180, 1342) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true } // atomic spectral emission color: 0xff1852
+    val beryllium = registerElement(4, "beryllium", 0xcccccc, 1286, 2469) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true } // atomic spectral emission color: 0x1e4cff
+    val boron = registerElement(5, "boron",0xb2b2b2, 2076, 4000) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true }  // atomic spectral emission color: 0x4132ff
     val carbon = registerElement(6, "carbon", 0xebffc1, 3500, 9999)
     val nitrogen = registerElement(7, "nitrogen", 0xe795ff, -210, -195)
     val oxygen = registerElement(8, "oxygen", 0xb8bfff, -218, -182)
     val fluorine = registerElement(9, "fluorine", 0xff1765, -219, -188)
     val neon = registerElement(10, "neon", 0xff4022, -248, -246)
 
-    val sodium = registerElement(11, "sodium", 0xffad1d, 97, 882) { isMetal = true }
-    val magnesium = registerElement(12, "magnesium", 0x55faff, 650, 1091) { isMetal = true }
-    val aluminium = registerElement(13, "aluminium", 0x4c95ff, 660, 2470) { isMetal = true }
-    val silicon = registerElement(14, "silicon", 0xbbceff, 1410, 2355) { isMetal = true }
+    val sodium = registerElement(11, "sodium", 0xf7f7f7, 97, 882) { isMetal = true } // atomic spectral emission color: 0xffad1d
+    val magnesium = registerElement(12, "magnesium", 0xdedede, 650, 1091) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true } // atomic spectral emission color: 0x55faff
+    val aluminium = registerElement(13, "aluminium", 0xc7c7c7, 660, 2470) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true } // atomic spectral emission color: 0x4c95ff
+    val silicon = registerElement(14, "silicon", 0xbbceff, 1410, 2355) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true }
     val phosphorus = registerElement(15, "phosphorus", 0x36fec8, 44, 280)
     val sulfur = registerElement(16, "sulfur", 0x6fb0ff, 112, 444)
     val chlorine = registerElement(17, "chlorine", 0x76b1ff, -101, -34)
@@ -50,11 +50,11 @@ object ModElements : RegisteringContext() {
     val vanadium = registerElement(23, "vanadium", 0xe8cfff, 1910, 3407) { isMetal = true }
     val chromium = registerElement(24, "chromium", 0x63c2fe, 1907, 2671) { isMetal = true }
     val manganese = registerElement(25, "manganese", 0x435eff, 1246, 2061) { isMetal = true }
-    val iron = registerElement(26, "iron", 0x32eaff, 1538, 2862) { isMetal = true; isGear = true }
+    val iron = registerElement(26, "iron", 0xffffff, 1538, 2862) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true } // atomic spectral emission color: 0x32eaff
     val cobalt = registerElement(27, "cobalt", 0x41fffa, 1495, 2869) { isMetal = true }
     val nickel = registerElement(28, "nickel", 0x35f5ff, 1455, 2730) { isMetal = true }
-    val copper = registerElement(29, "copper", 0x7effcf, 1084, 2562) { isMetal = true }
-    val zinc = registerElement(30, "zinc", 0x3941ff, 419, 907) { isMetal = true }
+    val copper = registerElement(29, "copper", 0xda7953, 1084, 2562) { isMetal = true } // atomic spectral emission color: 0x7effcf
+    val zinc = registerElement(30, "zinc", 0x91898d, 419, 907) { isMetal = true } // atomic spectral emission color: 0x3941ff
     val gallium = registerElement(31, "gallium", 0x7625ff, 29, 2400) { isMetal = true }
     val germanium = registerElement(32, "germanium", 0xe5ffd5, 938, 2833) { isMetal = true }
     val arsenic = registerElement(33, "arsenic", 0x339cff, 816, 613) { isMetal = true }
