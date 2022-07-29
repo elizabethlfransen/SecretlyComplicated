@@ -26,6 +26,16 @@ class SCElement(
     val hasSmallDust: Boolean,
     val hasTinyDust: Boolean,
     val hasCrushed: Boolean,
+
+    val hasImpureDust: Boolean,
+    val hasPureDust: Boolean,
+    val hasNugget: Boolean,
+    val hasWire: Boolean,
+    val hasGem: Boolean,
+    val hasGemBrittle: Boolean,
+    val hasGemPolished: Boolean,
+    val hasBlock: Boolean,
+
     config: SCElementConfig
 ) {
     val item by context.registerItem("${name}_ingot", config.itemConfigInitializer)

@@ -46,14 +46,14 @@ object ModElements : RegisteringContext() {
     val potassium = registerElement(19, "potassium", 0xdab4ff, 63, 758) { isMetal = true }
     val calcium = registerElement(20, "calcium", 0xfe78bf, 842, 1483) { isMetal = true }
     val scandium = registerElement(21, "scandium", 0xe0a5ff, 1540, 2835) { isMetal = true }
-    val titanium = registerElement(22, "titanium", 0x57a0fe, 1668, 3286) { isMetal = true }
-    val vanadium = registerElement(23, "vanadium", 0xe8cfff, 1910, 3407) { isMetal = true }
-    val chromium = registerElement(24, "chromium", 0x63c2fe, 1907, 2671) { isMetal = true }
+    val titanium = registerElement(22, "titanium", 0x57a0fe, 1668, 3286) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true  }
+    val vanadium = registerElement(23, "vanadium", 0xe8cfff, 1910, 3407) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true  }
+    val chromium = registerElement(24, "chromium", 0x63c2fe, 1907, 2671) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true  }
     val manganese = registerElement(25, "manganese", 0x435eff, 1246, 2061) { isMetal = true }
     val iron = registerElement(26, "iron", 0xffffff, 1538, 2862) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true } // atomic spectral emission color: 0x32eaff
-    val cobalt = registerElement(27, "cobalt", 0x41fffa, 1495, 2869) { isMetal = true }
-    val nickel = registerElement(28, "nickel", 0x35f5ff, 1455, 2730) { isMetal = true }
-    val copper = registerElement(29, "copper", 0xda7953, 1084, 2562) { isMetal = true } // atomic spectral emission color: 0x7effcf
+    val cobalt = registerElement(27, "cobalt", 0x41fffa, 1495, 2869) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true  }
+    val nickel = registerElement(28, "nickel", 0x35f5ff, 1455, 2730) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true  }
+    val copper = registerElement(29, "copper", 0xda7953, 1084, 2562) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true  } // atomic spectral emission color: 0x7effcf
     val zinc = registerElement(30, "zinc", 0x91898d, 419, 907) { isMetal = true } // atomic spectral emission color: 0x3941ff
     val gallium = registerElement(31, "gallium", 0x7625ff, 29, 2400) { isMetal = true }
     val germanium = registerElement(32, "germanium", 0xe5ffd5, 938, 2833) { isMetal = true }
