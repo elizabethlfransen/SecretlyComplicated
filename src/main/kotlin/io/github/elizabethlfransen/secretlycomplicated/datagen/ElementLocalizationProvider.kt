@@ -35,29 +35,53 @@ class EnglishElementLocalizationProvider(gen: DataGenerator) : BaseElementLocali
             else "Liquid ${element.capitalizeName()}"
         val gearName = 
             if (element.hasGear) "${element.capitalizeName()} Gear"
-            else return
+            else "${element.capitalizeName()} Gear"
         val plateName = 
             if (element.hasPlate) "${element.capitalizeName()} Plate"
-            else return
+            else "${element.capitalizeName()} Plate"
         val densePlateName = 
             if (element.hasDensePlate) "${element.capitalizeName()} Dense Plate"
-            else return
+            else "${element.capitalizeName()} Dense Plate"
         val rodName = 
             if (element.hasRod) "${element.capitalizeName()} Rod"
-            else return
+            else "${element.capitalizeName()} Rod"
         val dustName = 
             if (element.hasDust) "${element.capitalizeName()} Dust"
-            else return
+            else "${element.capitalizeName()} Dust"
         val smallDustName = 
             if (element.hasSmallDust) "${element.capitalizeName()} Small Dust"
-            else return
+            else "${element.capitalizeName()} Small Dust"
         val tinyDustName = 
             if (element.hasTinyDust) "${element.capitalizeName()} Tiny Dust"
-            else return
+            else "${element.capitalizeName()} Tiny Dust"
         val crushedName = 
             if (element.hasCrushed) "${element.capitalizeName()} Crushed"
-            else return
-        add(element.item, solidName)
+            else "${element.capitalizeName()} Crushed"
+        val impureDustName = 
+            if (element.hasImpureDust) "${element.capitalizeName()} Impure Dust"
+            else "${element.capitalizeName()} Impure Dust"
+        val pureDustName = 
+            if (element.hasPureDust) "${element.capitalizeName()} Pure Dust"
+            else "${element.capitalizeName()} Pure Dust"
+        val nuggetName = 
+            if (element.hasNugget) "${element.capitalizeName()} Nugget"
+            else "${element.capitalizeName()} Nugget"
+        val wireName = 
+            if (element.hasWire) "${element.capitalizeName()} Wire"
+            else "${element.capitalizeName()} Wire"
+        // val gemName = 
+        //     if (element.hasGem) "${element.capitalizeName()} Gem"
+        //     else "${element.capitalizeName()} Gem"
+        // val gemBrittleName = 
+        //     if (element.hasGemBrittle) "${element.capitalizeName()} Brittle Gem"
+        //     else "${element.capitalizeName()} Brittle Gem"
+        // val gemPolishedName = 
+        //     if (element.hasGemPolished) "${element.capitalizeName()} Polished Gem"
+        //     else "${element.capitalizeName()} Polished Gem"
+        // val blockName = 
+        //     if (element.hasBlock) "${element.capitalizeName()} Block"
+        //     else "${element.capitalizeName()} Block"
+        add(element.ingot, solidName)
         addFluidTranslation(element, fluidName)
         add(element.fluid.bucket, "$fluidName Bucket")
         add(element.gear, gearName)
@@ -68,6 +92,14 @@ class EnglishElementLocalizationProvider(gen: DataGenerator) : BaseElementLocali
         add(element.smallDust, smallDustName)
         add(element.tinyDust, tinyDustName)
         add(element.crushed, crushedName)
+        add(element.impureDust, impureDustName)
+        add(element.pureDust, pureDustName)
+        add(element.nugget, nuggetName)
+        add(element.wire, wireName)
+        // add(element.gem, gemName)
+        // add(element.gemBrittle, gemBrittleName)
+        // add(element.gemPolished, gemPolishedName)
+        // add(element.block, blockName)
     }
 }
 

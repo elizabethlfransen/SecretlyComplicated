@@ -5,6 +5,7 @@ import io.github.elizabethlfransen.secretlycomplicated.util.register.fluid.SCFlu
 import io.github.elizabethlfransen.secretlycomplicated.util.register.item.ItemRegistrationConfig
 import io.github.elizabethlfransen.secretlycomplicated.util.register.item.registerItem
 import io.github.elizabethlfransen.secretlycomplicated.element.SCElement
+import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated
 import net.minecraft.client.Minecraft
 import net.minecraft.client.color.item.ItemColor
 import net.minecraft.world.item.Item
@@ -31,15 +32,16 @@ class SCElement(
     val hasPureDust: Boolean,
     val hasNugget: Boolean,
     val hasWire: Boolean,
-    val hasGem: Boolean,
-    val hasGemBrittle: Boolean,
-    val hasGemPolished: Boolean,
-    val hasBlock: Boolean,
+    //val hasGem: Boolean,
+    //val hasGemBrittle: Boolean,
+    //val hasGemPolished: Boolean,
+    //val hasBlock: Boolean,
 
     config: SCElementConfig
 ) {
-    val item by context.registerItem("${name}_ingot", config.itemConfigInitializer)
+    val ingot by context.registerItem("${name}_ingot", config.itemConfigInitializer)
     val fluid = SCFluid(name, color, context)
+
     val gear by context.registerItem("${name}_gear", config.itemConfigInitializer)
     val plate by context.registerItem("${name}_plate", config.itemConfigInitializer)
     val densePlate by context.registerItem("${name}_dense_plate", config.itemConfigInitializer)
@@ -48,11 +50,20 @@ class SCElement(
     val smallDust by context.registerItem("${name}_small_dust", config.itemConfigInitializer)
     val tinyDust by context.registerItem("${name}_tiny_dust", config.itemConfigInitializer)
     val crushed by context.registerItem("${name}_crushed", config.itemConfigInitializer)
+
+    val impureDust by context.registerItem("${name}_impure_dust", config.itemConfigInitializer)
+    val pureDust by context.registerItem("${name}_pure_dust", config.itemConfigInitializer)
+    val nugget by context.registerItem("${name}_nugget", config.itemConfigInitializer)
+    val wire by context.registerItem("${name}_wire", config.itemConfigInitializer)
+    //val gem by context.registerItem("${name}_gem", config.itemConfigInitializer)
+    //val gemBrittle by context.registerItem("${name}_gem_brittle", config.itemConfigInitializer)
+    //val gemPolished by context.registerItem("${name}_gem_polished", config.itemConfigInitializer)
+    //val block by context.registerItem("${name}_block", config.itemConfigInitializer)
 }
 
 
 class SCElementConfig {
-    private var item: (() -> Item)? = null
+    private var ingot: (() -> Item)? = null
     private var gear: (() -> Item)? = null
     var itemConfigInitializer: ItemRegistrationConfig.() -> Unit = {}
         private set
@@ -71,7 +82,16 @@ class SCElementConfig {
     var isTinyDust: Boolean = false
     var isCrushed: Boolean = false
 
-    fun item(init: ItemRegistrationConfig.() -> Unit) {
+    var isImpureDust: Boolean = false
+    var isPureDust: Boolean = false
+    var isNugget: Boolean = false
+    var isWire: Boolean = false
+    //var isGem: Boolean = false
+    //var isGemBrittle: Boolean = false
+    //var isGemPolished: Boolean = false
+    //var isBlock: Boolean = false
+
+    fun ingot(init: ItemRegistrationConfig.() -> Unit) {
         itemConfigInitializer = init
     }
     fun gear(init: ItemRegistrationConfig.() -> Unit) {
@@ -98,6 +118,31 @@ class SCElementConfig {
     fun crushed(init: ItemRegistrationConfig.() -> Unit) {
         itemConfigInitializer = init
     }
+
+    fun impureDust(init: ItemRegistrationConfig.() -> Unit) {
+        itemConfigInitializer = init
+    }
+    fun pureDust(init: ItemRegistrationConfig.() -> Unit) {
+        itemConfigInitializer = init
+    }
+    fun nugget(init: ItemRegistrationConfig.() -> Unit) {
+        itemConfigInitializer = init
+    }
+    fun wire(init: ItemRegistrationConfig.() -> Unit) {
+        itemConfigInitializer = init
+    }
+    // fun gem(init: ItemRegistrationConfig.() -> Unit) {
+    //     itemConfigInitializer = init
+    // }
+    // fun gemBrittle(init: ItemRegistrationConfig.() -> Unit) {
+    //     itemConfigInitializer = init
+    // }
+    // fun gemPolished(init: ItemRegistrationConfig.() -> Unit) {
+    //     itemConfigInitializer = init
+    // }
+    // fun block(init: ItemRegistrationConfig.() -> Unit) {
+    //     itemConfigInitializer = init
+    // }
 }
 
 
@@ -126,11 +171,20 @@ fun RegisteringContext.registerElement(
         config.isSmallDust,
         config.isTinyDust,
         config.isCrushed,
+
+        config.isImpureDust,
+        config.isPureDust,
+        config.isNugget,
+        config.isWire,
+        // config.isGem,
+        // config.isGemBrittle,
+        // config.isGemPolished,
+        // config.isBlock,
         config
     )
     onRegister { bus ->
         bus.addListener<FMLClientSetupEvent> {
-            Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.item)
+            Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.ingot)
             Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.gear)
             Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.plate)
             Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.densePlate)
@@ -139,6 +193,15 @@ fun RegisteringContext.registerElement(
             Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.smallDust)
             Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.tinyDust)
             Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.crushed)
+        
+            Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.impureDust)
+            Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.pureDust)
+            Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.nugget)
+            Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.wire)
+            // Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.gem)
+            // Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.gemBrittle)
+            // Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.gemPolished)
+            // Minecraft.getInstance().itemColors.register((ItemColor { itemStack, colorIndex -> color }), element.block)
         }
     }
     return element

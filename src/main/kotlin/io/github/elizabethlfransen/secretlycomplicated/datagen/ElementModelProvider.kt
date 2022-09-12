@@ -58,6 +58,46 @@ class ElementModelProvider(generator: DataGenerator, existingFileHelper: Existin
         withExistingParent("${element.name}_crushed", "item/generated")
                 .texture("layer0", "secretly_complicated:item/base_crushed")
         else return
+
+        if (element.hasImpureDust)
+        withExistingParent("${element.name}_impure_dust", "item/generated")
+                .texture("layer0", "secretly_complicated:item/base_impure_dust")
+        else return
+
+        if (element.hasPureDust)
+        withExistingParent("${element.name}_pure_dust", "item/generated")
+                .texture("layer0", "secretly_complicated:item/base_pure_dust")
+        else return
+
+        if (element.hasNugget)
+        withExistingParent("${element.name}_nugget", "item/generated")
+                .texture("layer0", "secretly_complicated:item/base_nugget")
+        else return
+
+        if (element.hasWire)
+        withExistingParent("${element.name}_wire", "item/generated")
+                .texture("layer0", "secretly_complicated:item/base_wire")
+        else return
+
+        // if (element.hasGem)
+        // withExistingParent("${element.name}_gem", "item/generated")
+        //         .texture("layer0", "secretly_complicated:item/base_gem")
+        // else return
+
+        // if (element.hasGemBrittle)
+        // withExistingParent("${element.name}_gem_brittle", "item/generated")
+        //         .texture("layer0", "secretly_complicated:item/base_gem_brittle")
+        // else return
+
+        // if (element.hasGemPolished)
+        // withExistingParent("${element.name}_gem_polished", "item/generated")
+        //         .texture("layer0", "secretly_complicated:item/base_gem_polished")
+        // else return
+
+        // if (element.hasBlock)
+        // withExistingParent("${element.name}_block", "item/generated")
+        //         .texture("layer0", "secretly_complicated:item/base_block")
+        // else return
     }
 
     override fun registerModels() {
