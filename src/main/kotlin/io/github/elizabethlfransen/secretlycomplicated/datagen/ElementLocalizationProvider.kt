@@ -3,6 +3,7 @@ package io.github.elizabethlfransen.secretlycomplicated.datagen
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated
 import io.github.elizabethlfransen.secretlycomplicated.element.ModElements
 import io.github.elizabethlfransen.secretlycomplicated.element.SCElement
+import io.github.elizabethlfransen.secretlycomplicated.element.SCCompound
 import net.minecraft.data.DataGenerator
 import net.minecraftforge.common.data.LanguageProvider
 import net.minecraftforge.eventbus.api.SubscribeEvent
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent
 
 fun SCElement.capitalizeName() = name.replaceFirstChar(Char::uppercase)
+fun SCCompound.capitalizeName() = name.replaceFirstChar(Char::uppercase)
 
 abstract class BaseElementLocalizationProvider(gen: DataGenerator, locale: String) :
     LanguageProvider(gen, SecretlyComplicated.ID, locale) {
@@ -17,7 +19,13 @@ abstract class BaseElementLocalizationProvider(gen: DataGenerator, locale: Strin
         add("fluid.${SecretlyComplicated.ID}.${element.name}_fluid", translation)
     }
 
+    protected fun addFluidTranslation(compound: SCCompound, translation: String) {
+        add("fluid.${SecretlyComplicated.ID}.${compound.name}_fluid", translation)
+    }
+
     protected abstract fun addTranslation(element: SCElement)
+
+    protected abstract fun addTranslation(compound: SCCompound)
 
     override fun addTranslations() {
         ModElements.values.forEach(this::addTranslation)
@@ -100,6 +108,19 @@ class EnglishElementLocalizationProvider(gen: DataGenerator) : BaseElementLocali
         // add(element.gemBrittle, gemBrittleName)
         // add(element.gemPolished, gemPolishedName)
         // add(element.block, blockName)
+    }
+
+    override fun addTranslation(compound: SCCompound) {
+        val solidName =
+            if (compound.metallic) "${compound.capitalizeName()} Ingot"
+            else "Solid ${compound.capitalizeName()}"
+        val fluidName =
+            if (compound.metallic) "Molten ${compound.capitalizeName()}"
+            else "Liquid ${compound.capitalizeName()}"
+        add(compound.ingot, solidName)
+        addFluidTranslation(compound, fluidName)
+        add(compound.fluid.bucket, "$fluidName Bucket")
+
     }
 }
 

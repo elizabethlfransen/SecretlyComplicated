@@ -3,6 +3,7 @@ package io.github.elizabethlfransen.secretlycomplicated.datagen
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated
 import io.github.elizabethlfransen.secretlycomplicated.element.ModElements
 import io.github.elizabethlfransen.secretlycomplicated.element.SCElement
+import io.github.elizabethlfransen.secretlycomplicated.element.SCCompound
 import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
 import net.minecraftforge.client.model.generators.ItemModelProvider
@@ -16,6 +17,12 @@ class ElementModelProvider(generator: DataGenerator, existingFileHelper: Existin
         withExistingParent("${element.name}_fluid_bucket", ResourceLocation("forge", "item/bucket"))
             .customLoader { parent, exisingFileHandler -> DynamicBucketModelBuilder.begin(parent, exisingFileHandler) }
             .fluid(element.fluid.stillFluid)
+    }
+
+    private fun registerBucket(compound: SCCompound) {
+        withExistingParent("${compound.name}_fluid_bucket", ResourceLocation("forge", "item/bucket"))
+            .customLoader { parent, exisingFileHandler -> DynamicBucketModelBuilder.begin(parent, exisingFileHandler) }
+            .fluid(compound.fluid.stillFluid)
     }
 
     private fun registerMaterials(element: SCElement) {
@@ -98,6 +105,10 @@ class ElementModelProvider(generator: DataGenerator, existingFileHelper: Existin
         // withExistingParent("${element.name}_block", "item/generated")
         //         .texture("layer0", "secretly_complicated:item/base_block")
         // else return
+    }
+
+    private fun registerMaterials(compound: SCCompound) {
+
     }
 
     override fun registerModels() {

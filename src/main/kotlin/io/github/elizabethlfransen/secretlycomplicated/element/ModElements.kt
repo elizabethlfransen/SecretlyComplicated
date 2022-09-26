@@ -135,6 +135,102 @@ object ModElements : RegisteringContext() {
     val nobelium = registerElement(102, "nobelium", 0x444444, 826, 9999) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true; isImpureDust = true; isPureDust = true; isNugget = true; isWire = true; }
     val lawrencium = registerElement(103, "lawrencium", 0x444444, 1627, 9999) { isMetal = true; isGear = true; isPlate = true; isDensePlate = true; isRod = true; isDust = true; isSmallDust = true; isTinyDust = true; isCrushed = true; isImpureDust = true; isPureDust = true; isNugget = true; isWire = true; }
 
+    // alloys
+    val rose_gold = registerCompound("rose_gold", 0xE0BFB8, 897, 9999) { isMetal = true; }
+    val brass = registerCompound("brass", 0xE1C16E, 920, 9999) { isMetal = true; }
+    val bronze = registerCompound("bronze", 0xCD7F32, 1030, 9999) { isMetal = true; }
+    val electrum = registerCompound("electrum", 0xF2E279, 1064, 9999) { isMetal = true; }
+    val constantan = registerCompound("constantan", 0xFFC383, 1210, 9999) { isMetal = true; }
+    val invar = registerCompound("invar", 0x70776e, 2500, 9999) { isMetal = true; }
+    val steel = registerCompound("steel", 0x9ea4a6, 2500, 9999) { isMetal = true; }
+    /*
+    enderium
+    lumium
+    signalum
+'tin_alloy'
+'battery_alloy'
+'soldering_alloy'
+'red_alloy'
+'fireclay'
+'magnalium'
+'cupronickel'
+'borosilicate_glass'
+'yttrium_barium_cuprate'
+'black_bronze'
+'black_steel'
+'ferrite_mixture'
+'nichrome'
+'osmiridium'
+'gallium_arsenide'
+'sodium_sulfide'
+'kanthal'
+'vanadium_gallium'
+'vanadium_steel'
+'indium_gallium_phosphide'
+'cobalt_brass'
+'bismuth_bronze'
+'sterling_silver'
+
+    // others
+    graphite
+    oilsands
+    almandine
+    andradite
+    banded_iron
+    brown_limonite
+    cassiterite
+    chalcopyrite
+    cobaltite
+    cooperite
+    'galena',
+    'garnierite',
+    'grossular',
+    'ilmenite',
+    'rutile',
+    'magnesite',
+    'magnetite',
+    'molybdenite',
+    'phosphate',
+    'pyrite',
+    'pyrolusite',
+    'pyrope',
+    'saltpeter',
+    'scheelite',
+    'spessartine',
+    'sphalerite',
+    'stibnite',
+    'tetrahedrite',
+    'tungstate',
+    'uraninite',
+    'uvarovite',
+    'wulfenite',
+    'yellow_limonite',
+    'vanadium_magnetite',
+    'bastnasite',
+    'pentlandite',
+    'spodumene',
+    'tantalite',
+    'lepidolite',
+    'glauconite',
+    'bentonite',
+    'pitchblende',
+    'malachite',
+    'barite',
+    'phosphorus',
+    'cinnabar',
+    'wrought_iron',
+    'tungstensteel',
+    'quartzite',
+    'lignite_coal',
+    'salt',
+    'rock_salt',
+    'bauxite',
+    'oil_shale'
+     */
+    
+    
+    
+
 
     val values by lazy {
         ModElements::class.declaredMemberProperties
