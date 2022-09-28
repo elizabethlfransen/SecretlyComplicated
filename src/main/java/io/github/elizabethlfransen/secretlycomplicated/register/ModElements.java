@@ -1,6 +1,7 @@
 package io.github.elizabethlfransen.secretlycomplicated.register;
 
-import io.github.elizabethlfransen.secretlycomplicated.element.SCElement;
+import io.github.elizabethlfransen.secretlycomplicated.material.SCElement;
+import io.github.elizabethlfransen.secretlycomplicated.material.SCElementBuilder;
 import io.github.noeppi_noeppi.libx.annotation.registration.NoReg;
 import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
 
@@ -12,7 +13,7 @@ import static io.github.elizabethlfransen.secretlycomplicated.materialform.Commo
 
 @RegisterClass
 public final class ModElements {
-    public static final SCElement hydrogen = SCElement.builder()
+    public static final SCElement hydrogen = new SCElementBuilder()
             .atomicNumber(1)
             .name("hydrogen")
             .color(0xff1a7d)
@@ -20,7 +21,7 @@ public final class ModElements {
             .boiling(-252)
             .withForms(parts)
             .build();
-    public static final SCElement helium = SCElement.builder()
+    public static final SCElement helium = new SCElementBuilder()
             .atomicNumber(2)
             .name("helium")
             .color(0xffc6e0)
@@ -28,7 +29,7 @@ public final class ModElements {
             .boiling(-268)
             .withForms(parts)
             .build();
-    public static final SCElement lithium = SCElement.builder()
+    public static final SCElement lithium = new SCElementBuilder()
             .atomicNumber(3)
             .name("lithium")
             .color(0xe5e5e5)
@@ -37,7 +38,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build(); // atomic spectral emission color: 0xff1852
-    public static final SCElement beryllium = SCElement.builder()
+    public static final SCElement beryllium = new SCElementBuilder()
             .atomicNumber(4)
             .name("beryllium")
             .color(0xcccccc)
@@ -46,7 +47,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build(); // atomic spectral emission color: 0x1e4cff
-    public static final SCElement boron = SCElement.builder()
+    public static final SCElement boron = new SCElementBuilder()
             .atomicNumber(5)
             .name("boron")
             .color(0xb2b2b2)
@@ -55,7 +56,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();// atomic spectral emission color: 0x4132ff
-    public static final SCElement carbon = SCElement.builder()
+    public static final SCElement carbon = new SCElementBuilder()
             .atomicNumber(6)
             .name("carbon")
             .color(0xebffc1)
@@ -63,7 +64,7 @@ public final class ModElements {
             .boiling(9999)
             .withForms(parts)
             .build();
-    public static final SCElement nitrogen = SCElement.builder()
+    public static final SCElement nitrogen = new SCElementBuilder()
             .atomicNumber(7)
             .name("nitrogen")
             .color(0xe795ff)
@@ -71,7 +72,7 @@ public final class ModElements {
             .boiling(-195)
             .withForms(parts)
             .build();
-    public static final SCElement oxygen = SCElement.builder()
+    public static final SCElement oxygen = new SCElementBuilder()
             .atomicNumber(8)
             .name("oxygen")
             .color(0xb8bfff)
@@ -79,7 +80,7 @@ public final class ModElements {
             .boiling(-182)
             .withForms(parts)
             .build();
-    public static final SCElement fluorine = SCElement.builder()
+    public static final SCElement fluorine = new SCElementBuilder()
             .atomicNumber(9)
             .name("fluorine")
             .color(0xff1765)
@@ -87,7 +88,7 @@ public final class ModElements {
             .boiling(-188)
             .withForms(parts)
             .build();
-    public static final SCElement neon = SCElement.builder()
+    public static final SCElement neon = new SCElementBuilder()
             .atomicNumber(10)
             .name("neon")
             .color(0xff4022)
@@ -96,7 +97,7 @@ public final class ModElements {
             .withForms(parts)
             .build();
 
-    public static final SCElement sodium = SCElement.builder()
+    public static final SCElement sodium = new SCElementBuilder()
             .atomicNumber(11)
             .name("sodium")
             .color(0xf7f7f7)
@@ -105,7 +106,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build(); // atomic spectral emission color: 0xffad1d
-    public static final SCElement magnesium = SCElement.builder()
+    public static final SCElement magnesium = new SCElementBuilder()
             .atomicNumber(12)
             .name("magnesium")
             .color(0xdedede)
@@ -114,7 +115,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build(); // atomic spectral emission color: 0x55faff
-    public static final SCElement aluminium = SCElement.builder()
+    public static final SCElement aluminium = new SCElementBuilder()
             .atomicNumber(13)
             .name("aluminium")
             .color(0xc7c7c7)
@@ -123,7 +124,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build(); // atomic spectral emission color: 0x4c95ff
-    public static final SCElement silicon = SCElement.builder()
+    public static final SCElement silicon = new SCElementBuilder()
             .atomicNumber(14)
             .name("silicon")
             .color(0xbbceff)
@@ -132,7 +133,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement phosphorus = SCElement.builder()
+    public static final SCElement phosphorus = new SCElementBuilder()
             .atomicNumber(15)
             .name("phosphorus")
             .color(0x36fec8)
@@ -140,7 +141,7 @@ public final class ModElements {
             .boiling(280)
             .withForms(parts)
             .build();
-    public static final SCElement sulfur = SCElement.builder()
+    public static final SCElement sulfur = new SCElementBuilder()
             .atomicNumber(16)
             .name("sulfur")
             .color(0x6fb0ff)
@@ -148,7 +149,7 @@ public final class ModElements {
             .boiling(444)
             .withForms(parts)
             .build();
-    public static final SCElement chlorine = SCElement.builder()
+    public static final SCElement chlorine = new SCElementBuilder()
             .atomicNumber(17)
             .name("chlorine")
             .color(0x76b1ff)
@@ -156,7 +157,7 @@ public final class ModElements {
             .boiling(-34)
             .withForms(parts)
             .build();
-    public static final SCElement argon = SCElement.builder()
+    public static final SCElement argon = new SCElementBuilder()
             .atomicNumber(18)
             .name("argon")
             .color(0xff6afe)
@@ -165,7 +166,7 @@ public final class ModElements {
             .withForms(parts)
             .build();
 
-    public static final SCElement potassium = SCElement.builder()
+    public static final SCElement potassium = new SCElementBuilder()
             .atomicNumber(19)
             .name("potassium")
             .color(0xdab4ff)
@@ -174,7 +175,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement calcium = SCElement.builder()
+    public static final SCElement calcium = new SCElementBuilder()
             .atomicNumber(20)
             .name("calcium")
             .color(0xfe78bf)
@@ -183,7 +184,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement scandium = SCElement.builder()
+    public static final SCElement scandium = new SCElementBuilder()
             .atomicNumber(21)
             .name("scandium")
             .color(0xe0a5ff)
@@ -192,7 +193,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement titanium = SCElement.builder()
+    public static final SCElement titanium = new SCElementBuilder()
             .atomicNumber(22)
             .name("titanium")
             .color(0x57a0fe)
@@ -201,7 +202,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement vanadium = SCElement.builder()
+    public static final SCElement vanadium = new SCElementBuilder()
             .atomicNumber(23)
             .name("vanadium")
             .color(0xe8cfff)
@@ -210,7 +211,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement chromium = SCElement.builder()
+    public static final SCElement chromium = new SCElementBuilder()
             .atomicNumber(24)
             .name("chromium")
             .color(0x63c2fe)
@@ -219,7 +220,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement manganese = SCElement.builder()
+    public static final SCElement manganese = new SCElementBuilder()
             .atomicNumber(25)
             .name("manganese")
             .color(0x435eff)
@@ -228,7 +229,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement iron = SCElement.builder()
+    public static final SCElement iron = new SCElementBuilder()
             .atomicNumber(26)
             .name("iron")
             .color(0xffffff)
@@ -237,7 +238,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build(); // atomic spectral emission color: 0x32eaff
-    public static final SCElement cobalt = SCElement.builder()
+    public static final SCElement cobalt = new SCElementBuilder()
             .atomicNumber(27)
             .name("cobalt")
             .color(0x41fffa)
@@ -246,7 +247,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement nickel = SCElement.builder()
+    public static final SCElement nickel = new SCElementBuilder()
             .atomicNumber(28)
             .name("nickel")
             .color(0x35f5ff)
@@ -255,7 +256,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement copper = SCElement.builder()
+    public static final SCElement copper = new SCElementBuilder()
             .atomicNumber(29)
             .name("copper")
             .color(0xda7953)
@@ -264,7 +265,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build(); // atomic spectral emission color: 0x7effcf
-    public static final SCElement zinc = SCElement.builder()
+    public static final SCElement zinc = new SCElementBuilder()
             .atomicNumber(30)
             .name("zinc")
             .color(0x91898d)
@@ -273,7 +274,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build(); // atomic spectral emission color: 0x3941ff
-    public static final SCElement gallium = SCElement.builder()
+    public static final SCElement gallium = new SCElementBuilder()
             .atomicNumber(31)
             .name("gallium")
             .color(0x7625ff)
@@ -282,7 +283,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement germanium = SCElement.builder()
+    public static final SCElement germanium = new SCElementBuilder()
             .atomicNumber(32)
             .name("germanium")
             .color(0xe5ffd5)
@@ -291,7 +292,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement arsenic = SCElement.builder()
+    public static final SCElement arsenic = new SCElementBuilder()
             .atomicNumber(33)
             .name("arsenic")
             .color(0x339cff)
@@ -300,7 +301,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement selenium = SCElement.builder()
+    public static final SCElement selenium = new SCElementBuilder()
             .atomicNumber(34)
             .name("selenium")
             .color(0x4bb2ff)
@@ -308,7 +309,7 @@ public final class ModElements {
             .boiling(684)
             .withForms(parts)
             .build();
-    public static final SCElement bromine = SCElement.builder()
+    public static final SCElement bromine = new SCElementBuilder()
             .atomicNumber(35)
             .name("bromine")
             .color(0x86bfff)
@@ -316,7 +317,7 @@ public final class ModElements {
             .boiling(58)
             .withForms(parts)
             .build();
-    public static final SCElement krypton = SCElement.builder()
+    public static final SCElement krypton = new SCElementBuilder()
             .atomicNumber(36)
             .name("krypton")
             .color(0xffc2ef)
@@ -325,7 +326,7 @@ public final class ModElements {
             .withForms(parts)
             .build();
 
-    public static final SCElement rubidium = SCElement.builder()
+    public static final SCElement rubidium = new SCElementBuilder()
             .atomicNumber(37)
             .name("rubidium")
             .color(0xff4d81)
@@ -334,7 +335,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement strontium = SCElement.builder()
+    public static final SCElement strontium = new SCElementBuilder()
             .atomicNumber(38)
             .name("strontium")
             .color(0xfe69c3)
@@ -343,7 +344,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement yttrium = SCElement.builder()
+    public static final SCElement yttrium = new SCElementBuilder()
             .atomicNumber(39)
             .name("yttrium")
             .color(0xffecf1)
@@ -352,7 +353,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement zirconium = SCElement.builder()
+    public static final SCElement zirconium = new SCElementBuilder()
             .atomicNumber(40)
             .name("zirconium")
             .color(0x67d8ff)
@@ -361,7 +362,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement niobium = SCElement.builder()
+    public static final SCElement niobium = new SCElementBuilder()
             .atomicNumber(41)
             .name("niobium")
             .color(0x6cc2ff)
@@ -370,7 +371,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement molybdenum = SCElement.builder()
+    public static final SCElement molybdenum = new SCElementBuilder()
             .atomicNumber(42)
             .name("molybdenum")
             .color(0x8aa1fe)
@@ -379,7 +380,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement technetium = SCElement.builder()
+    public static final SCElement technetium = new SCElementBuilder()
             .atomicNumber(43)
             .name("technetium")
             .color(0x4780ff)
@@ -388,7 +389,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement ruthenium = SCElement.builder()
+    public static final SCElement ruthenium = new SCElementBuilder()
             .atomicNumber(44)
             .name("ruthenium")
             .color(0x447fff)
@@ -397,7 +398,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement rhodium = SCElement.builder()
+    public static final SCElement rhodium = new SCElementBuilder()
             .atomicNumber(45)
             .name("rhodium")
             .color(0x7cffd7)
@@ -406,7 +407,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement palladium = SCElement.builder()
+    public static final SCElement palladium = new SCElementBuilder()
             .atomicNumber(46)
             .name("palladium")
             .color(0x4effde)
@@ -415,7 +416,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement silver = SCElement.builder()
+    public static final SCElement silver = new SCElementBuilder()
             .atomicNumber(47)
             .name("silver")
             .color(0x32ffa3)
@@ -424,7 +425,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement cadmium = SCElement.builder()
+    public static final SCElement cadmium = new SCElementBuilder()
             .atomicNumber(48)
             .name("cadmium")
             .color(0x6098fe)
@@ -433,7 +434,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement indium = SCElement.builder()
+    public static final SCElement indium = new SCElementBuilder()
             .atomicNumber(49)
             .name("indium")
             .color(0x7745ff)
@@ -442,7 +443,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement tin = SCElement.builder()
+    public static final SCElement tin = new SCElementBuilder()
             .atomicNumber(50)
             .name("tin")
             .color(0xffbefc)
@@ -451,7 +452,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement antimony = SCElement.builder()
+    public static final SCElement antimony = new SCElementBuilder()
             .atomicNumber(51)
             .name("antimony")
             .color(0xefe7ff)
@@ -460,7 +461,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement tellurium = SCElement.builder()
+    public static final SCElement tellurium = new SCElementBuilder()
             .atomicNumber(52)
             .name("tellurium")
             .color(0x47d7ff)
@@ -469,7 +470,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement iodine = SCElement.builder()
+    public static final SCElement iodine = new SCElementBuilder()
             .atomicNumber(53)
             .name("iodine")
             .color(0x9fffdb)
@@ -477,7 +478,7 @@ public final class ModElements {
             .boiling(58)
             .withForms(parts)
             .build();
-    public static final SCElement xenon = SCElement.builder()
+    public static final SCElement xenon = new SCElementBuilder()
             .atomicNumber(54)
             .name("xenon")
             .color(0xab94ff)
@@ -486,7 +487,7 @@ public final class ModElements {
             .withForms(parts)
             .build();
 
-    public static final SCElement caesium = SCElement.builder()
+    public static final SCElement caesium = new SCElementBuilder()
             .atomicNumber(55)
             .name("caesium")
             .color(0x9268ff)
@@ -495,7 +496,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement barium = SCElement.builder()
+    public static final SCElement barium = new SCElementBuilder()
             .atomicNumber(56)
             .name("barium")
             .color(0xffc090)
@@ -504,7 +505,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement lanthanum = SCElement.builder()
+    public static final SCElement lanthanum = new SCElementBuilder()
             .atomicNumber(57)
             .name("lanthanum")
             .color(0x7f98ff)
@@ -514,7 +515,7 @@ public final class ModElements {
             .metallic()
             .build();
 
-    public static final SCElement cerium = SCElement.builder()
+    public static final SCElement cerium = new SCElementBuilder()
             .atomicNumber(58)
             .name("cerium")
             .color(0x69dffe)
@@ -523,7 +524,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement praseodymium = SCElement.builder()
+    public static final SCElement praseodymium = new SCElementBuilder()
             .atomicNumber(59)
             .name("praseodymium")
             .color(0x507fff)
@@ -532,7 +533,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement neodymium = SCElement.builder()
+    public static final SCElement neodymium = new SCElementBuilder()
             .atomicNumber(60)
             .name("neodymium")
             .color(0x4168ff)
@@ -541,7 +542,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement promethium = SCElement.builder()
+    public static final SCElement promethium = new SCElementBuilder()
             .atomicNumber(61)
             .name("promethium")
             .color(0x8085ff)
@@ -550,7 +551,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement samarium = SCElement.builder()
+    public static final SCElement samarium = new SCElementBuilder()
             .atomicNumber(62)
             .name("samarium")
             .color(0x87a5ff)
@@ -559,7 +560,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement europium = SCElement.builder()
+    public static final SCElement europium = new SCElementBuilder()
             .atomicNumber(63)
             .name("europium")
             .color(0xeecaff)
@@ -568,7 +569,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement gadolinium = SCElement.builder()
+    public static final SCElement gadolinium = new SCElementBuilder()
             .atomicNumber(64)
             .name("gadolinium")
             .color(0xfec1fc)
@@ -577,7 +578,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement terbium = SCElement.builder()
+    public static final SCElement terbium = new SCElementBuilder()
             .atomicNumber(65)
             .name("terbium")
             .color(0xa2feed)
@@ -586,7 +587,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement dysprosium = SCElement.builder()
+    public static final SCElement dysprosium = new SCElementBuilder()
             .atomicNumber(66)
             .name("dysprosium")
             .color(0x79d7ff)
@@ -595,7 +596,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement holmium = SCElement.builder()
+    public static final SCElement holmium = new SCElementBuilder()
             .atomicNumber(67)
             .name("holmium")
             .color(0x9cffc9)
@@ -604,7 +605,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement erbium = SCElement.builder()
+    public static final SCElement erbium = new SCElementBuilder()
             .atomicNumber(68)
             .name("erbium")
             .color(0x5effe1)
@@ -613,7 +614,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement thulium = SCElement.builder()
+    public static final SCElement thulium = new SCElementBuilder()
             .atomicNumber(69)
             .name("thulium")
             .color(0x60f4ff)
@@ -622,7 +623,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement ytterbium = SCElement.builder()
+    public static final SCElement ytterbium = new SCElementBuilder()
             .atomicNumber(70)
             .name("ytterbium")
             .color(0xb2f5ff)
@@ -631,7 +632,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement lutetium = SCElement.builder()
+    public static final SCElement lutetium = new SCElementBuilder()
             .atomicNumber(71)
             .name("lutetium")
             .color(0xb1faff)
@@ -641,7 +642,7 @@ public final class ModElements {
             .metallic()
             .build();
 
-    public static final SCElement hafnium = SCElement.builder()
+    public static final SCElement hafnium = new SCElementBuilder()
             .atomicNumber(72)
             .name("hafnium")
             .color(0x6f95ff)
@@ -650,7 +651,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement tantalum = SCElement.builder()
+    public static final SCElement tantalum = new SCElementBuilder()
             .atomicNumber(73)
             .name("tantalum")
             .color(0x68ceff)
@@ -659,7 +660,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement tungsten = SCElement.builder()
+    public static final SCElement tungsten = new SCElementBuilder()
             .atomicNumber(74)
             .name("tungsten")
             .color(0x49d5ff)
@@ -668,7 +669,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement rhenium = SCElement.builder()
+    public static final SCElement rhenium = new SCElementBuilder()
             .atomicNumber(75)
             .name("rhenium")
             .color(0x61a9fe)
@@ -677,7 +678,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement osmium = SCElement.builder()
+    public static final SCElement osmium = new SCElementBuilder()
             .atomicNumber(76)
             .name("osmium")
             .color(0x3e94ff)
@@ -686,7 +687,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement iridium = SCElement.builder()
+    public static final SCElement iridium = new SCElementBuilder()
             .atomicNumber(77)
             .name("iridium")
             .color(0x3e7eff)
@@ -695,7 +696,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement platinum = SCElement.builder()
+    public static final SCElement platinum = new SCElementBuilder()
             .atomicNumber(78)
             .name("platinum")
             .color(0x5695ff)
@@ -704,7 +705,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement gold = SCElement.builder()
+    public static final SCElement gold = new SCElementBuilder()
             .atomicNumber(79)
             .name("gold")
             .color(0xa38eff)
@@ -713,7 +714,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement mercury = SCElement.builder()
+    public static final SCElement mercury = new SCElementBuilder()
             .atomicNumber(80)
             .name("mercury")
             .color(0x93f8ff)
@@ -722,7 +723,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement thallium = SCElement.builder()
+    public static final SCElement thallium = new SCElementBuilder()
             .atomicNumber(81)
             .name("thallium")
             .color(0x1eff47)
@@ -731,7 +732,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement lead = SCElement.builder()
+    public static final SCElement lead = new SCElementBuilder()
             .atomicNumber(82)
             .name("lead")
             .color(0xa9ecff)
@@ -740,7 +741,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement bismuth = SCElement.builder()
+    public static final SCElement bismuth = new SCElementBuilder()
             .atomicNumber(83)
             .name("bismuth")
             .color(0x6b97ff)
@@ -749,7 +750,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement polonium = SCElement.builder()
+    public static final SCElement polonium = new SCElementBuilder()
             .atomicNumber(84)
             .name("polonium")
             .color(0x4a8dff)
@@ -758,7 +759,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement astatine = SCElement.builder()
+    public static final SCElement astatine = new SCElementBuilder()
             .atomicNumber(85)
             .name("astatine")
             .color(0x444444)
@@ -767,7 +768,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement radon = SCElement.builder()
+    public static final SCElement radon = new SCElementBuilder()
             .atomicNumber(86)
             .name("radon")
             .color(0xff19a1)
@@ -776,7 +777,7 @@ public final class ModElements {
             .withForms(parts)
             .build();
 
-    public static final SCElement francium = SCElement.builder()
+    public static final SCElement francium = new SCElementBuilder()
             .atomicNumber(87)
             .name("francium")
             .color(0xfe8146)
@@ -785,7 +786,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement radium = SCElement.builder()
+    public static final SCElement radium = new SCElementBuilder()
             .atomicNumber(88)
             .name("radium")
             .color(0xff5a64)
@@ -794,7 +795,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement actinium = SCElement.builder()
+    public static final SCElement actinium = new SCElementBuilder()
             .atomicNumber(89)
             .name("actinium")
             .color(0xc1e6ff)
@@ -804,7 +805,7 @@ public final class ModElements {
             .metallic()
             .build();
 
-    public static final SCElement thorium = SCElement.builder()
+    public static final SCElement thorium = new SCElementBuilder()
             .atomicNumber(90)
             .name("thorium")
             .color(0x8bf5ff)
@@ -813,7 +814,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement protactinium = SCElement.builder()
+    public static final SCElement protactinium = new SCElementBuilder()
             .atomicNumber(91)
             .name("protactinium")
             .color(0xe80aff)
@@ -822,7 +823,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement uranium = SCElement.builder()
+    public static final SCElement uranium = new SCElementBuilder()
             .atomicNumber(92)
             .name("uranium")
             .color(0xa0bbff)
@@ -831,7 +832,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement neptunium = SCElement.builder()
+    public static final SCElement neptunium = new SCElementBuilder()
             .atomicNumber(93)
             .name("neptunium")
             .color(0xffbf29)
@@ -840,7 +841,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement plutonium = SCElement.builder()
+    public static final SCElement plutonium = new SCElementBuilder()
             .atomicNumber(94)
             .name("plutonium")
             .color(0xff40d7)
@@ -849,7 +850,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement americium = SCElement.builder()
+    public static final SCElement americium = new SCElementBuilder()
             .atomicNumber(95)
             .name("americium")
             .color(0x996fff)
@@ -858,7 +859,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement curium = SCElement.builder()
+    public static final SCElement curium = new SCElementBuilder()
             .atomicNumber(96)
             .name("curium")
             .color(0xff31c3)
@@ -867,7 +868,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement berkelium = SCElement.builder()
+    public static final SCElement berkelium = new SCElementBuilder()
             .atomicNumber(97)
             .name("berkelium")
             .color(0x48ff5e)
@@ -876,7 +877,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement californium = SCElement.builder()
+    public static final SCElement californium = new SCElementBuilder()
             .atomicNumber(98)
             .name("californium")
             .color(0x94fec1)
@@ -885,7 +886,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement einsteinium = SCElement.builder()
+    public static final SCElement einsteinium = new SCElementBuilder()
             .atomicNumber(99)
             .name("einsteinium")
             .color(0x13ffb7)
@@ -894,7 +895,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement fermium = SCElement.builder()
+    public static final SCElement fermium = new SCElementBuilder()
             .atomicNumber(100)
             .name("fermium")
             .color(0x444444)
@@ -903,7 +904,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement mendelevium = SCElement.builder()
+    public static final SCElement mendelevium = new SCElementBuilder()
             .atomicNumber(101)
             .name("mendelevium")
             .color(0x444444)
@@ -912,7 +913,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement nobelium = SCElement.builder()
+    public static final SCElement nobelium = new SCElementBuilder()
             .atomicNumber(102)
             .name("nobelium")
             .color(0x444444)
@@ -921,7 +922,7 @@ public final class ModElements {
             .withForms(parts)
             .metallic()
             .build();
-    public static final SCElement lawrencium = SCElement.builder()
+    public static final SCElement lawrencium = new SCElementBuilder()
             .atomicNumber(103)
             .name("lawrencium")
             .color(0x444444)
@@ -942,11 +943,11 @@ public final class ModElements {
             })
             .collect(Collectors.toUnmodifiableSet());
 
-    private ModElements() {
-        throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
-    }
 
     public static Set<SCElement> getValues() {
         return ModElements.values;
+    }
+    private ModElements() {
+        throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
     }
 }

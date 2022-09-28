@@ -1,7 +1,8 @@
 package io.github.elizabethlfransen.secretlycomplicated.datagen;
 
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
-import io.github.elizabethlfransen.secretlycomplicated.element.SCElement;
+import io.github.elizabethlfransen.secretlycomplicated.material.SCElement;
+import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.fluid.SimpleFluidMaterialForm;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.item.ItemMaterialForm;
@@ -21,24 +22,24 @@ public class ElementModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        ModElements.getValues()
+        SecretlyComplicated.getAllMaterials()
                 .forEach(this::registerElement);
     }
 
-    private void registerElement(SCElement element) {
-        element.forms.forEach((key, value) -> registerForm(
-                element,
+    private void registerElement(SCMaterial material) {
+        material.forms.forEach((key, value) -> registerForm(
+                material,
                 key,
                 value
         ));
     }
 
-    private void registerForm(SCElement element, String formName, MaterialForm form) {
+    private void registerForm(SCMaterial material, String formName, MaterialForm form) {
         if(form instanceof ItemMaterialForm itemForm) {
-            registerForm("%s_%s".formatted(element.name, formName), itemForm);
+            registerForm("%s_%s".formatted(material.name, formName), itemForm);
         }
         if(form instanceof SimpleFluidMaterialForm fluidForm) {
-            registerForm(element.name + "_fluid_bucket", fluidForm);
+            registerForm(material.name + "_fluid_bucket", fluidForm);
         }
     }
 

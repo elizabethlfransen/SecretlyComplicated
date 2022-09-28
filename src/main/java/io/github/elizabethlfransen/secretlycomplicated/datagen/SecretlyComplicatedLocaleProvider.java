@@ -1,5 +1,6 @@
 package io.github.elizabethlfransen.secretlycomplicated.datagen;
 
+import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.LocalizableMaterialForm;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
 import io.github.elizabethlfransen.secretlycomplicated.register.ModElements;
@@ -20,7 +21,7 @@ public class SecretlyComplicatedLocaleProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         addCommonTranslations();
-        ModElements.getValues().stream()
+        SecretlyComplicated.getAllMaterials().stream()
                 .flatMap(element -> element.forms.values().stream())
                 .forEach(this::addTranslation);
     }

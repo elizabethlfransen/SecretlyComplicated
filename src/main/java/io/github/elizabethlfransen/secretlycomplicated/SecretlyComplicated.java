@@ -1,6 +1,9 @@
 package io.github.elizabethlfransen.secretlycomplicated;
 
 import io.github.elizabethlfransen.secretlycomplicated.datagen.DataProviderRegister;
+import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
+import io.github.elizabethlfransen.secretlycomplicated.register.ModCompounds;
+import io.github.elizabethlfransen.secretlycomplicated.register.ModElements;
 import io.github.elizabethlfransen.secretlycomplicated.util.SimpleCreativeTab;
 import io.github.noeppi_noeppi.libx.mod.registration.ModXRegistration;
 import io.github.noeppi_noeppi.libx.mod.registration.RegistrationBuilder;
@@ -12,6 +15,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import static io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated.MOD_ID;
 
@@ -46,5 +52,12 @@ public final class SecretlyComplicated extends ModXRegistration {
     @Override
     protected void clientSetup(FMLClientSetupEvent event) {
 
+    }
+
+    public static Set<SCMaterial> getAllMaterials() {
+        Set<SCMaterial> result = new HashSet<>();
+        result.addAll(ModCompounds.getValues());
+        result.addAll(ModElements.getValues());
+        return result;
     }
 }
