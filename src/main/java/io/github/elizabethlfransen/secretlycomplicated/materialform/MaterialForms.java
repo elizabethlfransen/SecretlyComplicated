@@ -1,5 +1,6 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform;
 
+import io.github.elizabethlfransen.secretlycomplicated.materialform.block.BlockMaterialFormFactory;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.fluid.FluidMaterialFormFactory;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.item.ItemMaterialFormFactory;
 
@@ -24,6 +25,13 @@ public final class MaterialForms {
             .withBucketLocalization(EN_US, element ->
                     element.metallic ? "Bucket of Molten " + element.getCapitalizedName()
                             : "Bucket of Liquid " + element.getCapitalizedName()
+            )
+            .build();
+
+    public static final BlockMaterialFormFactory BLOCK = BlockMaterialFormFactory.builder("block")
+            .withLocalizedName(EN_US, element ->
+                    element.metallic ? element.getCapitalizedName() + " Block"
+                            : "Solid " + element.getCapitalizedName()
             )
             .build();
 
