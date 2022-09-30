@@ -1,7 +1,6 @@
 package io.github.elizabethlfransen.secretlycomplicated.block;
 
 import io.github.noeppi_noeppi.libx.base.BlockBase;
-import io.github.noeppi_noeppi.libx.base.ItemBase;
 import io.github.noeppi_noeppi.libx.mod.ModX;
 import io.github.noeppi_noeppi.libx.mod.registration.Registerable;
 import net.minecraft.client.Minecraft;
@@ -19,7 +18,7 @@ public class ColorableBlock extends BlockBase implements Registerable {
 
     @Override
     public void registerClient(ResourceLocation id, Consumer<Runnable> defer) {
-        Minecraft.getInstance().getItemColors().register((itemStack, colorIndex) -> color, this);
+        Minecraft.getInstance().getBlockColors().register((p_92567_, p_92568_, p_92569_, p_92570_) -> color, this);
         
     }
 }

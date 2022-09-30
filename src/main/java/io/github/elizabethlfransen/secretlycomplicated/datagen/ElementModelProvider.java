@@ -1,12 +1,10 @@
 package io.github.elizabethlfransen.secretlycomplicated.datagen;
 
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
-import io.github.elizabethlfransen.secretlycomplicated.material.SCElement;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.fluid.SimpleFluidMaterialForm;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.item.ItemMaterialForm;
-import io.github.elizabethlfransen.secretlycomplicated.register.ModElements;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -42,6 +40,7 @@ public class ElementModelProvider extends ItemModelProvider {
             registerForm(material.name + "_fluid_bucket", fluidForm);
         }
     }
+
 
     private void registerForm(String name, SimpleFluidMaterialForm form) {
         withExistingParent(name,new ResourceLocation("forge", "item/bucket"))

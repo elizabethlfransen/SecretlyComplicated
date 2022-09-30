@@ -2,12 +2,10 @@ package io.github.elizabethlfransen.secretlycomplicated.materialform.block;
 
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.elizabethlfransen.secretlycomplicated.block.ColorableBlock;
-import io.github.elizabethlfransen.secretlycomplicated.material.SCElement;
-import io.github.elizabethlfransen.secretlycomplicated.item.ColorableItem;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialFormFactory;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +26,7 @@ public class BlockMaterialFormFactory extends MaterialFormFactory<SimpleBlockMat
         private final String id;
         private String textureName;
         private final Map<String, Function<SCMaterial, String>> localizedNames = new HashMap<>();
+
         private Builder(String id) {
             this.id = id;
             this.textureName = "base_" + id;
@@ -56,9 +55,13 @@ public class BlockMaterialFormFactory extends MaterialFormFactory<SimpleBlockMat
 
 
     @Override
-    public SimpleBlockMaterialForm getMaterialForm(SCMaterial element) {
+    public SimpleBlockMaterialForm getMaterialForm(SCMaterial material) {
         // TODO Auto-generated method stub
-        return null;
+        return new SimpleBlockMaterialForm(
+                new ColorableBlock(SecretlyComplicated.getInstance(), material.color, BlockBehaviour.Properties.of(Material.METAL)),
+                textureName,
+                locale -> localizedNames.apply(material, locale)
+        );
     }
 
     // @Override

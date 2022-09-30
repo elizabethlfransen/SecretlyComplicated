@@ -22,7 +22,8 @@ public final class CommonMaterialFormFactories {
             PURE_DUST,
             NUGGET,
             WIRE,
-            FLUID
+            FLUID,
+            BLOCK
     );
 
     private CommonMaterialFormFactories() {
