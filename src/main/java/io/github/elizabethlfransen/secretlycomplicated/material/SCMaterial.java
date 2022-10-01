@@ -27,6 +27,7 @@ public class SCMaterial implements Registerable {
         this.melting = melting;
         this.boiling = boiling;
         this.forms = forms.stream()
+                .filter(MaterialFormFactory::isSupported)
                 .collect(Collectors.toMap(
                         factory -> factory.id,
                         factory -> factory.getMaterialForm(this)
