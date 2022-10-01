@@ -14,6 +14,9 @@ public class DataProviderRegister {
             event.getGenerator().addProvider(new ElementModelProvider(event.getGenerator(), MOD_ID, event.getExistingFileHelper()));
             event.getGenerator().addProvider(new SecretlyComplicatedLocaleProvider(event.getGenerator(), MOD_ID, Locales.EN_US));
             event.getGenerator().addProvider(new ElementBlockStateProvider(event.getGenerator(), MOD_ID, event.getExistingFileHelper()));
+
+            event.getGenerator().addProvider(new OresModelProvider(event.getGenerator(), MOD_ID, event.getExistingFileHelper()));
+            event.getGenerator().addProvider(new OresBlockStateProvider(event.getGenerator(), MOD_ID, event.getExistingFileHelper()));
         }
     }
 }

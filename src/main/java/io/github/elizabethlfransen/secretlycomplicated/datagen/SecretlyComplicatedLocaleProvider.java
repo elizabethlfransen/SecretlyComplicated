@@ -23,6 +23,10 @@ public class SecretlyComplicatedLocaleProvider extends LanguageProvider {
         SecretlyComplicated.getAllMaterials().stream()
                 .flatMap(element -> element.forms.values().stream())
                 .forEach(this::addTranslation);
+
+                SecretlyComplicated.getAllRocks().stream()
+                .flatMap(element -> element.forms.values().stream())
+                .forEach(this::addTranslation);
     }
 
     private void addCommonTranslations() {

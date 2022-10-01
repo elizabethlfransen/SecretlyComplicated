@@ -3,6 +3,8 @@ package io.github.elizabethlfransen.secretlycomplicated.materialform;
 import java.util.Arrays;
 import java.util.List;
 
+import io.github.elizabethlfransen.secretlycomplicated.materialform.block.BlockRockFormFactory;
+
 import static io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForms.*;
 
 
@@ -25,6 +27,10 @@ public final class CommonMaterialFormFactories {
             FLUID,
             BLOCK,
             GAS
+    );
+
+    public static final List<BlockRockFormFactory> rocks = Arrays.asList(
+            ORE
     );
 
     private CommonMaterialFormFactories() {
