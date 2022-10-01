@@ -1,9 +1,8 @@
 package io.github.elizabethlfransen.secretlycomplicated.datagen;
 
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
-import io.github.elizabethlfransen.secretlycomplicated.materialform.LocalizableMaterialForm;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
-import io.github.elizabethlfransen.secretlycomplicated.register.ModElements;
+import io.github.elizabethlfransen.secretlycomplicated.util.Localizable;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -32,8 +31,8 @@ public class SecretlyComplicatedLocaleProvider extends LanguageProvider {
     }
 
     private void addTranslation(MaterialForm form) {
-        if(!(form instanceof LocalizableMaterialForm localizableMaterialForm)) return;
-        localizableMaterialForm.addLocalizations(locale,this);
+        if(!(form instanceof Localizable localizable)) return;
+        localizable.addLocalizations(locale,this);
     }
 
 }

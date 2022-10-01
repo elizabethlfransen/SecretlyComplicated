@@ -1,7 +1,8 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.fluid;
 
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
-import io.github.elizabethlfransen.secretlycomplicated.materialform.LocalizableMaterialForm;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
+import io.github.elizabethlfransen.secretlycomplicated.util.Localizable;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -16,7 +17,7 @@ import java.util.function.Function;
 
 import static io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated.MOD_ID;
 
-public class SimpleFluidMaterialForm implements LocalizableMaterialForm {
+public class SimpleFluidMaterialForm implements MaterialForm, Localizable {
 
     private final ForgeFlowingFluid still;
     private final ForgeFlowingFluid flowing;
@@ -72,7 +73,6 @@ public class SimpleFluidMaterialForm implements LocalizableMaterialForm {
         return bucket;
     }
 
-    @Override
     public void addLocalizations(String locale, LanguageProvider provider) {
         provider.add(fluidDescriptionId,fluidLocalizations.apply(locale));
         provider.add(bucket,bucketLocalizations.apply(locale));
@@ -85,5 +85,9 @@ public class SimpleFluidMaterialForm implements LocalizableMaterialForm {
                 "flowing", getFlowing(),
                 "bucket", getBucket()
         );
+    }
+
+    public Item getBucketItem() {
+        return bucket;
     }
 }

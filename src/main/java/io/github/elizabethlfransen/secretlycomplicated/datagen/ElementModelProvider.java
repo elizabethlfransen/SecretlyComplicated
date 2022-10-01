@@ -4,7 +4,7 @@ import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.fluid.SimpleFluidMaterialForm;
-import io.github.elizabethlfransen.secretlycomplicated.materialform.item.ItemMaterialForm;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.item.SimpleItemMaterialForm;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -33,22 +33,22 @@ public class ElementModelProvider extends ItemModelProvider {
     }
 
     private void registerForm(SCMaterial material, String formName, MaterialForm form) {
-        if(form instanceof ItemMaterialForm itemForm) {
-            registerForm("%s_%s".formatted(material.name, formName), itemForm);
+        if (form instanceof SimpleItemMaterialForm textureForm) {
+            registerForm("%s_%s".formatted(material.name, formName), textureForm);
         }
-        if(form instanceof SimpleFluidMaterialForm fluidForm) {
+        if (form instanceof SimpleFluidMaterialForm fluidForm) {
             registerForm(material.name + "_fluid_bucket", fluidForm);
         }
     }
 
 
     private void registerForm(String name, SimpleFluidMaterialForm form) {
-        withExistingParent(name,new ResourceLocation("forge", "item/bucket"))
+        withExistingParent(name, new ResourceLocation("forge", "item/bucket"))
                 .customLoader(DynamicBucketModelBuilder::begin)
                 .fluid(form.getStill());
     }
 
-    private void registerForm(String name, ItemMaterialForm form) {
+    private void registerForm(String name, SimpleItemMaterialForm form) {
         withExistingParent(name, "item/generated")
                 .texture("layer0", "%s:item/%s".formatted(SecretlyComplicated.MOD_ID, form.getTextureName()));
     }

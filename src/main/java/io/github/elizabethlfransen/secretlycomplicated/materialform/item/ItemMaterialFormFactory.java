@@ -1,8 +1,7 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.item;
 
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
-import io.github.elizabethlfransen.secretlycomplicated.material.SCElement;
-import io.github.elizabethlfransen.secretlycomplicated.item.ColorableItem;
+import io.github.elizabethlfransen.secretlycomplicated.item.SCItem;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialFormFactory;
 import net.minecraft.world.item.Item;
@@ -54,6 +53,6 @@ public class ItemMaterialFormFactory extends MaterialFormFactory<SimpleItemMater
 
     @Override
     public SimpleItemMaterialForm getMaterialForm(SCMaterial element) {
-        return new SimpleItemMaterialForm(new ColorableItem(SecretlyComplicated.getInstance(), element.color, new Item.Properties()), textureName, locale -> localizedNames.apply(element, locale));
+        return new SimpleItemMaterialForm(new SCItem(SecretlyComplicated.getInstance(), new Item.Properties()), textureName, element.color, locale -> localizedNames.apply(element, locale));
     }
 }

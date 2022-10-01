@@ -1,5 +1,7 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.item;
 
+import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
+import io.github.elizabethlfransen.secretlycomplicated.util.Localizable;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -9,15 +11,17 @@ import java.util.function.Function;
 
 import static io.github.elizabethlfransen.secretlycomplicated.util.CollectionUtil.setOf;
 
-public class SimpleItemMaterialForm implements ItemMaterialForm {
+public class SimpleItemMaterialForm implements MaterialForm, Localizable, ItemForm {
 
     private final Item item;
     private final String textureName;
     private final Function<String,String> localizedNames;
+    private final int color;
 
-    public SimpleItemMaterialForm(Item item, String textureName, Function<String, String> localizedName) {
+    public SimpleItemMaterialForm(Item item, String textureName, int color, Function<String, String> localizedName) {
         this.item = item;
         this.textureName = textureName;
+        this.color = color;
         this.localizedNames = localizedName;
     }
 
@@ -26,18 +30,21 @@ public class SimpleItemMaterialForm implements ItemMaterialForm {
         return setOf(item);
     }
 
-    @Override
+
     public String getTextureName() {
         return textureName;
     }
 
-    @Override
+
     public Item getItem() {
         return item;
     }
 
-    @Override
     public void addLocalizations(String locale, LanguageProvider provider) {
         provider.add(item, localizedNames.apply(locale));
+    }
+
+    public int getColor() {
+        return this.color;
     }
 }

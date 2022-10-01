@@ -3,13 +3,10 @@ package io.github.elizabethlfransen.secretlycomplicated.datagen;
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
-import io.github.elizabethlfransen.secretlycomplicated.materialform.block.BlockMaterialForm;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.block.SimpleBlockMaterialForm;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-
-import static io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated.MOD_ID;
 
 public class ElementBlockStateProvider extends BlockStateProvider {
     public ElementBlockStateProvider(DataGenerator gen, String modid, ExistingFileHelper exFileHelper) {
@@ -24,19 +21,18 @@ public class ElementBlockStateProvider extends BlockStateProvider {
 
     private void registerMaterial(SCMaterial material) {
         material.forms
-                .forEach((name, form) -> registerForm(material, name, form));
+                .forEach((name, form) -> registerForm(material, form));
     }
 
-    private void registerForm(SCMaterial material, String formName, MaterialForm form) {
-        if (form instanceof BlockMaterialForm blockForm) {
+    private void registerForm(SCMaterial material, MaterialForm form) {
+        if (form instanceof SimpleBlockMaterialForm blockForm) {
             registerForm(material.name + "_block", blockForm);
         }
     }
 
-    private void registerForm(String name, BlockMaterialForm form) {
-
-        simpleBlock(form.getBlock(),
-                models().cubeAll(name, new ResourceLocation(MOD_ID, "block/" + form.getTextureName()))
-        );
+    private void registerForm(String name, SimpleBlockMaterialForm form) {
+        itemModels().withExistingParent(name, modLoc("block/colorable_block"));
+        simpleBlock(form.getBlock(), models().withExistingParent(name, modLoc("block/colorable_block")));
     }
+
 }
