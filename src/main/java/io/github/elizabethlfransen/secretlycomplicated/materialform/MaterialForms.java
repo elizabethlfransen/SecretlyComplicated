@@ -2,6 +2,7 @@ package io.github.elizabethlfransen.secretlycomplicated.materialform;
 
 import io.github.elizabethlfransen.secretlycomplicated.materialform.block.BlockMaterialFormFactory;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.fluid.FluidMaterialFormFactory;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.gas.GasMaterialFormFactory;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.item.ItemMaterialFormFactory;
 
 import static io.github.elizabethlfransen.secretlycomplicated.util.Locales.EN_US;
@@ -70,5 +71,8 @@ public final class MaterialForms {
             .build();
     public static final ItemMaterialFormFactory WIRE = ItemMaterialFormFactory.builder("wire")
             .withLocalizedName(EN_US, element -> element.getCapitalizedName() + " Wire")
+            .build();
+    public static final GasMaterialFormFactory GAS = GasMaterialFormFactory.builder()
+            .withLocalization(EN_US, material -> material.getCapitalizedName() + " Gas")
             .build();
 }

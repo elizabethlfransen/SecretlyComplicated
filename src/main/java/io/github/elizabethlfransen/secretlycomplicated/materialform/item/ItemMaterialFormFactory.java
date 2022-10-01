@@ -52,7 +52,7 @@ public class ItemMaterialFormFactory extends MaterialFormFactory<SimpleItemMater
     }
 
     @Override
-    public SimpleItemMaterialForm getMaterialForm(SCMaterial element) {
-        return new SimpleItemMaterialForm(new SCItem(SecretlyComplicated.getInstance(), new Item.Properties()), textureName, element.color, locale -> localizedNames.apply(element, locale));
+    public SimpleItemMaterialForm getMaterialForm(SCMaterial material) {
+        return new SimpleItemMaterialForm(new SCItem(SecretlyComplicated.getInstance(), new Item.Properties()), textureName, material.color, locale -> localizedNames.apply(material, locale));
     }
 }

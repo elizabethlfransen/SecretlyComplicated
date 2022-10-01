@@ -23,7 +23,8 @@ public final class CommonMaterialFormFactories {
             NUGGET,
             WIRE,
             FLUID,
-            BLOCK
+            BLOCK,
+            GAS
     );
 
     private CommonMaterialFormFactories() {
