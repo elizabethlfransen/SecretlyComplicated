@@ -1,14 +1,15 @@
 package io.github.elizabethlfransen.secretlycomplicated.datagen;
 
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.UseOreModelProp;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
-import io.github.elizabethlfransen.secretlycomplicated.material.SCRock;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
-import io.github.elizabethlfransen.secretlycomplicated.materialform.block.SimpleBlockMaterialForm;
-import io.github.elizabethlfransen.secretlycomplicated.register.ModRocks;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.block.BlockForm;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+
+import java.util.Objects;
 
 public class SCBlockStateProvider extends BlockStateProvider {
     public SCBlockStateProvider(DataGenerator gen, String modid, ExistingFileHelper exFileHelper) {
@@ -19,29 +20,40 @@ public class SCBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         SecretlyComplicated.getAllMaterials()
                 .forEach(this::registerMaterial);
-        ModRocks.getValues()
-                .forEach(this::registerRock);
     }
 
-    private void registerRock(SCRock rock) {
-        itemModels().withExistingParent(rock.name,modLoc("block/base_ore"));
-        simpleBlock(rock, models().withExistingParent(rock.name, modLoc("block/base_ore")));
+
+    private void registerForm(MaterialForm form) {
+        if (form instanceof BlockForm blockForm) {
+            registerForm(form, blockForm);
+        }
     }
 
     private void registerMaterial(SCMaterial material) {
         material.forms
-                .forEach((name, form) -> registerForm(material, form));
+                .forEach((name, form) -> registerForm(form));
     }
 
-    private void registerForm(SCMaterial material, MaterialForm form) {
-        if (form instanceof SimpleBlockMaterialForm blockForm) {
-            registerForm(material.name + "_block", blockForm);
-        }
+
+    private void registerWithParent(BlockForm form, String parent) {
+        String name = Objects.requireNonNull(form.getBlock().getRegistryName(), "expected block to have a registry name but did not").getPath();
+        itemModels().withExistingParent(name, modLoc(parent));
+        simpleBlock(form.getBlock(), models().withExistingParent(name, modLoc(parent)));
     }
 
-    private void registerForm(String name, SimpleBlockMaterialForm form) {
-        itemModels().withExistingParent(name, modLoc("block/colorable_block"));
-        simpleBlock(form.getBlock(), models().withExistingParent(name, modLoc("block/colorable_block")));
+    private void registerRock(BlockForm form, String texture) {
+        String name = Objects.requireNonNull(form.getBlock().getRegistryName(), "expected block to have a registry name but did not").getPath();
+        itemModels().withExistingParent(name, modLoc("block/base_ore"))
+                .texture("all", texture);
+        simpleBlock(form.getBlock(), models().withExistingParent(name, modLoc("block/base_ore")).texture("all", texture));
+    }
+
+    private void registerForm(MaterialForm form, BlockForm blockForm) {
+        form.dataGenProps.getProperty(UseOreModelProp.class)
+                .ifPresentOrElse(
+                        prop -> registerRock(blockForm,prop.baseTexture()),
+                        () -> registerWithParent(blockForm, "block/colorable_block")
+                );
     }
 
 }

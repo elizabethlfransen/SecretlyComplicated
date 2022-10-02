@@ -1,6 +1,5 @@
 package io.github.elizabethlfransen.secretlycomplicated.register;
 
-import io.github.elizabethlfransen.secretlycomplicated.material.SCElement;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterialBuilder;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.CommonMaterialFormFactories;
@@ -19,7 +18,7 @@ public class ModCompounds {
             .melting(897)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial brass = new SCMaterialBuilder()
             .name("brass")
@@ -27,7 +26,7 @@ public class ModCompounds {
             .melting(920)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial bronze = new SCMaterialBuilder()
             .name("bronze")
@@ -35,7 +34,7 @@ public class ModCompounds {
             .melting(1030)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial electrum = new SCMaterialBuilder()
             .name("electrum")
@@ -43,7 +42,7 @@ public class ModCompounds {
             .melting(1064)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial constantan = new SCMaterialBuilder()
             .name("constantan")
@@ -51,7 +50,7 @@ public class ModCompounds {
             .melting(1210)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial invar = new SCMaterialBuilder()
             .name("invar")
@@ -59,7 +58,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial steel = new SCMaterialBuilder()
             .name("steel")
@@ -67,7 +66,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial tin_alloy = new SCMaterialBuilder()
             .name("tin_alloy")
@@ -75,7 +74,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial battery_alloy = new SCMaterialBuilder()
             .name("battery_alloy")
@@ -83,7 +82,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial soldering_alloy = new SCMaterialBuilder()
             .name("soldering_alloy")
@@ -91,7 +90,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial red_alloy = new SCMaterialBuilder()
             .name("red_alloy")
@@ -99,7 +98,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial magnalium = new SCMaterialBuilder()
             .name("magnalium")
@@ -107,7 +106,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial borosilicate_glass = new SCMaterialBuilder()
             .name("borosilicate_glass")
@@ -115,7 +114,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial yttrium_barium_cuprate = new SCMaterialBuilder()
             .name("yttrium_barium_cuprate")
@@ -123,7 +122,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial black_bronze = new SCMaterialBuilder()
             .name("black_bronze")
@@ -131,7 +130,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial black_steel = new SCMaterialBuilder()
             .name("black_steel")
@@ -139,7 +138,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial ferrite_mixture = new SCMaterialBuilder()
             .name("ferrite_mixture")
@@ -147,7 +146,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial nichrome = new SCMaterialBuilder()
             .name("nichrome")
@@ -155,7 +154,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial osmiridium = new SCMaterialBuilder()
             .name("osmiridium")
@@ -163,7 +162,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial gallium_arsenide = new SCMaterialBuilder()
             .name("gallium_arsenide")
@@ -171,7 +170,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial sodium_sulfide = new SCMaterialBuilder()
             .name("sodium_sulfide")
@@ -179,7 +178,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial kanthal = new SCMaterialBuilder()
             .name("kanthal")
@@ -187,7 +186,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial vanadium_gallium = new SCMaterialBuilder()
             .name("vanadium_gallium")
@@ -195,7 +194,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial vanadium_steel = new SCMaterialBuilder()
             .name("vanadium_steel")
@@ -203,7 +202,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial indium_gallium_phosphide = new SCMaterialBuilder()
             .name("indium_gallium_phosphide")
@@ -211,7 +210,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial cobalt_brass = new SCMaterialBuilder()
             .name("cobalt_brass")
@@ -219,7 +218,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial bismuth_bronze = new SCMaterialBuilder()
             .name("bismuth_bronze")
@@ -227,7 +226,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial sterling_silver = new SCMaterialBuilder()
             .name("sterling_silver")
@@ -235,7 +234,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial wrought_iron = new SCMaterialBuilder()
             .name("wrought_iron")
@@ -243,7 +242,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial red_steel = new SCMaterialBuilder()
             .name("red_steel")
@@ -251,7 +250,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial blue_steel = new SCMaterialBuilder()
             .name("blue_steel")
@@ -259,7 +258,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial tungstensteel = new SCMaterialBuilder()
             .name("tungstensteel")
@@ -267,7 +266,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial nickel_zinc_ferrite = new SCMaterialBuilder()
             .name("nickel_zinc_ferrite")
@@ -275,7 +274,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial tungsten_carbide = new SCMaterialBuilder()
             .name("tungsten_carbide")
@@ -283,7 +282,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial hssg = new SCMaterialBuilder()
             .name("hssg")
@@ -291,7 +290,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial hsse = new SCMaterialBuilder()
             .name("hsse")
@@ -299,7 +298,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial hsss = new SCMaterialBuilder()
             .name("hsss")
@@ -307,7 +306,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     public static final SCMaterial annealed_copper = new SCMaterialBuilder()
             .name("annealed_copper")
@@ -315,7 +314,7 @@ public class ModCompounds {
             .melting(2500)
             .boiling(9999)
             .metallic()
-            .withForms(CommonMaterialFormFactories.parts)
+            .withForms(CommonMaterialFormFactories.PARTS)
             .build();
     @NoReg
     private static final Set<SCMaterial> values = Arrays.stream(ModCompounds.class.getDeclaredFields())

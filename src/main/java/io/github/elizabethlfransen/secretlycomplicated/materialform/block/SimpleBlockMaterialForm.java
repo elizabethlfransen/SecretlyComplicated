@@ -1,8 +1,8 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.block;
 
 import io.github.elizabethlfransen.secretlycomplicated.block.SCBlock;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
-import io.github.elizabethlfransen.secretlycomplicated.materialform.item.ItemForm;
 import io.github.elizabethlfransen.secretlycomplicated.util.Localizable;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -14,16 +14,15 @@ import java.util.function.Function;
 
 import static io.github.elizabethlfransen.secretlycomplicated.util.CollectionUtil.setOf;
 
-public class SimpleBlockMaterialForm implements MaterialForm, Localizable, ItemForm {
+public class SimpleBlockMaterialForm extends MaterialForm implements BlockForm, Localizable {
 
     private final SCBlock block;
-    private final String textureName;
     private final Function<String,String> localizedNames;
     private final int color;
 
-    public SimpleBlockMaterialForm(SCBlock block, String textureName, int color, Function<String, String> localizedName) {
+    public SimpleBlockMaterialForm(SCBlock block, int color, Function<String, String> localizedName, DataGenProps dataGenProps) {
+        super(dataGenProps);
         this.block = block;
-        this.textureName = textureName;
         this.color = color;
         this.localizedNames = localizedName;
     }
@@ -31,10 +30,6 @@ public class SimpleBlockMaterialForm implements MaterialForm, Localizable, ItemF
     @Override
     public Set<Object> getAdditionalRegisters(ResourceLocation id) {
         return setOf(block);
-    }
-
-    public String getTextureName() {
-        return textureName;
     }
 
     public Block getBlock() {

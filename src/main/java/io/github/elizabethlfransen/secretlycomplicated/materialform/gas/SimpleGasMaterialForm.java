@@ -1,5 +1,6 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.gas;
 
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
 import io.github.elizabethlfransen.secretlycomplicated.util.Localizable;
 import mekanism.api.chemical.gas.Gas;
@@ -9,12 +10,13 @@ import net.minecraftforge.common.data.LanguageProvider;
 import java.util.Set;
 import java.util.function.Function;
 
-public class SimpleGasMaterialForm implements MaterialForm, Localizable {
+public class SimpleGasMaterialForm extends MaterialForm implements Localizable {
 
     private final Gas gas;
     private final Function<String, String> localizations;
 
-    public SimpleGasMaterialForm(Gas gas, Function<String, String> localizations) {
+    public SimpleGasMaterialForm(Gas gas, Function<String, String> localizations, DataGenProps dataGenProps) {
+        super(dataGenProps);
         this.gas = gas;
         this.localizations = localizations;
     }

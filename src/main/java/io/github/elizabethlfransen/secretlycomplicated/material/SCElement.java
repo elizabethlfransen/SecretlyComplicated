@@ -1,8 +1,8 @@
 package io.github.elizabethlfransen.secretlycomplicated.material;
 
-import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialFormFactory;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.base.MaterialFormFactory;
 
-import java.util.*;
+import java.util.Set;
 
 public class SCElement extends SCMaterial {
 

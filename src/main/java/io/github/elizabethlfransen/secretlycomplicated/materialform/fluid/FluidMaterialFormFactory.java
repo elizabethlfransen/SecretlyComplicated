@@ -1,8 +1,9 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.fluid;
 
-import io.github.elizabethlfransen.secretlycomplicated.material.SCElement;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
-import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialFormFactory;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.base.BaseMaterialFormFactoryBuilder;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.base.MaterialFormFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,17 +14,18 @@ public class FluidMaterialFormFactory extends MaterialFormFactory<SimpleFluidMat
     private final BiFunction<SCMaterial, String, String> fluidLocalizations;
     private final BiFunction<SCMaterial, String, String> bucketLocalizations;
 
-    private FluidMaterialFormFactory(BiFunction<SCMaterial, String, String> fluidLocalizations, BiFunction<SCMaterial, String, String> bucketLocalizations) {
-        super("fluid");
+    private FluidMaterialFormFactory(String id, BiFunction<SCMaterial, String, String> fluidLocalizations, BiFunction<SCMaterial, String, String> bucketLocalizations, DataGenProps dataGenProps) {
+        super(id, dataGenProps);
         this.fluidLocalizations = fluidLocalizations;
         this.bucketLocalizations = bucketLocalizations;
     }
 
-    public static final class Builder {
+    public static final class Builder extends BaseMaterialFormFactoryBuilder<SimpleFluidMaterialForm,FluidMaterialFormFactory,Builder> {
         private final Map<String, Function<SCMaterial, String>> fluidLocalizations = new HashMap<>();
         private final Map<String, Function<SCMaterial, String>> bucketLocalizations = new HashMap<>();
 
-        private Builder() {
+        private Builder(String id) {
+            super(id);
         }
 
         public Builder withFluidLocalization(String locale, Function<SCMaterial, String> fluidLocalization) {
@@ -35,16 +37,22 @@ public class FluidMaterialFormFactory extends MaterialFormFactory<SimpleFluidMat
             return this;
         }
 
+        @Override
+        protected Builder getSelf() {
+            return getSelf();
+        }
+
         public FluidMaterialFormFactory build() {
             return new FluidMaterialFormFactory(
+                    id,
                     (element, locale) -> fluidLocalizations.get(locale).apply(element),
-                    (element, locale) -> bucketLocalizations.get(locale).apply(element)
-            );
+                    (element, locale) -> bucketLocalizations.get(locale).apply(element),
+                    dataGenProps);
         }
     }
 
-    public static Builder builder() {
-        return new Builder();
+    public static Builder builder(String id) {
+        return new Builder(id);
     }
 
     @Override
@@ -53,7 +61,8 @@ public class FluidMaterialFormFactory extends MaterialFormFactory<SimpleFluidMat
                 material.color,
                 material.name,
                 locale -> fluidLocalizations.apply(material, locale),
-                locale -> bucketLocalizations.apply(material, locale)
+                locale -> bucketLocalizations.apply(material, locale),
+                getDataGenProps()
         );
     }
 }
