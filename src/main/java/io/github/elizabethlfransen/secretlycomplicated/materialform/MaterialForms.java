@@ -4,6 +4,7 @@ import io.github.elizabethlfransen.secretlycomplicated.materialform.block.BlockM
 import io.github.elizabethlfransen.secretlycomplicated.materialform.fluid.FluidMaterialFormFactory;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.gas.GasMaterialFormFactory;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.item.ItemMaterialFormFactory;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.ore.OreMaterialFormFactory;
 
 import static io.github.elizabethlfransen.secretlycomplicated.util.Locales.EN_US;
 
@@ -74,5 +75,9 @@ public final class MaterialForms {
             .build();
     public static final GasMaterialFormFactory GAS = GasMaterialFormFactory.builder()
             .withLocalization(EN_US, material -> material.getCapitalizedName() + " Gas")
+            .build();
+
+    public static final OreMaterialFormFactory ORE = OreMaterialFormFactory.builder()
+            .withLocalization(EN_US, material -> material.getCapitalizedName() + " Ore")
             .build();
 }

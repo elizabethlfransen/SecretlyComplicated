@@ -1,7 +1,8 @@
 {
   "parent": "block/block",
   "textures": {
-    "all": "secretly_complicated:block/base_ore",
+    "base": "minecraft:block/stone",
+    "mask": "secretly_complicated:block/base_ore_mask",
     "particle": "secretly_complicated:block/base_ore"
   },
   "elements": [
@@ -9,12 +10,24 @@
       "from": [ 0, 0, 0 ],
       "to":   [ 16, 16, 16 ],
       "faces": {
-        "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#all", "tintindex": 0 },
-        "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all", "tintindex": 0 },
-        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#all", "tintindex": 0 },
-        "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all", "tintindex": 0 },
-        "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#all", "tintindex": 0 },
-        "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all", "tintindex": 0 }
+        "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#base"},
+        "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#base" },
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#base" },
+        "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#base"},
+        "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#base"},
+        "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#base"}
+      }
+    },
+    {
+      "from": [ 0, 0, 0 ],
+      "to":   [ 16, 16, 16 ],
+      "faces": {
+        "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#mask", "tintindex": 0 },
+        "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#mask", "tintindex": 0 },
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#mask", "tintindex": 0 },
+        "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#mask", "tintindex": 0 },
+        "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#mask", "tintindex": 0 },
+        "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#mask", "tintindex": 0 }
       }
     }
   ]

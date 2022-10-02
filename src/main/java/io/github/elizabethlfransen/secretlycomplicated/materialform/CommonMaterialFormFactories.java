@@ -27,6 +27,10 @@ public final class CommonMaterialFormFactories {
             GAS
     );
 
+    public static final List<MaterialFormFactory<?>> ores = Arrays.asList(
+            ORE
+    );
+
     private CommonMaterialFormFactories() {
         throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
     }

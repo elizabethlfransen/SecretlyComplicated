@@ -3,6 +3,8 @@ package io.github.elizabethlfransen.secretlycomplicated.block;
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.noeppi_noeppi.libx.mod.ModX;
 import io.github.noeppi_noeppi.libx.mod.registration.Registerable;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -52,5 +54,8 @@ public class SCBlock extends Block implements Registerable {
 
     }
 
-
+    @Override
+    public void registerClient(ResourceLocation id, Consumer<Runnable> defer) {
+        ItemBlockRenderTypes.setRenderLayer(this, RenderType.cutout());
+    }
 }

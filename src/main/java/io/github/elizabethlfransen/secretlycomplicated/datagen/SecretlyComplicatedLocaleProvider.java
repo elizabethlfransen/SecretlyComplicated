@@ -2,7 +2,6 @@ package io.github.elizabethlfransen.secretlycomplicated.datagen;
 
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
-import io.github.elizabethlfransen.secretlycomplicated.register.ModRocks;
 import io.github.elizabethlfransen.secretlycomplicated.util.Localizable;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -24,9 +23,6 @@ public class SecretlyComplicatedLocaleProvider extends LanguageProvider {
         SecretlyComplicated.getAllMaterials().stream()
                 .flatMap(element -> element.forms.values().stream())
                 .forEach(this::addTranslation);
-
-        ModRocks.getValues()
-                .forEach(rock -> addBlock(() -> rock,rock.getCapitalizedName() + " Ore"));
     }
 
     private void addCommonTranslations() {
