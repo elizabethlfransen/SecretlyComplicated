@@ -14,16 +14,17 @@ import java.util.function.Function;
 public class OreMaterialFormFactory extends MaterialFormFactory<OreMaterialForm> {
     private final BiFunction<SCMaterial, String, String> localizedNames;
 
-    private OreMaterialFormFactory(BiFunction<SCMaterial, String, String> localizedNames) {
-        super("ore");
+    private OreMaterialFormFactory(BiFunction<SCMaterial, String, String> localizedNames, String id) {
+        super(id);
         this.localizedNames = localizedNames;
     }
 
-    public static Builder builder() {
-        return new Builder();
+    public static Builder builder(String id) {
+        return new Builder(id);
     }
 
     public static final class Builder {
+        private final String id;
         private final Map<String, Function<SCMaterial, String>> localizedNames = new HashMap<>();
 
         public Builder withLocalization(String locale, Function<SCMaterial, String> localization) {
@@ -31,10 +32,12 @@ public class OreMaterialFormFactory extends MaterialFormFactory<OreMaterialForm>
             return this;
         }
 
-        private Builder() {}
+        private Builder(String id) {
+            this.id = id;
+        }
 
         public OreMaterialFormFactory build() {
-            return new OreMaterialFormFactory((material, locale) -> localizedNames.get(locale).apply(material));
+            return new OreMaterialFormFactory((material, locale) -> localizedNames.get(locale).apply(material), id);
         }
 
     }

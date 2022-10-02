@@ -77,7 +77,11 @@ public final class MaterialForms {
             .withLocalization(EN_US, material -> material.getCapitalizedName() + " Gas")
             .build();
 
-    public static final OreMaterialFormFactory ORE = OreMaterialFormFactory.builder()
+    public static final OreMaterialFormFactory ORE = OreMaterialFormFactory.builder("ore")
             .withLocalization(EN_US, material -> material.getCapitalizedName() + " Ore")
+            .build();
+
+    public static final OreMaterialFormFactory DEEPSLATE_ORE = OreMaterialFormFactory.builder("deepslate_ore")
+            .withLocalization(EN_US, material -> "Deepslate %s Ore".formatted(material.getCapitalizedName()))
             .build();
 }
