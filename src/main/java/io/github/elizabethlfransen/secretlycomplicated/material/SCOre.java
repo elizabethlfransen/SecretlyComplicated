@@ -1,6 +1,6 @@
 package io.github.elizabethlfransen.secretlycomplicated.material;
 
-import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialFormFactory;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.base.MaterialFormFactory;
 
 import java.util.Set;
 

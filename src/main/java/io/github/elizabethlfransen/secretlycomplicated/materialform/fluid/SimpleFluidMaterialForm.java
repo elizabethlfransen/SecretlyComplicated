@@ -1,6 +1,7 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.fluid;
 
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
 import io.github.elizabethlfransen.secretlycomplicated.util.Localizable;
 import net.minecraft.resources.ResourceLocation;
@@ -17,7 +18,7 @@ import java.util.function.Function;
 
 import static io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated.MOD_ID;
 
-public class SimpleFluidMaterialForm implements MaterialForm, Localizable {
+public class SimpleFluidMaterialForm extends MaterialForm implements Localizable {
 
     private final ForgeFlowingFluid still;
     private final ForgeFlowingFluid flowing;
@@ -29,7 +30,8 @@ public class SimpleFluidMaterialForm implements MaterialForm, Localizable {
     private final Function<String,String> bucketLocalizations;
 
 
-    public SimpleFluidMaterialForm(int color, String name, Function<String, String> fluidLocalizations, Function<String, String> bucketLocalizations) {
+    public SimpleFluidMaterialForm(int color, String name, Function<String, String> fluidLocalizations, Function<String, String> bucketLocalizations, DataGenProps dataGenProps) {
+        super(dataGenProps);
         this.name = name;
         this.fluidLocalizations = fluidLocalizations;
         this.bucketLocalizations = bucketLocalizations;

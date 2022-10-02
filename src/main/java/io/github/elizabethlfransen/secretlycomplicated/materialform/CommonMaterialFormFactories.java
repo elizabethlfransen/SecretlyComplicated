@@ -1,5 +1,7 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform;
 
+import io.github.elizabethlfransen.secretlycomplicated.materialform.base.MaterialFormFactory;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;

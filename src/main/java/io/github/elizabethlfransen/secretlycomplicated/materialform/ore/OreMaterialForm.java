@@ -1,6 +1,7 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.ore;
 
 import io.github.elizabethlfransen.secretlycomplicated.block.SCBlock;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.block.BlockForm;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.item.ItemForm;
@@ -14,13 +15,14 @@ import java.util.function.Function;
 
 import static io.github.elizabethlfransen.secretlycomplicated.util.CollectionUtil.setOf;
 
-public class OreMaterialForm implements MaterialForm, Localizable, ItemForm, BlockForm {
+public class OreMaterialForm extends MaterialForm implements Localizable, ItemForm, BlockForm {
     private final SCBlock block;
     private final int color;
 
     private final Function<String, String> localeProvider;
 
-    public OreMaterialForm(SCBlock block, int color, Function<String, String> localeProvider) {
+    public OreMaterialForm(SCBlock block, int color, Function<String, String> localeProvider, DataGenProps dataGenProps) {
+        super(dataGenProps);
         this.block = block;
         this.color = color;
         this.localeProvider = localeProvider;

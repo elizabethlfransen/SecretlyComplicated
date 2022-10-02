@@ -1,42 +1,48 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.gas;
 
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
-import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialFormFactory;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.base.BaseLocalizableMaterialFormFactoryBuilder;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.base.LocalizableMaterialFormFactory;
 import mekanism.api.chemical.gas.Gas;
 import mekanism.api.chemical.gas.GasBuilder;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Function;
+import java.util.function.BiFunction;
 
-public class GasMaterialFormFactory extends MaterialFormFactory<SimpleGasMaterialForm> {
-    private final Map<String, Function<SCMaterial, String>> localizations;
-    private GasMaterialFormFactory(Map<String, Function<SCMaterial, String>> localizations) {
-        super("gas");
-        this.localizations = localizations;
+public class GasMaterialFormFactory extends LocalizableMaterialFormFactory<SimpleGasMaterialForm> {
+
+    public GasMaterialFormFactory(String id, BiFunction<SCMaterial, String, String> localizedNames, DataGenProps dataGenProps) {
+        super(id, localizedNames, dataGenProps);
     }
 
-    public static final class Builder {
-        private final Map<String, Function<SCMaterial, String>> localizations = new HashMap<>();
-        private Builder() {
+    public static final class Builder extends BaseLocalizableMaterialFormFactoryBuilder<SimpleGasMaterialForm,GasMaterialFormFactory,Builder> {
+
+        private Builder(String id) {
+            super(id);
         }
-        public Builder withLocalization(String locale, Function<SCMaterial, String> localization) {
-            localizations.put(locale, localization);
+
+        @Override
+        protected Builder getSelf() {
             return this;
         }
+
         public GasMaterialFormFactory build() {
-            return new GasMaterialFormFactory(localizations);
+            return new GasMaterialFormFactory(id, getLocalizationProvider(), dataGenProps);
         }
 
     }
 
-    public static Builder builder() {
-        return new Builder();
+    public static Builder builder(String id) {
+        return new Builder(id);
     }
 
     @Override
     public SimpleGasMaterialForm getMaterialForm(SCMaterial material) {
-        return new SimpleGasMaterialForm(new Gas(GasBuilder.builder().color(material.color)), locale -> localizations.get(locale).apply(material));
+        return new SimpleGasMaterialForm(
+                new Gas(GasBuilder.builder().color(material.color)),
+                getLocalizationProvider(material),
+                getDataGenProps()
+        );
     }
 
     @Override

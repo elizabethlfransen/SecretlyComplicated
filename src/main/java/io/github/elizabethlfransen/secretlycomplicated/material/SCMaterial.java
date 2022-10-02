@@ -1,7 +1,7 @@
 package io.github.elizabethlfransen.secretlycomplicated.material;
 
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
-import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialFormFactory;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.base.MaterialFormFactory;
 import io.github.noeppi_noeppi.libx.mod.registration.Registerable;
 import net.minecraft.resources.ResourceLocation;
 

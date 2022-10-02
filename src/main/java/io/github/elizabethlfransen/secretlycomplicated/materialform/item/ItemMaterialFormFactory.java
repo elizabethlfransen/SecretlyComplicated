@@ -1,48 +1,35 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.item;
 
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.item.SCItem;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
-import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialFormFactory;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.base.BaseLocalizableMaterialFormFactoryBuilder;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.base.LocalizableMaterialFormFactory;
 import net.minecraft.world.item.Item;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.BiFunction;
-import java.util.function.Function;
 
-public class ItemMaterialFormFactory extends MaterialFormFactory<SimpleItemMaterialForm> {
+public class ItemMaterialFormFactory extends LocalizableMaterialFormFactory<SimpleItemMaterialForm> {
     private final String textureName;
-    private final BiFunction<SCMaterial, String, String> localizedNames;
 
-    private ItemMaterialFormFactory(String id, String textureName, BiFunction<SCMaterial, String, String> localizedNames) {
-        super(id);
+    private ItemMaterialFormFactory(String id, String textureName, BiFunction<SCMaterial, String, String> localizedNames, DataGenProps dataGenProps) {
+        super(id, localizedNames, dataGenProps);
         this.textureName = textureName;
-        this.localizedNames = localizedNames;
     }
 
-    public static final class Builder {
-        private final String id;
-        private String textureName;
-        private final Map<String, Function<SCMaterial, String>> localizedNames = new HashMap<>();
+    public static final class Builder extends BaseLocalizableMaterialFormFactoryBuilder<SimpleItemMaterialForm,ItemMaterialFormFactory,Builder> {
         private Builder(String id) {
-            this.id = id;
-            this.textureName = "base_" + id;
+            super(id);
         }
 
-        public Builder textureName(String textureName) {
-            this.textureName = textureName;
-            return this;
-        }
-
-        public Builder withLocalizedName(String locale, Function<SCMaterial, String> localizedName) {
-            localizedNames.put(locale, localizedName);
+        @Override
+        protected Builder getSelf() {
             return this;
         }
 
         public ItemMaterialFormFactory build() {
-            HashMap<String, Function<SCMaterial, String>> localizedNames = new HashMap<>(this.localizedNames);
-            return new ItemMaterialFormFactory(id, textureName, (element, locale) -> localizedNames.get(locale).apply(element));
+            return new ItemMaterialFormFactory(id, "base_" + id, getLocalizationProvider(), dataGenProps);
         }
     }
 
@@ -53,6 +40,11 @@ public class ItemMaterialFormFactory extends MaterialFormFactory<SimpleItemMater
 
     @Override
     public SimpleItemMaterialForm getMaterialForm(SCMaterial material) {
-        return new SimpleItemMaterialForm(new SCItem(SecretlyComplicated.getInstance(), new Item.Properties()), textureName, material.color, locale -> localizedNames.apply(material, locale));
+        return new SimpleItemMaterialForm(
+                new SCItem(SecretlyComplicated.getInstance(), new Item.Properties()),
+                textureName,
+                material.color,
+                getLocalizationProvider(material),
+                getDataGenProps());
     }
 }
