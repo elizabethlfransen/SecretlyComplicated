@@ -2,10 +2,8 @@ package io.github.elizabethlfransen.secretlycomplicated;
 
 import io.github.elizabethlfransen.secretlycomplicated.datagen.DataProviderRegister;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
-import io.github.elizabethlfransen.secretlycomplicated.material.SCRock;
 import io.github.elizabethlfransen.secretlycomplicated.register.ModCompounds;
 import io.github.elizabethlfransen.secretlycomplicated.register.ModElements;
-import io.github.elizabethlfransen.secretlycomplicated.register.ModRocks;
 import io.github.elizabethlfransen.secretlycomplicated.util.SimpleCreativeTab;
 import io.github.noeppi_noeppi.libx.mod.registration.ModXRegistration;
 import io.github.noeppi_noeppi.libx.mod.registration.RegistrationBuilder;
@@ -60,12 +58,6 @@ public final class SecretlyComplicated extends ModXRegistration {
         Set<SCMaterial> result = new HashSet<>();
         result.addAll(ModCompounds.getValues());
         result.addAll(ModElements.getValues());
-        return result;
-    }
-
-    public static Set<SCRock> getAllRocks() {
-        Set<SCRock> result = new HashSet<>();
-        result.addAll(ModRocks.getValues());
         return result;
     }
 }

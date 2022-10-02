@@ -1,6 +1,5 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.block;
 
-import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.elizabethlfransen.secretlycomplicated.block.SCBlock;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialFormFactory;
@@ -58,7 +57,7 @@ public class BlockMaterialFormFactory extends MaterialFormFactory<SimpleBlockMat
     public SimpleBlockMaterialForm getMaterialForm(SCMaterial material) {
         // TODO Auto-generated method stub
         return new SimpleBlockMaterialForm(
-                new SCBlock(SecretlyComplicated.getInstance(), BlockBehaviour.Properties.of(Material.METAL)),
+                new SCBlock(BlockBehaviour.Properties.of(Material.METAL)),
                 textureName, material.color, locale -> localizedNames.apply(material, locale)
         );
     }

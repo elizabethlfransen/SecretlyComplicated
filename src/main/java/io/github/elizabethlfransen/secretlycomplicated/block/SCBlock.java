@@ -1,5 +1,6 @@
 package io.github.elizabethlfransen.secretlycomplicated.block;
 
+import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.noeppi_noeppi.libx.mod.ModX;
 import io.github.noeppi_noeppi.libx.mod.registration.Registerable;
 import net.minecraft.resources.ResourceLocation;
@@ -16,13 +17,13 @@ public class SCBlock extends Block implements Registerable {
     protected final ModX mod;
     protected final Item item;
 
-    public SCBlock(ModX mod, Properties properties) {
-        this(mod, properties, new Item.Properties());
+    public SCBlock(Properties properties) {
+        this(properties, new Item.Properties());
     }
 
-    public SCBlock(ModX mod, Properties properties, Item.Properties itemProperties) {
+    public SCBlock(Properties properties, Item.Properties itemProperties) {
         super(properties);
-        this.mod = mod;
+        this.mod = SecretlyComplicated.getInstance();
         if (mod.tab != null) {
             itemProperties.tab(mod.tab);
         }
