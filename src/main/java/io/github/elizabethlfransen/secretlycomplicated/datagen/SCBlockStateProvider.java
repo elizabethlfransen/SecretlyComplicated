@@ -1,7 +1,10 @@
 package io.github.elizabethlfransen.secretlycomplicated.datagen;
 
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.UseExistingBlockState;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.UseExistingModel;
 import io.github.elizabethlfransen.secretlycomplicated.datagen.props.UseOreModelProp;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.UseSimpleModelForOres;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.block.BlockForm;
@@ -23,9 +26,10 @@ public class SCBlockStateProvider extends BlockStateProvider {
     }
 
 
-    private void registerForm(MaterialForm form) {
+    private void registerForm(MaterialForm<?> form) {
         if (form instanceof BlockForm blockForm) {
-            registerForm(form, blockForm);
+            //noinspection unchecked
+            registerForm((MaterialForm<? extends BlockForm>) form, blockForm);
         }
     }
 
@@ -41,17 +45,34 @@ public class SCBlockStateProvider extends BlockStateProvider {
         simpleBlock(form.getBlock(), models().withExistingParent(name, modLoc(parent)));
     }
 
-    private void registerRock(BlockForm form, String texture) {
-        String name = Objects.requireNonNull(form.getBlock().getRegistryName(), "expected block to have a registry name but did not").getPath();
-        itemModels().withExistingParent(name, modLoc("block/base_ore"))
-                .texture("all", texture);
-        simpleBlock(form.getBlock(), models().withExistingParent(name, modLoc("block/base_ore")).texture("all", texture));
+    private void registerRock(MaterialForm<? extends BlockForm> form, BlockForm blockForm, String texture) {
+        String name = Objects.requireNonNull(blockForm.getBlock().getRegistryName(), "expected block to have a registry name but did not").getPath();
+
+        if(form.dataGenProps.has(UseSimpleModelForOres.class)) {
+            simpleBlock(blockForm.getBlock());
+            itemModels().withExistingParent(name, modLoc("block/"+name));
+        } else {
+            itemModels().withExistingParent(name, modLoc("block/base_ore"))
+                    .texture("all", texture);
+            simpleBlock(blockForm.getBlock(), models().withExistingParent(name, modLoc("block/base_ore")).
+                    texture("all", texture));
+        }
+
+
     }
 
-    private void registerForm(MaterialForm form, BlockForm blockForm) {
+    private void registerForm(MaterialForm<? extends BlockForm> form, BlockForm blockForm) {
+        if(form.dataGenProps.has(UseExistingBlockState.class))
+            return;
+        if(form.dataGenProps.has(UseExistingModel.class)) {
+            String name = Objects.requireNonNull(blockForm.getBlock().getRegistryName(), "expected block to have a registry name but did not").getPath();
+            simpleBlock(blockForm.getBlock(),models().getExistingFile(modLoc("block/"+name)));
+            return;
+        }
+        
         form.dataGenProps.getProperty(UseOreModelProp.class)
                 .ifPresentOrElse(
-                        prop -> registerRock(blockForm,prop.baseTexture()),
+                        prop -> registerRock(form, blockForm,prop.baseTexture()),
                         () -> registerWithParent(blockForm, "block/colorable_block")
                 );
     }

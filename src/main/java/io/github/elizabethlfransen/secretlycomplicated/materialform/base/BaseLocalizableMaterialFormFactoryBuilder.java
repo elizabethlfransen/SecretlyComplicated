@@ -10,7 +10,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public abstract class BaseLocalizableMaterialFormFactoryBuilder<
-        TMaterialForm extends MaterialForm,
+        TMaterialForm extends MaterialForm<TMaterialForm>,
         TFactory extends MaterialFormFactory<TMaterialForm>,
         TBuilder extends BaseMaterialFormFactoryBuilder<TMaterialForm, TFactory, TBuilder>
         > extends BaseMaterialFormFactoryBuilder<TMaterialForm, TFactory, TBuilder> {

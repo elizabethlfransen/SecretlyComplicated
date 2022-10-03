@@ -1,8 +1,9 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.block;
 
 import io.github.elizabethlfransen.secretlycomplicated.block.SCBlock;
-import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.base.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.base.MaterialFormFactory;
 import io.github.elizabethlfransen.secretlycomplicated.util.Localizable;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -14,14 +15,14 @@ import java.util.function.Function;
 
 import static io.github.elizabethlfransen.secretlycomplicated.util.CollectionUtil.setOf;
 
-public class SimpleBlockMaterialForm extends MaterialForm implements BlockForm, Localizable {
+public class SimpleBlockMaterialForm extends MaterialForm<SimpleBlockMaterialForm> implements BlockForm, Localizable {
 
     private final SCBlock block;
     private final Function<String,String> localizedNames;
     private final int color;
 
-    public SimpleBlockMaterialForm(SCBlock block, int color, Function<String, String> localizedName, DataGenProps dataGenProps) {
-        super(dataGenProps);
+    public SimpleBlockMaterialForm(MaterialFormFactory<SimpleBlockMaterialForm> factory, SCBlock block, int color, Function<String, String> localizedName, DataGenProps dataGenProps) {
+        super(factory, dataGenProps);
         this.block = block;
         this.color = color;
         this.localizedNames = localizedName;

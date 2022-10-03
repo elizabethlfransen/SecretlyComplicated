@@ -1,10 +1,10 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.base;
 
-import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.base.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
 
 public abstract class BaseMaterialFormFactoryBuilder<
-        TMaterialForm extends MaterialForm,
+        TMaterialForm extends MaterialForm<TMaterialForm>,
         TFactory extends MaterialFormFactory<TMaterialForm>,
         TBuilder extends BaseMaterialFormFactoryBuilder<TMaterialForm, TFactory, TBuilder>
         > {

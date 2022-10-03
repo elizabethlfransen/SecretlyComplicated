@@ -9,8 +9,8 @@ import io.github.elizabethlfransen.secretlycomplicated.materialform.ore.OreMater
 
 import static io.github.elizabethlfransen.secretlycomplicated.util.Locales.EN_US;
 
-public final class MaterialForms {
-    private MaterialForms() {
+public final class MaterialFormFactories {
+    private MaterialFormFactories() {
     }
 
     public static final ItemMaterialFormFactory SOLID = ItemMaterialFormFactory.builder("solid")

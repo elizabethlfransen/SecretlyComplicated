@@ -1,7 +1,7 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.ore;
 
 import io.github.elizabethlfransen.secretlycomplicated.block.SCBlock;
-import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.base.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.base.BaseLocalizableMaterialFormFactoryBuilder;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.base.LocalizableMaterialFormFactory;
@@ -40,10 +40,11 @@ public class OreMaterialFormFactory extends LocalizableMaterialFormFactory<OreMa
     @Override
     public OreMaterialForm getMaterialForm(SCMaterial material) {
         return new OreMaterialForm(
+                this,
                 new SCBlock(BlockBehaviour.Properties.of(Material.STONE)),
                 material.color,
                 getLocalizationProvider(material),
-                getDataGenProps()
+                DataGenProps.union(getDataGenProps(), material.getDataGenProps())
         );
     }
 }

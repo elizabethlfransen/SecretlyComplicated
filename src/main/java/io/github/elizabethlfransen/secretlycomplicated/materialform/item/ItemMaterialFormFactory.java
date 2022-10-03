@@ -1,7 +1,7 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.item;
 
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
-import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.base.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.item.SCItem;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.base.BaseLocalizableMaterialFormFactoryBuilder;
@@ -41,10 +41,12 @@ public class ItemMaterialFormFactory extends LocalizableMaterialFormFactory<Simp
     @Override
     public SimpleItemMaterialForm getMaterialForm(SCMaterial material) {
         return new SimpleItemMaterialForm(
+                this,
                 new SCItem(SecretlyComplicated.getInstance(), new Item.Properties()),
                 textureName,
                 material.color,
                 getLocalizationProvider(material),
-                getDataGenProps());
+                DataGenProps.union(getDataGenProps(), material.getDataGenProps())
+        );
     }
 }

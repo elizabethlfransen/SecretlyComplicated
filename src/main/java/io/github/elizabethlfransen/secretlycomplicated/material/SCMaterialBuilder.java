@@ -9,6 +9,6 @@ public final class SCMaterialBuilder extends SCBaseMaterialBuilder<SCMaterialBui
 
     @Override
     public SCMaterial build() {
-        return new SCMaterial(metallic, name, color, melting, boiling, forms);
+        return new SCMaterial(metallic, name, color, melting, boiling, forms, dataGenProps);
     }
 }

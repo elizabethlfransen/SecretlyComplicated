@@ -9,6 +9,6 @@ public final class SCOreBuilder extends SCBaseMaterialBuilder<SCOreBuilder, SCOr
 
     @Override
     public SCOre build() {
-        return new SCOre(metallic, name, color, melting, boiling, forms);
+        return new SCOre(metallic, name, color, melting, boiling, forms, dataGenProps);
     }
 }

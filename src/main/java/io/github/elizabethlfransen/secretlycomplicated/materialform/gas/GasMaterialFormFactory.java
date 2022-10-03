@@ -1,6 +1,6 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.gas;
 
-import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.base.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.base.BaseLocalizableMaterialFormFactoryBuilder;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.base.LocalizableMaterialFormFactory;
@@ -39,9 +39,10 @@ public class GasMaterialFormFactory extends LocalizableMaterialFormFactory<Simpl
     @Override
     public SimpleGasMaterialForm getMaterialForm(SCMaterial material) {
         return new SimpleGasMaterialForm(
+                this,
                 new Gas(GasBuilder.builder().color(material.color)),
                 getLocalizationProvider(material),
-                getDataGenProps()
+                DataGenProps.union(getDataGenProps(), material.getDataGenProps())
         );
     }
 

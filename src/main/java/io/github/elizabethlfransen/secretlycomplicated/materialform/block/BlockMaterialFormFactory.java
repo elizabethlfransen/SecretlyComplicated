@@ -1,7 +1,7 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.block;
 
 import io.github.elizabethlfransen.secretlycomplicated.block.SCBlock;
-import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.base.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.base.BaseLocalizableMaterialFormFactoryBuilder;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.base.LocalizableMaterialFormFactory;
@@ -47,10 +47,11 @@ public class BlockMaterialFormFactory extends LocalizableMaterialFormFactory<Sim
     public SimpleBlockMaterialForm getMaterialForm(SCMaterial material) {
         // TODO Auto-generated method stub
         return new SimpleBlockMaterialForm(
+                this,
                 new SCBlock(BlockBehaviour.Properties.of(Material.METAL)),
                 material.color,
                 getLocalizationProvider(material),
-                getDataGenProps()
+                DataGenProps.union(getDataGenProps(), material.getDataGenProps())
         );
     }
 }

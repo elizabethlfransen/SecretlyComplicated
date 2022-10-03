@@ -1,8 +1,9 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.fluid;
 
 import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
-import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.base.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.base.MaterialFormFactory;
 import io.github.elizabethlfransen.secretlycomplicated.util.Localizable;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BucketItem;
@@ -18,7 +19,7 @@ import java.util.function.Function;
 
 import static io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated.MOD_ID;
 
-public class SimpleFluidMaterialForm extends MaterialForm implements Localizable {
+public class SimpleFluidMaterialForm extends MaterialForm<SimpleFluidMaterialForm> implements Localizable {
 
     private final ForgeFlowingFluid still;
     private final ForgeFlowingFluid flowing;
@@ -27,17 +28,17 @@ public class SimpleFluidMaterialForm extends MaterialForm implements Localizable
     private final String name;
     private final String fluidDescriptionId;
     private final Function<String, String> fluidLocalizations;
-    private final Function<String,String> bucketLocalizations;
+    private final Function<String, String> bucketLocalizations;
 
 
-    public SimpleFluidMaterialForm(int color, String name, Function<String, String> fluidLocalizations, Function<String, String> bucketLocalizations, DataGenProps dataGenProps) {
-        super(dataGenProps);
+    public SimpleFluidMaterialForm(MaterialFormFactory<SimpleFluidMaterialForm> factory, int color, String name, Function<String, String> fluidLocalizations, Function<String, String> bucketLocalizations, DataGenProps dataGenProps) {
+        super(factory, dataGenProps);
         this.name = name;
         this.fluidLocalizations = fluidLocalizations;
         this.bucketLocalizations = bucketLocalizations;
-        ResourceLocation stillTexture = new ResourceLocation("minecraft","block/water_still");
+        ResourceLocation stillTexture = new ResourceLocation("minecraft", "block/water_still");
         ResourceLocation flowingTexture = new ResourceLocation("minecraft", "block/water_flow");
-        ResourceLocation overlayTexture = new ResourceLocation("minecraft","block/water_overlay");
+        ResourceLocation overlayTexture = new ResourceLocation("minecraft", "block/water_overlay");
         ForgeFlowingFluid.Properties properties = new ForgeFlowingFluid.Properties(
                 this::getStill,
                 this::getFlowing,
@@ -48,18 +49,18 @@ public class SimpleFluidMaterialForm extends MaterialForm implements Localizable
         still = new ForgeFlowingFluid.Source(properties);
         flowing = new ForgeFlowingFluid.Flowing(properties);
 
-        Item.Properties itemProps =new Item.Properties()
+        Item.Properties itemProps = new Item.Properties()
                 .craftRemainder(Items.BUCKET)
                 .stacksTo(1);
         CreativeModeTab tab = SecretlyComplicated.getInstance().tab;
-        if(tab != null)
+        if (tab != null)
             itemProps.tab(tab);
 
         bucket = new BucketItem(
                 this::getStill,
                 itemProps
         );
-        fluidDescriptionId = "fluid.%s.%s_fluid_still".formatted(MOD_ID,name);
+        fluidDescriptionId = "fluid.%s.%s_fluid_still".formatted(MOD_ID, name);
     }
 
 
@@ -76,8 +77,8 @@ public class SimpleFluidMaterialForm extends MaterialForm implements Localizable
     }
 
     public void addLocalizations(String locale, LanguageProvider provider) {
-        provider.add(fluidDescriptionId,fluidLocalizations.apply(locale));
-        provider.add(bucket,bucketLocalizations.apply(locale));
+        provider.add(fluidDescriptionId, fluidLocalizations.apply(locale));
+        provider.add(bucket, bucketLocalizations.apply(locale));
     }
 
     @Override

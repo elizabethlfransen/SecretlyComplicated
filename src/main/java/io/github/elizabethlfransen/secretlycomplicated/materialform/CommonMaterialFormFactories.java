@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForms.*;
+import static io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialFormFactories.*;
 import static io.github.elizabethlfransen.secretlycomplicated.util.CollectionUtil.union;
 
 

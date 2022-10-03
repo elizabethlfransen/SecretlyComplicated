@@ -1,5 +1,6 @@
 package io.github.elizabethlfransen.secretlycomplicated.material;
 
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.base.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.base.MaterialFormFactory;
 
 import java.util.Arrays;
@@ -14,6 +15,7 @@ public abstract class SCBaseMaterialBuilder<TSelf extends SCBaseMaterialBuilder<
     protected int melting;
     protected int boiling;
     protected Set<MaterialFormFactory<?>> forms = new HashSet<>();
+    protected final DataGenProps dataGenProps = new DataGenProps();
 
     protected abstract TSelf getSelf();
 
@@ -56,6 +58,10 @@ public abstract class SCBaseMaterialBuilder<TSelf extends SCBaseMaterialBuilder<
 
     public TSelf withForms(MaterialFormFactory<?>... forms) {
         return withForms(Arrays.asList(forms));
+    }
+
+    public TSelf withDataGenProp(Object prop) {
+        return configure(() -> dataGenProps.set(prop));
     }
 
     public abstract TMaterial build();

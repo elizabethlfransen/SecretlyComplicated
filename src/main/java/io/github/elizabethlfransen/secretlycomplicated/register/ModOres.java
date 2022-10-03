@@ -1,7 +1,9 @@
 package io.github.elizabethlfransen.secretlycomplicated.register;
 
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.UseSimpleModelForOres;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCOre;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCOreBuilder;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialFormFactories;
 import io.github.noeppi_noeppi.libx.annotation.registration.NoReg;
 import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
 
@@ -247,6 +249,11 @@ public class ModOres {
             .withForms(ORES)
             .name("rock_salt")
             .color(0xf0c8c8)
+            // adds an override where you can just replace the texture, this will still create the model and the block state
+            .withDataGenProp(new UseSimpleModelForOres(form -> form.getFactory() == MaterialFormFactories.ORE))
+//            .withDataGenProp(new UseSimpleModelForOres()) // if you want to override all ore forms
+//            .withDataGenProp(new UseExistingModel())      // this will still create the block state but not the model
+//            .withDataGenProp(new UseExistingBlockState()) // this will create nothing
             .build();
     public static final SCOre bauxite = new SCOreBuilder()
             .withForms(ORES)

@@ -18,6 +18,6 @@ public final class SCElementBuilder extends SCBaseMaterialBuilder<SCElementBuild
 
     @Override
     public SCElement build() {
-        return new SCElement(atomicNumber, metallic, name, color, melting, boiling, forms);
+        return new SCElement(atomicNumber, metallic, name, color, melting, boiling, forms, dataGenProps);
     }
 }

@@ -1,6 +1,6 @@
 package io.github.elizabethlfransen.secretlycomplicated.materialform.fluid;
 
-import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.base.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.base.BaseMaterialFormFactoryBuilder;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.base.MaterialFormFactory;
@@ -39,7 +39,7 @@ public class FluidMaterialFormFactory extends MaterialFormFactory<SimpleFluidMat
 
         @Override
         protected Builder getSelf() {
-            return getSelf();
+            return this;
         }
 
         public FluidMaterialFormFactory build() {
@@ -58,11 +58,12 @@ public class FluidMaterialFormFactory extends MaterialFormFactory<SimpleFluidMat
     @Override
     public SimpleFluidMaterialForm getMaterialForm(SCMaterial material) {
         return new SimpleFluidMaterialForm(
+                this,
                 material.color,
                 material.name,
                 locale -> fluidLocalizations.apply(material, locale),
                 locale -> bucketLocalizations.apply(material, locale),
-                getDataGenProps()
+                DataGenProps.union(getDataGenProps(), material.getDataGenProps())
         );
     }
 }

@@ -1,5 +1,6 @@
 package io.github.elizabethlfransen.secretlycomplicated.material;
 
+import io.github.elizabethlfransen.secretlycomplicated.datagen.props.base.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForm;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.base.MaterialFormFactory;
 import io.github.noeppi_noeppi.libx.mod.registration.Registerable;
@@ -18,14 +19,17 @@ public class SCMaterial implements Registerable {
     public final int melting;
     public final int boiling;
 
-    public final Map<String, MaterialForm> forms;
+    public final Map<String, MaterialForm<?>> forms;
 
-    SCMaterial(boolean metallic, String name, int color, int melting, int boiling, Set<MaterialFormFactory<?>> forms) {
+    private final DataGenProps dataGenProps;
+
+    SCMaterial(boolean metallic, String name, int color, int melting, int boiling, Set<MaterialFormFactory<?>> forms, DataGenProps dataGenProps) {
         this.metallic = metallic;
         this.name = name;
         this.color = color;
         this.melting = melting;
         this.boiling = boiling;
+        this.dataGenProps = dataGenProps;
         this.forms = forms.stream()
                 .filter(MaterialFormFactory::isSupported)
                 .collect(Collectors.toMap(
@@ -44,5 +48,9 @@ public class SCMaterial implements Registerable {
     @Override
     public Map<String, Object> getNamedAdditionalRegisters(ResourceLocation id) {
         return new HashMap<>(forms);
+    }
+
+    public DataGenProps getDataGenProps() {
+        return dataGenProps;
     }
 }
