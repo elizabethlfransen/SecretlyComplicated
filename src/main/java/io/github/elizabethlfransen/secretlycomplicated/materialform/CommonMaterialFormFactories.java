@@ -34,7 +34,9 @@ public final class CommonMaterialFormFactories {
 
     public static final List<MaterialFormFactory<?>> OVERWORLD_ORES = Arrays.asList(
             ORE,
-            DEEPSLATE_ORE
+            DEEPSLATE_ORE,
+            NETHERRACK_ORE,
+            END_ORE
     );
 
     public static final Set<MaterialFormFactory<?>> ORES = union(OVERWORLD_ORES)

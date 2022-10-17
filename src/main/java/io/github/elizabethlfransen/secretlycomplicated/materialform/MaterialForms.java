@@ -87,4 +87,14 @@ public final class MaterialForms {
             .withLocalization(EN_US, material -> "Deepslate %s Ore".formatted(material.getCapitalizedName()))
             .withDataGenProp(new UseOreModelProp("minecraft:block/deepslate"))
             .build();
+
+    public static final OreMaterialFormFactory NETHERRACK_ORE = OreMaterialFormFactory.builder("netherrack_ore")
+            .withLocalization(EN_US, material -> "Netherrack %s Ore".formatted(material.getCapitalizedName()))
+            .withDataGenProp(new UseOreModelProp("secretly_complicated:block/base_nether_ore"))
+            .build();
+
+    public static final OreMaterialFormFactory END_ORE = OreMaterialFormFactory.builder("end_ore")
+            .withLocalization(EN_US, material -> "End %s Ore".formatted(material.getCapitalizedName()))
+            .withDataGenProp(new UseOreModelProp("secretly_complicated:block/base_end_ore"))
+            .build();
 }
