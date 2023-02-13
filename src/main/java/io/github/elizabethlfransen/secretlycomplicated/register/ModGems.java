@@ -47,6 +47,72 @@ public class ModGems {
             .boiling(9999)
             .withForms(CommonMaterialFormFactories.GEMS)
             .build();
+            /*
+             * prefix-tomic molecules
+             */
+    public static final SCMaterial dilithium = new SCMaterialBuilder()
+            .name("dilithium")
+            .color(0xfffafa)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial trilithium = new SCMaterialBuilder()
+            .name("trilithium")
+            .color(0xfffafa)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial tetralithium = new SCMaterialBuilder()
+            .name("tetralithium")
+            .color(0xfffafa)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial pentalithium = new SCMaterialBuilder()
+            .name("pentalithium")
+            .color(0xfffafa)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial hexalithium = new SCMaterialBuilder()
+            .name("hexalithium")
+            .color(0xfffafa)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial heptalithium = new SCMaterialBuilder()
+            .name("heptalithium")
+            .color(0xfffafa)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial octalithium = new SCMaterialBuilder()
+            .name("octalithium")
+            .color(0xfffafa)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial nonalithium = new SCMaterialBuilder()
+            .name("nonalithium")
+            .color(0xfffafa)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial decalithium = new SCMaterialBuilder()
+            .name("decalithium")
+            .color(0xfffafa)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
 
     @NoReg
     private static final Set<SCMaterial> values = Arrays.stream(ModGems.class.getDeclaredFields())

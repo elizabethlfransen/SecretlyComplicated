@@ -232,6 +232,21 @@ public class ModGases {
             .boiling(9999)
             .withForms(CommonMaterialFormFactories.GASES)
             .build();
+    public static final SCMaterial red_matter = new SCMaterialBuilder()
+            .name("red_matter")
+            .color(0xff0000)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GASES)
+            .build();
+    public static final SCMaterial dark_matter = new SCMaterialBuilder()
+            .name("dark_matter")
+            .color(0x440a5a)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GASES)
+            .build();
+            
     public static final SCMaterial pentane = new SCMaterialBuilder()
             .name("pentane")
             .color(0xffffff)
