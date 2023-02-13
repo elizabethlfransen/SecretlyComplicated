@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.checkerframework.common.reflection.qual.GetMethod;
+
 import static io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForms.*;
 import static io.github.elizabethlfransen.secretlycomplicated.util.CollectionUtil.union;
 
@@ -32,12 +34,40 @@ public final class CommonMaterialFormFactories {
             GAS
     );
 
+    public static final List<MaterialFormFactory<?>> MACHINE_BLOCKS = Arrays.asList(
+            BLOCK
+    );
+
+    public static final List<MaterialFormFactory<?>> FLUIDS = Arrays.asList(
+            FLUID
+    );
+
+    public static final List<MaterialFormFactory<?>> GEMS = Arrays.asList(
+            GEM,
+            DUST,
+            BLOCK
+    );
+
+    public static final List<MaterialFormFactory<?>> SINGULAR_ITEMS = Arrays.asList(
+            CHUNK,
+            BLOCK
+    );
+
     public static final List<MaterialFormFactory<?>> OVERWORLD_ORES = Arrays.asList(
             ORE,
             DEEPSLATE_ORE,
             NETHERRACK_ORE,
-            END_ORE
+            END_ORE,
+        //     GRAVEL_ORE,
+        //     SAND_ORE,
+            DIORITE_ORE,
+            ANDESITE_ORE,
+            GRANITE_ORE
     );
+
+    public static final List<MaterialFormFactory<?>> GASES = Arrays.asList(
+                GAS
+        );
 
     public static final Set<MaterialFormFactory<?>> ORES = union(OVERWORLD_ORES)
             .collect(Collectors.toSet());

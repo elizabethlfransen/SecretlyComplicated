@@ -263,6 +263,73 @@ public class ModOres {
             .name("oilsands")
             .color(0x0a0a0a)
             .build();
+            
+    public static final SCOre aluminium = new SCOreBuilder()
+            .withForms(ORES)
+            .name("aluminium")
+            .color(0xc7c7c7)
+            .build();
+            
+    public static final SCOre copper = new SCOreBuilder()
+            .withForms(ORES)
+            .name("copper")
+            .color(0xda7953)
+            .build();
+            
+    public static final SCOre emerald = new SCOreBuilder()
+            .withForms(ORES)
+            .name("emerald")
+            .color(0x055f05)
+            .build();
+            
+    public static final SCOre lead = new SCOreBuilder()
+            .withForms(ORES)
+            .name("lead")
+            .color(0x8c648c)
+            .build();
+            
+    public static final SCOre silver = new SCOreBuilder()
+            .withForms(ORES)
+            .name("silver")
+            .color(0xdcdcff)
+            .build();
+            
+    public static final SCOre nickel = new SCOreBuilder()
+            .withForms(ORES)
+            .name("nickel")
+            .color(0xc8c8fa)
+            .build();
+            
+    public static final SCOre tin = new SCOreBuilder()
+            .withForms(ORES)
+            .name("tin")
+            .color(0xdcdcdc)
+            .build();
+            
+    public static final SCOre zinc = new SCOreBuilder()
+            .withForms(ORES)
+            .name("zinc")
+            .color(0xfaf0f0)
+            .build();
+            
+    public static final SCOre sulfur = new SCOreBuilder()
+            .withForms(ORES)
+            .name("sulfur")
+            .color(0xc8c800)
+            .build();
+            
+    public static final SCOre beryllium = new SCOreBuilder()
+            .withForms(ORES)
+            .name("beryllium")
+            .color(0x64b464)
+            .build();
+            
+    public static final SCOre thorium = new SCOreBuilder()
+            .withForms(ORES)
+            .name("thorium")
+            .color(0x001e00)
+            .build();
+            
     @NoReg
     private static final Set<SCOre> values = Arrays.stream(ModOres.class.getDeclaredFields())
             .filter(f -> f.getType() == SCOre.class)

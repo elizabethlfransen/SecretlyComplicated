@@ -3,6 +3,8 @@ package io.github.elizabethlfransen.secretlycomplicated.materialform.ore;
 import io.github.elizabethlfransen.secretlycomplicated.block.SCBlock;
 import io.github.elizabethlfransen.secretlycomplicated.datagen.props.DataGenProps;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.CommonMaterialFormFactories;
+import io.github.elizabethlfransen.secretlycomplicated.materialform.MaterialForms;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.base.BaseLocalizableMaterialFormFactoryBuilder;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.base.LocalizableMaterialFormFactory;
 import net.minecraft.world.level.block.state.BlockBehaviour;

@@ -97,4 +97,38 @@ public final class MaterialForms {
             .withLocalization(EN_US, material -> "End %s Ore".formatted(material.getCapitalizedName()))
             .withDataGenProp(new UseOreModelProp("secretly_complicated:block/base_end_ore"))
             .build();
+
+//     public static final OreMaterialFormFactory GRAVEL_ORE = OreMaterialFormFactory.builder("gravel_ore")
+//             .withLocalization(EN_US, material -> "Gravel %s Ore".formatted(material.getCapitalizedName()))
+//             .withDataGenProp(new UseOreModelProp("secretly_complicated:block/base_gravel_ore"))
+//             .build();
+
+//     public static final OreMaterialFormFactory SAND_ORE = OreMaterialFormFactory.builder("sand_ore")
+//             .withLocalization(EN_US, material -> "Sand %s Ore".formatted(material.getCapitalizedName()))
+//             .withDataGenProp(new UseOreModelProp("secretly_complicated:block/base_sand_ore"))
+//             .build();
+
+    public static final OreMaterialFormFactory DIORITE_ORE = OreMaterialFormFactory.builder("diorite_ore")
+            .withLocalization(EN_US, material -> "Diorite %s Ore".formatted(material.getCapitalizedName()))
+            .withDataGenProp(new UseOreModelProp("secretly_complicated:block/base_diorite_ore"))
+            .build();
+
+    public static final OreMaterialFormFactory ANDESITE_ORE = OreMaterialFormFactory.builder("andesite_ore")
+            .withLocalization(EN_US, material -> "Andesite %s Ore".formatted(material.getCapitalizedName()))
+            .withDataGenProp(new UseOreModelProp("secretly_complicated:block/base_andesite_ore"))
+            .build();
+
+    public static final OreMaterialFormFactory GRANITE_ORE = OreMaterialFormFactory.builder("granite_ore")
+            .withLocalization(EN_US, material -> "Granite %s Ore".formatted(material.getCapitalizedName()))
+            .withDataGenProp(new UseOreModelProp("secretly_complicated:block/base_granite_ore"))
+            .build();
+
+    public static final ItemMaterialFormFactory GEM = ItemMaterialFormFactory.builder("gem")
+            .withLocalization(EN_US, material -> material.getCapitalizedName() + " Gem")
+            .build();
+
+    public static final ItemMaterialFormFactory CHUNK = ItemMaterialFormFactory.builder("chunk")
+            .withLocalization(EN_US, material -> material.getCapitalizedName())
+            .build();
+
 }

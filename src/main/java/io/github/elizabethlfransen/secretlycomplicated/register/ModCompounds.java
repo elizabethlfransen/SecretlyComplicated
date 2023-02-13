@@ -5,13 +5,12 @@ import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterialBuilde
 import io.github.elizabethlfransen.secretlycomplicated.materialform.CommonMaterialFormFactories;
 import io.github.noeppi_noeppi.libx.annotation.registration.NoReg;
 import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
-
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @RegisterClass
-public class ModCompounds {
+public final class ModCompounds {
     public static final SCMaterial roseGold = new SCMaterialBuilder()
             .name("rose_gold")
             .color(0xE0BFB8)
@@ -316,6 +315,88 @@ public class ModCompounds {
             .metallic()
             .withForms(CommonMaterialFormFactories.PARTS)
             .build();
+    public static final SCMaterial graphite = new SCMaterialBuilder()
+            .name("graphite")
+            .color(0x808080)
+            .melting(9999)
+            .boiling(9999)
+            .metallic()
+            .withForms(CommonMaterialFormFactories.PARTS)
+            .build();
+    public static final SCMaterial lumium = new SCMaterialBuilder()
+            .name("lumium")
+            .color(0xf6ff99)
+            .melting(9999)
+            .boiling(9999)
+            .metallic()
+            .withForms(CommonMaterialFormFactories.PARTS)
+            .build();
+    public static final SCMaterial signalum = new SCMaterialBuilder()
+            .name("signalum")
+            .color(0xce4b00)
+            .melting(9999)
+            .boiling(9999)
+            .metallic()
+            .withForms(CommonMaterialFormFactories.PARTS)
+            .build();
+    public static final SCMaterial enderium = new SCMaterialBuilder()
+            .name("enderium")
+            .color(0x1f6b62)
+            .melting(9999)
+            .boiling(9999)
+            .metallic()
+            .withForms(CommonMaterialFormFactories.PARTS)
+            .build();
+    public static final SCMaterial electrical_steel = new SCMaterialBuilder()
+            .name("electrical_steel")
+            .color(0xb2c0c1)
+            .melting(9999)
+            .boiling(9999)
+            .metallic()
+            .withForms(CommonMaterialFormFactories.PARTS)
+            .build();
+    public static final SCMaterial dark_steel = new SCMaterialBuilder()
+            .name("dark_steel")
+            .color(0x414751)
+            .melting(9999)
+            .boiling(9999)
+            .metallic()
+            .withForms(CommonMaterialFormFactories.PARTS)
+            .build();
+    public static final SCMaterial pulsating_iron = new SCMaterialBuilder()
+            .name("pulsating_iron")
+            .color(0x6ae26e)
+            .melting(9999)
+            .boiling(9999)
+            .metallic()
+            .withForms(CommonMaterialFormFactories.PARTS)
+            .build();
+    public static final SCMaterial vibrant_alloy = new SCMaterialBuilder()
+            .name("vibrant_alloy")
+            .color(0xa4ff70)
+            .melting(9999)
+            .boiling(9999)
+            .metallic()
+            .withForms(CommonMaterialFormFactories.PARTS)
+            .build();
+    public static final SCMaterial energetic_alloy = new SCMaterialBuilder()
+            .name("energetic_alloy")
+            .color(0xf49507)
+            .melting(9999)
+            .boiling(9999)
+            .metallic()
+            .withForms(CommonMaterialFormFactories.PARTS)
+            .build();
+    public static final SCMaterial end_steel = new SCMaterialBuilder()
+            .name("end_steel")
+            .color(0xe0efbd)
+            .melting(9999)
+            .boiling(9999)
+            .metallic()
+            .withForms(CommonMaterialFormFactories.PARTS)
+            .build();
+
+
     @NoReg
     private static final Set<SCMaterial> values = Arrays.stream(ModCompounds.class.getDeclaredFields())
             .filter(f -> f.getType() == SCMaterial.class)

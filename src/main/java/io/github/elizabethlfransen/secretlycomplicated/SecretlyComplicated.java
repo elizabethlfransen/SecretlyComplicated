@@ -4,7 +4,12 @@ import io.github.elizabethlfransen.secretlycomplicated.datagen.DataProviderRegis
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.register.ModCompounds;
 import io.github.elizabethlfransen.secretlycomplicated.register.ModElements;
+import io.github.elizabethlfransen.secretlycomplicated.register.ModFluids;
+import io.github.elizabethlfransen.secretlycomplicated.register.ModGases;
+import io.github.elizabethlfransen.secretlycomplicated.register.ModGems;
+import io.github.elizabethlfransen.secretlycomplicated.register.ModMachineBlocks;
 import io.github.elizabethlfransen.secretlycomplicated.register.ModOres;
+import io.github.elizabethlfransen.secretlycomplicated.register.ModSingularItems;
 import io.github.elizabethlfransen.secretlycomplicated.util.SimpleCreativeTab;
 import io.github.noeppi_noeppi.libx.mod.registration.ModXRegistration;
 import io.github.noeppi_noeppi.libx.mod.registration.RegistrationBuilder;
@@ -60,6 +65,12 @@ public final class SecretlyComplicated extends ModXRegistration {
         result.addAll(ModCompounds.getValues());
         result.addAll(ModElements.getValues());
         result.addAll(ModOres.getValues());
+        result.addAll(ModMachineBlocks.getValues());
+        result.addAll(ModFluids.getValues());
+        result.addAll(ModGems.getValues());
+        result.addAll(ModSingularItems.getValues());
+        result.addAll(ModGases.getValues());
+
         return result;
     }
 }
