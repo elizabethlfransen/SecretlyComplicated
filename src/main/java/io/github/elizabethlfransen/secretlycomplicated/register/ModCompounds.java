@@ -1,8 +1,10 @@
 package io.github.elizabethlfransen.secretlycomplicated.register;
 
+import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterialBuilder;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.CommonMaterialFormFactories;
+import io.github.noeppi_noeppi.libx.annotation.ForMod;
 import io.github.noeppi_noeppi.libx.annotation.registration.NoReg;
 import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
 import java.util.Arrays;
@@ -10,6 +12,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @RegisterClass
+@ForMod(value = SecretlyComplicated.class)
 public final class ModCompounds {
     public static final SCMaterial roseGold = new SCMaterialBuilder()
             .name("rose_gold")
@@ -390,6 +393,14 @@ public final class ModCompounds {
     public static final SCMaterial end_steel = new SCMaterialBuilder()
             .name("end_steel")
             .color(0xe0efbd)
+            .melting(9999)
+            .boiling(9999)
+            .metallic()
+            .withForms(CommonMaterialFormFactories.PARTS)
+            .build();
+    public static final SCMaterial stainless_steel = new SCMaterialBuilder()
+            .name("stainless_steel")
+            .color(0xc8c8dc)
             .melting(9999)
             .boiling(9999)
             .metallic()

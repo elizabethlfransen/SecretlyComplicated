@@ -1,7 +1,9 @@
 package io.github.elizabethlfransen.secretlycomplicated.register;
 
+import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCOre;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCOreBuilder;
+import io.github.noeppi_noeppi.libx.annotation.ForMod;
 import io.github.noeppi_noeppi.libx.annotation.registration.NoReg;
 import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
 
@@ -12,6 +14,7 @@ import java.util.stream.Collectors;
 import static io.github.elizabethlfransen.secretlycomplicated.materialform.CommonMaterialFormFactories.ORES;
 
 @RegisterClass
+@ForMod(value = SecretlyComplicated.class)
 public class ModOres {
     public static final SCOre graphite = new SCOreBuilder()
             .withForms(ORES)
@@ -263,7 +266,9 @@ public class ModOres {
             .name("oilsands")
             .color(0x0a0a0a)
             .build();
-            
+            /*
+             * Pure Ores
+             */
     public static final SCOre aluminium = new SCOreBuilder()
             .withForms(ORES)
             .name("aluminium")
@@ -309,7 +314,7 @@ public class ModOres {
     public static final SCOre zinc = new SCOreBuilder()
             .withForms(ORES)
             .name("zinc")
-            .color(0xfaf0f0)
+            .color(0x91898d)
             .build();
             
     public static final SCOre sulfur = new SCOreBuilder()
@@ -329,6 +334,86 @@ public class ModOres {
             .name("thorium")
             .color(0x001e00)
             .build();
+     /**
+     * Gems
+     **/
+    
+    public static final SCOre blue_topaz = new SCOreBuilder()
+            .withForms(ORES)
+            .name("blue_topaz")
+            .color(0x0000ff)
+            .build();
+    public static final SCOre charcoal = new SCOreBuilder()
+            .withForms(ORES)
+            .name("charcoal")
+            .color(0x644646)
+            .build();
+    public static final SCOre coal_coke = new SCOreBuilder()
+            .withForms(ORES)
+            .name("coal_coke")
+            .color(0x8c8caa)
+            .build();
+    public static final SCOre lignite_coke = new SCOreBuilder()
+            .withForms(ORES)
+            .name("lignite_coke")
+            .color(0x8c6464)
+            .build();
+    public static final SCOre green_sapphire = new SCOreBuilder()
+            .withForms(ORES)
+            .name("green_sapphire")
+            .color(0x64c882)
+            .build();
+    public static final SCOre ruby = new SCOreBuilder()
+            .withForms(ORES)
+            .name("ruby")
+            .color(0xff6464)
+            .build();
+    public static final SCOre blue_sapphire = new SCOreBuilder()
+            .withForms(ORES)
+            .name("blue_sapphire")
+            .color(0x6464c8)
+            .build();
+    public static final SCOre sodalite = new SCOreBuilder()
+            .withForms(ORES)
+            .name("sodalite")
+            .color(0x1414ff)
+            .build();
+    public static final SCOre tanzanite = new SCOreBuilder()
+            .withForms(ORES)
+            .name("tanzanite")
+            .color(0x4000c8)
+            .build();
+    public static final SCOre topaz = new SCOreBuilder()
+            .withForms(ORES)
+            .name("topaz")
+            .color(0xff8000)
+            .build();
+    public static final SCOre olivine = new SCOreBuilder()
+            .withForms(ORES)
+            .name("olivine")
+            .color(0x96ff96)
+            .build();
+//     public static final SCOre amethyst = new SCOreBuilder()
+//             .withForms(ORES)
+//             .name("amethyst")
+//             .color(0xd232d2)
+//             .build();
+    public static final SCOre red_garnet = new SCOreBuilder()
+            .withForms(ORES)
+            .name("red_garnet")
+            .color(0xc85050)
+            .build();
+    public static final SCOre yellow_garnet = new SCOreBuilder()
+            .withForms(ORES)
+            .name("yellow_garnet")
+            .color(0xc8c850)
+            .build();
+    public static final SCOre monazite = new SCOreBuilder()
+            .withForms(ORES)
+            .name("monazite")
+            .color(0x324632)
+            .build();
+            
             
     @NoReg
     private static final Set<SCOre> values = Arrays.stream(ModOres.class.getDeclaredFields())

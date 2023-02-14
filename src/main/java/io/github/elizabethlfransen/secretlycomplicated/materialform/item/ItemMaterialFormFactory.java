@@ -11,11 +11,11 @@ import net.minecraft.world.item.Item;
 import java.util.function.BiFunction;
 
 public class ItemMaterialFormFactory extends LocalizableMaterialFormFactory<SimpleItemMaterialForm> {
-    private static String textureName;
+    private final String textureName;
 
     private ItemMaterialFormFactory(String id, String textureName, BiFunction<SCMaterial, String, String> localizedNames, DataGenProps dataGenProps) {
         super(id, localizedNames, dataGenProps);
-        ItemMaterialFormFactory.textureName = textureName;
+        this.textureName = textureName;
     }
 
     public static final class Builder extends BaseLocalizableMaterialFormFactoryBuilder<SimpleItemMaterialForm,ItemMaterialFormFactory,Builder> {

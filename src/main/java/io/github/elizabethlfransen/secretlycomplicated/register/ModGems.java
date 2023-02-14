@@ -1,8 +1,10 @@
 package io.github.elizabethlfransen.secretlycomplicated.register;
 
+import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterialBuilder;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.CommonMaterialFormFactories;
+import io.github.noeppi_noeppi.libx.annotation.ForMod;
 import io.github.noeppi_noeppi.libx.annotation.registration.NoReg;
 import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
 
@@ -11,6 +13,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @RegisterClass
+@ForMod(value = SecretlyComplicated.class)
 public class ModGems {
     public static final SCMaterial coal_coke = new SCMaterialBuilder()
             .name("coal_coke")
@@ -34,7 +37,7 @@ public class ModGems {
             .withForms(CommonMaterialFormFactories.GEMS)
             .build();
     public static final SCMaterial potassium_nitrate = new SCMaterialBuilder()
-            .name("potassium_nitrate")
+            .name("potassium_nitrate") //saltpeter, nitrate
             .color(0xfafafa)
             .melting(9999)
             .boiling(9999)
@@ -48,7 +51,7 @@ public class ModGems {
             .withForms(CommonMaterialFormFactories.GEMS)
             .build();
             /*
-             * prefix-tomic molecules
+             * Allotropes (homonuclear) molecules
              */
     public static final SCMaterial dilithium = new SCMaterialBuilder()
             .name("dilithium")
@@ -113,6 +116,101 @@ public class ModGems {
             .boiling(9999)
             .withForms(CommonMaterialFormFactories.GEMS)
             .build();
+            /*
+             * Ore Gems
+             */
+    public static final SCMaterial blue_topaz = new SCMaterialBuilder()
+            .name("blue_topaz")
+            .color(0x0000ff)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial charcoal = new SCMaterialBuilder()
+            .name("charcoal")
+            .color(0x644646)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial lignite_coke = new SCMaterialBuilder()
+            .name("lignite_coke")
+            .color(0x8c6464)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial green_sapphire = new SCMaterialBuilder()
+            .name("green_sapphire")
+            .color(0x64c882)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial ruby = new SCMaterialBuilder()
+            .name("ruby")
+            .color(0xff6464)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial blue_sapphire = new SCMaterialBuilder()
+            .name("blue_sapphire")
+            .color(0x6464c8)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial sodalite = new SCMaterialBuilder()
+            .name("sodalite")
+            .color(0x1414ff)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial tanzanite = new SCMaterialBuilder()
+            .name("tanzanite")
+            .color(0x4000c8)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial topaz = new SCMaterialBuilder()
+            .name("topaz")
+            .color(0xff8000)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial olivine = new SCMaterialBuilder()
+            .name("olivine")
+            .color(0x96ff96)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial red_garnet = new SCMaterialBuilder()
+            .name("red_garnet")
+            .color(0xc85050)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial yellow_garnet = new SCMaterialBuilder()
+            .name("yellow_garnet")
+            .color(0xc8c850)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial monazite = new SCMaterialBuilder()
+            .name("monazite")
+            .color(0x324632)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+
 
     @NoReg
     private static final Set<SCMaterial> values = Arrays.stream(ModGems.class.getDeclaredFields())

@@ -1,8 +1,10 @@
 package io.github.elizabethlfransen.secretlycomplicated.register;
 
+import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterialBuilder;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.CommonMaterialFormFactories;
+import io.github.noeppi_noeppi.libx.annotation.ForMod;
 import io.github.noeppi_noeppi.libx.annotation.registration.NoReg;
 import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
 
@@ -11,6 +13,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @RegisterClass
+@ForMod(value = SecretlyComplicated.class)
 public class ModSingularItems {
     public static final SCMaterial tar = new SCMaterialBuilder()
             .name("tar")
@@ -82,13 +85,13 @@ public class ModSingularItems {
             .boiling(9999)
             .withForms(CommonMaterialFormFactories.SINGULAR_ITEMS)
             .build();
-    public static final SCMaterial sodium_sulfide = new SCMaterialBuilder()
-            .name("sodium_sulfide")
-            .color(0xffe680)
-            .melting(9999)
-            .boiling(9999)
-            .withForms(CommonMaterialFormFactories.SINGULAR_ITEMS)
-            .build();
+//     public static final SCMaterial sodium_sulfide = new SCMaterialBuilder()
+//             .name("sodium_sulfide")
+//             .color(0xffe680)
+//             .melting(9999)
+//             .boiling(9999)
+//             .withForms(CommonMaterialFormFactories.SINGULAR_ITEMS)
+//             .build();
     public static final SCMaterial rare_earth = new SCMaterialBuilder()
             .name("rare_earth")
             .color(0x808064)
@@ -152,13 +155,13 @@ public class ModSingularItems {
             .boiling(9999)
             .withForms(CommonMaterialFormFactories.SINGULAR_ITEMS)
             .build();
-    public static final SCMaterial brick = new SCMaterialBuilder()
-            .name("brick")
-            .color(0x9b5643)
-            .melting(9999)
-            .boiling(9999)
-            .withForms(CommonMaterialFormFactories.SINGULAR_ITEMS)
-            .build();
+//     public static final SCMaterial brick = new SCMaterialBuilder()
+//             .name("brick")
+//             .color(0x9b5643)
+//             .melting(9999)
+//             .boiling(9999)
+//             .withForms(CommonMaterialFormFactories.SINGULAR_ITEMS)
+//             .build();
     public static final SCMaterial sodium_bisulfate = new SCMaterialBuilder()
             .name("sodium_bisulfate")
             .color(0x004455)
@@ -274,13 +277,13 @@ public class ModSingularItems {
             .boiling(9999)
             .withForms(CommonMaterialFormFactories.SINGULAR_ITEMS)
             .build();
-    public static final SCMaterial gallium_arsenide = new SCMaterialBuilder()
-            .name("gallium_arsenide")
-            .color(0xa0a0a0)
-            .melting(9999)
-            .boiling(9999)
-            .withForms(CommonMaterialFormFactories.SINGULAR_ITEMS)
-            .build();
+//     public static final SCMaterial gallium_arsenide = new SCMaterialBuilder()
+//             .name("gallium_arsenide")
+//             .color(0xa0a0a0)
+//             .melting(9999)
+//             .boiling(9999)
+//             .withForms(CommonMaterialFormFactories.SINGULAR_ITEMS)
+//             .build();
     public static final SCMaterial fiber_reinforced_epoxy_resin = new SCMaterialBuilder()
             .name("fiber_reinforced_epoxy_resin")
             .color(0xa07010)

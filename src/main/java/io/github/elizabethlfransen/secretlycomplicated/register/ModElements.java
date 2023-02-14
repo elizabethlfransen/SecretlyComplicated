@@ -1,7 +1,9 @@
 package io.github.elizabethlfransen.secretlycomplicated.register;
 
+import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCElement;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCElementBuilder;
+import io.github.noeppi_noeppi.libx.annotation.ForMod;
 import io.github.noeppi_noeppi.libx.annotation.registration.NoReg;
 import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
 
@@ -12,6 +14,7 @@ import java.util.stream.Collectors;
 import static io.github.elizabethlfransen.secretlycomplicated.materialform.CommonMaterialFormFactories.PARTS;
 
 @RegisterClass
+@ForMod(value = SecretlyComplicated.class)
 public final class ModElements {
     public static final SCElement hydrogen = new SCElementBuilder()
             .atomicNumber(1)
@@ -59,11 +62,11 @@ public final class ModElements {
     public static final SCElement carbon = new SCElementBuilder()
             .atomicNumber(6)
             .name("carbon")
-            .color(0xebffc1)
+            .color(0x141414)
             .melting(3500)
             .boiling(9999)
             .withForms(PARTS)
-            .build();
+            .build();// atomic spectral emission color: 0xebffc1
     public static final SCElement nitrogen = new SCElementBuilder()
             .atomicNumber(7)
             .name("nitrogen")
@@ -136,27 +139,27 @@ public final class ModElements {
     public static final SCElement phosphorus = new SCElementBuilder()
             .atomicNumber(15)
             .name("phosphorus")
-            .color(0x36fec8)
+            .color(0xffff00)
             .melting(44)
             .boiling(280)
             .withForms(PARTS)
-            .build();
+            .build();// atomic spectral emission color: 0x36fec8
     public static final SCElement sulfur = new SCElementBuilder()
             .atomicNumber(16)
             .name("sulfur")
-            .color(0x6fb0ff)
+            .color(0xc8c800)
             .melting(112)
             .boiling(444)
             .withForms(PARTS)
-            .build();
+            .build();// atomic spectral emission color: 0x6fb0ff
     public static final SCElement chlorine = new SCElementBuilder()
             .atomicNumber(17)
             .name("chlorine")
-            .color(0x76b1ff)
+            .color(0x00ffff)
             .melting(-101)
             .boiling(-34)
             .withForms(PARTS)
-            .build();
+            .build();// atomic spectral emission color: 0x76b1ff
     public static final SCElement argon = new SCElementBuilder()
             .atomicNumber(18)
             .name("argon")
@@ -169,21 +172,21 @@ public final class ModElements {
     public static final SCElement potassium = new SCElementBuilder()
             .atomicNumber(19)
             .name("potassium")
-            .color(0xdab4ff)
+            .color(0xfafafa)
             .melting(63)
             .boiling(758)
             .withForms(PARTS)
             .metallic()
-            .build();
+            .build();// atomic spectral emission color: 0xdab4ff
     public static final SCElement calcium = new SCElementBuilder()
             .atomicNumber(20)
             .name("calcium")
-            .color(0xfe78bf)
+            .color(0xfff5f5)
             .melting(842)
             .boiling(1483)
             .withForms(PARTS)
             .metallic()
-            .build();
+            .build();// atomic spectral emission color: 0xfe78bf
     public static final SCElement scandium = new SCElementBuilder()
             .atomicNumber(21)
             .name("scandium")
@@ -250,12 +253,12 @@ public final class ModElements {
     public static final SCElement nickel = new SCElementBuilder()
             .atomicNumber(28)
             .name("nickel")
-            .color(0x35f5ff)
+            .color(0xc8c8fa)
             .melting(1455)
             .boiling(2730)
             .withForms(PARTS)
             .metallic()
-            .build();
+            .build();// atomic spectral emission color: 0x35f5ff
     public static final SCElement copper = new SCElementBuilder()
             .atomicNumber(29)
             .name("copper")
@@ -419,12 +422,12 @@ public final class ModElements {
     public static final SCElement silver = new SCElementBuilder()
             .atomicNumber(47)
             .name("silver")
-            .color(0x32ffa3)
+            .color(0xdcdcff)
             .melting(1084)
             .boiling(2562)
             .withForms(PARTS)
             .metallic()
-            .build();
+            .build();// atomic spectral emission color: 0x32ffa3
     public static final SCElement cadmium = new SCElementBuilder()
             .atomicNumber(48)
             .name("cadmium")
@@ -446,12 +449,12 @@ public final class ModElements {
     public static final SCElement tin = new SCElementBuilder()
             .atomicNumber(50)
             .name("tin")
-            .color(0xffbefc)
+            .color(0xdcdcdc)
             .melting(938)
             .boiling(2833)
             .withForms(PARTS)
             .metallic()
-            .build();
+            .build();// atomic spectral emission color: 0xffbefc
     public static final SCElement antimony = new SCElementBuilder()
             .atomicNumber(51)
             .name("antimony")
@@ -708,12 +711,12 @@ public final class ModElements {
     public static final SCElement gold = new SCElementBuilder()
             .atomicNumber(79)
             .name("gold")
-            .color(0xa38eff)
+            .color(0xffd83d)
             .melting(1064)
             .boiling(2700)
             .withForms(PARTS)
             .metallic()
-            .build();
+            .build();// atomic spectral emission color: 0xa38eff
     public static final SCElement mercury = new SCElementBuilder()
             .atomicNumber(80)
             .name("mercury")
@@ -735,12 +738,12 @@ public final class ModElements {
     public static final SCElement lead = new SCElementBuilder()
             .atomicNumber(82)
             .name("lead")
-            .color(0xa9ecff)
+            .color(0x8c648c)
             .melting(327)
             .boiling(1749)
             .withForms(PARTS)
             .metallic()
-            .build();
+            .build();// atomic spectral emission color: 0xa9ecff
     public static final SCElement bismuth = new SCElementBuilder()
             .atomicNumber(83)
             .name("bismuth")
