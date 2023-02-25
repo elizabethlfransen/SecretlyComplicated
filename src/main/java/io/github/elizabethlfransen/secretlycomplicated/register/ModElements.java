@@ -711,7 +711,7 @@ public final class ModElements {
     public static final SCElement gold = new SCElementBuilder()
             .atomicNumber(79)
             .name("gold")
-            .color(0xffd83d)
+            .color(0xffff00)
             .melting(1064)
             .boiling(2700)
             .withForms(PARTS)

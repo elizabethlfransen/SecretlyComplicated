@@ -2,6 +2,7 @@ package io.github.elizabethlfransen.secretlycomplicated;
 
 import io.github.elizabethlfransen.secretlycomplicated.datagen.DataProviderRegister;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
+import io.github.elizabethlfransen.secretlycomplicated.register.ModComponents;
 import io.github.elizabethlfransen.secretlycomplicated.register.ModCompounds;
 import io.github.elizabethlfransen.secretlycomplicated.register.ModElements;
 import io.github.elizabethlfransen.secretlycomplicated.register.ModFluids;
@@ -70,6 +71,7 @@ public final class SecretlyComplicated extends ModXRegistration {
         result.addAll(ModGems.getValues());
         result.addAll(ModSingularItems.getValues());
         result.addAll(ModGases.getValues());
+        result.addAll(ModComponents.getValues());
 
         return result;
     }

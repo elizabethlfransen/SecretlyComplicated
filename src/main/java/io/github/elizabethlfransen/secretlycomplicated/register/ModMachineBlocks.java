@@ -1,8 +1,10 @@
 package io.github.elizabethlfransen.secretlycomplicated.register;
 
+import io.github.elizabethlfransen.secretlycomplicated.SecretlyComplicated;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterial;
 import io.github.elizabethlfransen.secretlycomplicated.material.SCMaterialBuilder;
 import io.github.elizabethlfransen.secretlycomplicated.materialform.CommonMaterialFormFactories;
+import io.github.noeppi_noeppi.libx.annotation.ForMod;
 import io.github.noeppi_noeppi.libx.annotation.registration.NoReg;
 import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
 
@@ -11,6 +13,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @RegisterClass
+@ForMod(value = SecretlyComplicated.class)
 public class ModMachineBlocks {
         // immersive engineering
     public static final SCMaterial coke_brick = new SCMaterialBuilder()

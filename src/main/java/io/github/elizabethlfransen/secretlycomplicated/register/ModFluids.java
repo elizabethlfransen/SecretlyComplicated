@@ -483,6 +483,13 @@ public class ModFluids {
             .boiling(9999)
             .withForms(CommonMaterialFormFactories.FLUIDS)
             .build();
+    public static final SCMaterial glue = new SCMaterialBuilder()
+            .name("glue")
+            .color(0xc8c400)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.FLUIDS)
+            .build();
             
     @NoReg
     private static final Set<SCMaterial> values = Arrays.stream(ModFluids.class.getDeclaredFields())

@@ -131,4 +131,8 @@ public final class MaterialForms {
             .withLocalization(EN_US, material -> material.getCapitalizedName())
             .build();
 
+    public static final ItemMaterialFormFactory COMPONENT = ItemMaterialFormFactory.builder("component")
+            .withLocalization(EN_US, material -> material.getCapitalizedName())
+            .build();
+
 }

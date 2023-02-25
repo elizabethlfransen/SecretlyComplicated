@@ -46,9 +46,14 @@ public final class CommonMaterialFormFactories {
             BLOCK
     );
 
-    public static final List<MaterialFormFactory<?>> SINGULAR_ITEMS = Arrays.asList(
+    public static final List<MaterialFormFactory<?>> CHUNKS = Arrays.asList(
             CHUNK,
+            DUST,
             BLOCK
+    );
+    
+    public static final List<MaterialFormFactory<?>> COMPONENTS = Arrays.asList(
+            COMPONENT
     );
 
     public static final List<MaterialFormFactory<?>> OVERWORLD_ORES = Arrays.asList(
