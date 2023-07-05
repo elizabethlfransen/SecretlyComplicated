@@ -217,6 +217,55 @@ public class ModGems {
             .boiling(9999)
             .withForms(CommonMaterialFormFactories.GEMS)
             .build();
+    public static final SCMaterial zeolite = new SCMaterialBuilder()
+            .name("zeolite")
+            .color(0xdbdbdb)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial spent_zeolite = new SCMaterialBuilder()
+            .name("spent_zeolite")
+            .color(0x9dac9e)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial kaolinite = new SCMaterialBuilder()
+            .name("kaolinite")
+            .color(0xdbdbdb)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial halloysite = new SCMaterialBuilder()
+            .name("halloysite")
+            .color(0xdbdbdb)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial bituminous_coal = new SCMaterialBuilder()
+            .name("bituminous_coal")
+            .color(0x444444)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial subbituminous_coal = new SCMaterialBuilder()
+            .name("subbituminous_coal")
+            .color(0x444444)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
+    public static final SCMaterial anthracite_coal = new SCMaterialBuilder()
+            .name("anthracite_coal")
+            .color(0x444444)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.GEMS)
+            .build();
 
 
     @NoReg

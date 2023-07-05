@@ -29,6 +29,13 @@ public class ModSingularItems {
             .boiling(9999)
             .withForms(CommonMaterialFormFactories.CHUNKS)
             .build();
+    public static final SCMaterial fire_clay = new SCMaterialBuilder()
+            .name("fire_clay")
+            .color(0xf1f1f1)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.CHUNKS)
+            .build();
     public static final SCMaterial rosin = new SCMaterialBuilder()
             .name("rosin")
             .color(0x222222)
@@ -64,8 +71,8 @@ public class ModSingularItems {
             .boiling(9999)
             .withForms(CommonMaterialFormFactories.CHUNKS)
             .build();
-    public static final SCMaterial reactioncatalyst = new SCMaterialBuilder()
-            .name("reactioncatalyst")
+    public static final SCMaterial reaction_catalyst = new SCMaterialBuilder()
+            .name("reaction_catalyst")
             .color(0x43ab43)
             .melting(9999)
             .boiling(9999)
@@ -151,6 +158,13 @@ public class ModSingularItems {
     public static final SCMaterial soda_ash = new SCMaterialBuilder()
             .name("soda_ash")
             .color(0xdcdcff)
+            .melting(9999)
+            .boiling(9999)
+            .withForms(CommonMaterialFormFactories.CHUNKS)
+            .build();
+    public static final SCMaterial ash = new SCMaterialBuilder()
+            .name("ash")
+            .color(0xf0f0ff)
             .melting(9999)
             .boiling(9999)
             .withForms(CommonMaterialFormFactories.CHUNKS)
